@@ -1,9 +1,9 @@
-package com.example.skak;
+package vidmot;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class SkakController {
     @FXML
     private Label welcomeText;
 
