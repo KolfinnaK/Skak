@@ -1,16 +1,16 @@
 package vinnsla.game;
 
-import com.chess.model.game.pieces.*;
-import com.chess.model.util.Colors;
-import com.chess.model.util.Pieces;
-import com.chess.model.util.Tile;
+import vinnsla.game.pieces.*;
+import vinnsla.util.Colors;
+import vinnsla.util.Pieces;
+import vinnsla.util.Tile;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static com.chess.model.util.Pieces.*;
+import static vinnsla.util.Pieces.*;
 
 public class ChessGameBuilder {
     private Pieces[][] boardState;

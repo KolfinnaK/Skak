@@ -1,21 +1,24 @@
 package vinnsla.game;
 
-import com.chess.model.game.pieces.*;
-import com.chess.model.util.Colors;
-import com.chess.model.util.Pair;
-import com.chess.model.util.Pieces;
-import com.chess.model.util.Tile;
+import vinnsla.game.pieces.*;
+import vinnsla.util.Colors;
+import vinnsla.util.Pair;
+import vinnsla.util.Pieces;
+import vinnsla.util.Tile;
 
 import java.util.*;
 
-import static com.chess.model.util.Constants.*;
-import static com.chess.model.util.Pieces.*;
-import static com.chess.model.util.Pieces.BLACK_KNIGHT;
+import static vinnsla.util.Constants.*;
+import static vinnsla.util.Pieces.*;
+import static vinnsla.util.Pieces.BLACK_KNIGHT;
 
 public class ChessGame implements ChessGameInterface {
     private int materialHeuristic, positionalHeuristic;
     private Colors currentPlayersColor;
-    private List<Piece> activeWhitePieces, activeBlackPieces, capturedWhitePieces, capturedBlackPieces;
+    private List<Piece> activeWhitePieces;
+    private List<Piece> activeBlackPieces;
+    private List<Piece> capturedWhitePieces;
+    private List<Piece> capturedBlackPieces;
     private Map<Tile, Piece> board;
     private ArrayDeque<MoveCommand> playedMoves;
     private Map<Piece, Set<Tile>> availableTilesCache;

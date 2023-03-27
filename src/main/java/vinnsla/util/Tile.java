@@ -3,7 +3,7 @@ package vinnsla.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.chess.model.util.Constants.SIZE_OF_CHESS_BOARD;
+import static vinnsla.util.Constants.SIZE_OF_CHESS_BOARD;
 
 public class Tile {
     private int row, col;

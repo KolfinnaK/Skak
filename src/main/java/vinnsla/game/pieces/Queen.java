@@ -1,9 +1,9 @@
 package vinnsla.game.pieces;
 
-import com.chess.model.game.ChessGame;
-import com.chess.model.game.MoveCommand;
-import com.chess.model.util.Colors;
-import com.chess.model.util.Tile;
+import vinnsla.game.ChessGame;
+import vinnsla.game.MoveCommand;
+import vinnsla.util.Colors;
+import vinnsla.util.Tile;
 
 import java.util.HashSet;
 import java.util.Set;

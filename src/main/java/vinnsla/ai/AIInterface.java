@@ -1,8 +1,8 @@
 package vinnsla.ai;
 
-import com.chess.model.game.ChessGameInterface;
-import com.chess.model.util.Pair;
-import com.chess.model.util.Tile;
+import vinnsla.game.ChessGameInterface;
+import vinnsla.util.Pair;
+import vinnsla.util.Tile;
 
 public interface AIInterface {
     /**

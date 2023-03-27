@@ -1,10 +1,10 @@
 package vinnsla.game;
 
-import com.chess.model.game.pieces.Pawn;
-import com.chess.model.game.pieces.Piece;
-import com.chess.model.util.Colors;
-import com.chess.model.util.Pair;
-import com.chess.model.util.Tile;
+import vinnsla.game.pieces.Pawn;
+import vinnsla.game.pieces.Piece;
+import vinnsla.util.Colors;
+import vinnsla.util.Pair;
+import vinnsla.util.Tile;
 
 import java.util.Map;
 import java.util.Set;

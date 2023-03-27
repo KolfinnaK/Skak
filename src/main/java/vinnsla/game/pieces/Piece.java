@@ -1,17 +1,17 @@
 package vinnsla.game.pieces;
 
-import com.chess.model.game.ChessGame;
-import com.chess.model.game.MoveCommand;
-import com.chess.model.util.Colors;
-import com.chess.model.util.Pair;
-import com.chess.model.util.Tile;
+import vinnsla.game.ChessGame;
+import vinnsla.game.MoveCommand;
+import vinnsla.util.Colors;
+import vinnsla.util.Pair;
+import vinnsla.util.Tile;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import static com.chess.model.util.Constants.SIZE_OF_CHESS_BOARD;
+import static vinnsla.util.Constants.SIZE_OF_CHESS_BOARD;
 
 public abstract class Piece {
     protected ChessGame game;
