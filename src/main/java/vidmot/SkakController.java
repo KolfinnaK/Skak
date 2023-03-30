@@ -1,14 +1,15 @@
 package vidmot;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-public class SkakController {
+import java.util.ResourceBundle;
+
+public class SkakController{
     @FXML
     private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void initialize() {
     }
 }
