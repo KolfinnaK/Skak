@@ -3,7 +3,7 @@
 Verkaskipting: 
 - Gera upphafssenuna í scenebuilder: Lilja
 - Gera fjögur mismunandi stylesheets og finna flotta liti: Lilja
-- Gera þema takkann: Lilja
+- Gera þema takkann: Óli
 - Gera erfiðleikasenuna í scenebuilder: Kolfinna
 - Gera tímamarkasenuna í scenebuilder: Hekla
 - Gera skáksenuna í scenebuilder
