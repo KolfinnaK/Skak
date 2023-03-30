@@ -1,12 +1,14 @@
 # Skák
 
 Verkaskipting: 
-- Gera upphafssenuna í scenebuilder
-- Gera fjögur mismunandi stylesheets og finna flotta liti
-- Gera erfiðleikasenuna í scenebuilder
-- Gera tímamarkasenuna í scenebuilder
+- Gera upphafssenuna í scenebuilder: Lilja
+- Gera fjögur mismunandi stylesheets og finna flotta liti: Lilja
+- Gera þema takkann: Lilja
+- Gera erfiðleikasenuna í scenebuilder: Kolfinna
+- Gera tímamarkasenuna í scenebuilder: Hekla
 - Gera skáksenuna í scenebuilder
-- Gera alert dialog
+- Gera alert dialog: Sindri
+- Gera hljóðtakkann og virknina: Óli
 
 Þema: 
 - Drop down menu
