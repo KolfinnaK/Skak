@@ -9,6 +9,8 @@ Verkaskipting:
 - Gera skáksenuna í scenebuilder
 - Gera alert dialog: Sindri
 - Gera hljóðtakkann og virknina: Óli
+- Útfæra ViewSwitcher: Sindri (liggur ekki á)
+- 
 
 Þema: 
 - Drop down menu
@@ -43,7 +45,7 @@ Skáksenan:
 - inniheldur leikborðið
 - inniheldur tvær skeiðklukkur
 - inniheldur tvö listview þar sem drepnir taflmenn birtast
-- inniheldur tvö labels, leikmaður 1 og leikmaður 2.
+- inniheldur tvö labels, leikmaður 1 og leikmaður 2
 
 
 Alert dialog: 
