@@ -10,7 +10,7 @@ Verkaskipting:
 - Gera alert dialog: Sindri
 - Gera hljóðtakkann og virknina: Óli
 - Útfæra ViewSwitcher: Lilja (búið)
-- 
+- Gera sérhæfða componenta fyrir homebutton og hljóðtakkann
 
 Þema: 
 - Drop down menu

@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
 import javafx.stage.Stage;
+import javafx.scene.media.*;
 
 /******************************************************************************
  *  Nafn    : Lilja Kolbrún Schopka
@@ -30,5 +31,6 @@ public class UpphafController{
     @FXML
     private Button leikmadur;
 
+    //Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
 
 }
