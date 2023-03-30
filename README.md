@@ -9,7 +9,7 @@ Verkaskipting:
 - Gera skáksenuna í scenebuilder
 - Gera alert dialog: Sindri
 - Gera hljóðtakkann og virknina: Óli
-- Útfæra ViewSwitcher: Sindri (liggur ekki á)
+- Útfæra ViewSwitcher: Lilja (búið)
 - 
 
 Þema: 
