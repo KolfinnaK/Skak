@@ -1,7 +1,12 @@
 # Skák
 
-To-do listi: 
-- Gera upphafsskjá í scenebuilder og gera fxml skrá
+Verkaskipting: 
+- Gera upphafssenuna í scenebuilder
+- Gera fjögur mismunandi stylesheets og finna flotta liti
+- Gera erfiðleikasenuna í scenebuilder
+- Gera tímamarkasenuna í scenebuilder
+- Gera skáksenuna í scenebuilder
+- Gera alert dialog
 
 Þema: 
 - Drop down menu
