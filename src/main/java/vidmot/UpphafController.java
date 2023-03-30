@@ -2,6 +2,7 @@ package vidmot;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.scene.media.*;
 
 /******************************************************************************
  *  Nafn    : Lilja Kolbrún Schopka
@@ -14,6 +15,5 @@ import javafx.stage.Stage;
  *
  *****************************************************************************/
 public class UpphafController{
-
-
+    Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
 }
