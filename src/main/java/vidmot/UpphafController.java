@@ -34,7 +34,7 @@ public class UpphafController{
     @FXML
     private Button fxLeikmadur;
 
-    Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
+    Media media = new Media(UpphafController.class.getResource("music.wav").toExternalForm());
     MediaPlayer mediaPlayer = new MediaPlayer(media);
 
     public void fxTolvaHandler(ActionEvent actionEvent){
@@ -45,7 +45,7 @@ public class UpphafController{
         ViewSwitcher.switchTo(View.TIMAMORK);
     }
 
-    public void FxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
+    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
         if(mediaPlayer.isMute()){
             mediaPlayer.play();
         }
