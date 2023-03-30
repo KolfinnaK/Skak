@@ -31,6 +31,6 @@ public class UpphafController{
     @FXML
     private Button leikmadur;
 
-    //Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
+    Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
 
 }
