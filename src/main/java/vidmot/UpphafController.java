@@ -1,10 +1,13 @@
 package vidmot;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.media.*;
 
@@ -21,16 +24,28 @@ import javafx.scene.media.*;
 public class UpphafController{
 
     @FXML
-    private Button homeButton;
+    private Button fxHomeButton;
     @FXML
-    private Button hljodtakki;
+    private Button fxHljodtakki;
     @FXML
-    private MenuBar theme;
+    private MenuBar fxTheme;
     @FXML
-    private Button tolva;
+    private Button fxTolva;
     @FXML
-    private Button leikmadur;
+    private Button fxLeikmadur;
 
-    //Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
+    Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
+
+    public void fxTolvaHandler(ActionEvent actionEvent){
+        ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
+    }
+
+    public void fxLeikmadurHandler(ActionEvent actionEvent){
+        ViewSwitcher.switchTo(View.TIMAMORK);
+    }
+
+    public void initialize(){
+        fxHomeButton.setGraphic(new ImageView(new Image(UpphafController.class.getResourceAsStream("home_icon.png"))));
+    }
 
 }
