@@ -35,6 +35,7 @@ public class UpphafController{
     private Button fxLeikmadur;
 
     Media media = new Media(UpphafController.class.getResource("upphaf.mp4").toExternalForm());
+    MediaPlayer mediaPlayer = new MediaPlayer(media);
 
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
@@ -44,8 +45,16 @@ public class UpphafController{
         ViewSwitcher.switchTo(View.TIMAMORK);
     }
 
+    public void FxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
+        if(mediaPlayer.isMute()){
+            mediaPlayer.play();
+        }
+        mediaPlayer.setMute(true);
+    }
+
     public void initialize(){
         fxHomeButton.setGraphic(new ImageView(new Image(UpphafController.class.getResourceAsStream("home_icon.png"))));
+        mediaPlayer.play();
     }
 
 }
