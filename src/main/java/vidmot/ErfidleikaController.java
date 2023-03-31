@@ -1,6 +1,8 @@
 package vidmot;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /******************************************************************************
@@ -13,6 +15,20 @@ import javafx.stage.Stage;
  *
  *
  *****************************************************************************/
-public class ErfidleikaController {
+public class ErfidleikaController extends UpphafController {
+    @FXML
+    private Button fxAudvelt;
+    @FXML
+    private Button fxErfitt;
 
+    @FXML
+    public void fxAudveltHandler() {
+
+    }
+
+    @FXML
+    public void fxErfittHandler() {
+
+    }
 }
+
