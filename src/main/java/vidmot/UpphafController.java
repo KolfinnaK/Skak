@@ -45,7 +45,7 @@ public class UpphafController{
         ViewSwitcher.switchTo(View.TIMAMORK);
     }
 
-    public void FxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
+    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
         if(mediaPlayer.isMute()){
             mediaPlayer.play();
         }

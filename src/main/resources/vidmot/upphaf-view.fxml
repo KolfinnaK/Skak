@@ -34,7 +34,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button fx:id="fxHljodtakki" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" text="Hljóðtakki" />
+      <Button fx:id="fxHljodtakki" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" text="Hljóðtakki" />
       <Button fx:id="fxTolva" layoutX="161.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxTolvaHandler" prefHeight="53.0" prefWidth="108.0" text="Tölva">
          <font>
             <Font size="14.0" />
