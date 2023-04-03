@@ -50,17 +50,7 @@ public class UpphafController{
     }
 
    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
-       // if(mediaPlayer.isMute()){
-         //   mediaPlayer.play();
-        //}
-    // mediaPlayer.setMute(true);
-        //else {
-          //  mediaPlayer.setMute(true);
-        //}
-       mediaPlayer.setAutoPlay(true);
-
-
-
+       mediaPlayer.setMute(!mediaPlayer.isMute());
    }
 
     public void fxThemeHandler(ActionEvent actionEvent){
@@ -85,6 +75,7 @@ public class UpphafController{
         //ImageView view = new ImageView(img);
         //fxHomeButton.setGraphic(view);
         //mediaPlayer.play();
+        mediaPlayer.setAutoPlay(true);
     }
 
 }
