@@ -50,17 +50,7 @@ public class UpphafController{
     }
 
    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
-       // if(mediaPlayer.isMute()){
-         //   mediaPlayer.play();
-        //}
-    // mediaPlayer.setMute(true);
-        //else {
-          //  mediaPlayer.setMute(true);
-        //}
-       mediaPlayer.setAutoPlay(true);
-
-
-
+       mediaPlayer.setMute(!mediaPlayer.isMute());
    }
 
     public void fxThemeHandler(ActionEvent actionEvent){
@@ -80,10 +70,16 @@ public class UpphafController{
     }
 
     public void initialize(){
-        //Image img = new Image(getClass().getResource("images/home_icon.png").toExternalForm()); //ekki rétt path
-        //ImageView view = new ImageView(img);
-        fxHomeButton.getStyleClass().add("mynd");
+        Image img = new Image(getClass().getResource("images/home_icon.png").toExternalForm()); //ekki rétt path
+        ImageView view = new ImageView(img);
+
+        //fxHomeButton.getStyleClass().add("mynd");
         mediaPlayer.play();
+
+        //fxHomeButton.setGraphic(view);
+        //mediaPlayer.play();
+        mediaPlayer.setAutoPlay(true);
+
     }
 
 }
