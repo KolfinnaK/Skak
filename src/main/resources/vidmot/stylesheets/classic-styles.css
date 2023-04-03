@@ -4,9 +4,21 @@
 
 .button{
     -fx-background-color: #0f4519; //dökkgrænn
+    -fx-text-fill: #d6d6d6; //ljósgrár
 }
 
 .label{
-    -fx-text-fill: #f7f7f7; //hvítur
+    -fx-text-fill: #4d4c4c; //dökkgrár
     -fx-font-Family: "Arial";
 }
+
+.menu{
+    -fx-text-fill: #d6d6d6; //ljósgrár
+    -fx-background-color: #0f4519; //dökkgrænn
+}
+
+.mynd{
+    -fx-background-image: url("home_icon.png");
+        -fx-background-size: 100%, 100%;
+}
+

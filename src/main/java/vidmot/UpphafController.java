@@ -68,23 +68,22 @@ public class UpphafController{
     }
 
     public void fxClassicHandler(ActionEvent actionEvent){
-        //fxHomeButton.getScene().getStylesheets().add("classic-styles.css"); //ekki rétt path
         fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/classic-styles.css").toExternalForm());}
 
     public void fxCottonCandyHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm()); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm());
 
     }
 
     public void fxTropicalHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/tropical-styles.css").toExternalForm()); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/tropical-styles.css").toExternalForm());
     }
 
     public void initialize(){
-        //Image img = new Image("images/home_icon.png"); //ekki rétt path
+        //Image img = new Image(getClass().getResource("images/home_icon.png").toExternalForm()); //ekki rétt path
         //ImageView view = new ImageView(img);
-        //fxHomeButton.setGraphic(view);
-        //mediaPlayer.play();
+        fxHomeButton.getStyleClass().add("mynd");
+        mediaPlayer.play();
     }
 
 }
