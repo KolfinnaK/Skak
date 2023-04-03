@@ -49,7 +49,13 @@ public class UpphafController{
         if(mediaPlayer.isMute()){
             mediaPlayer.play();
         }
-        mediaPlayer.setMute(true);
+        else {
+            mediaPlayer.setMute(true);
+        }
+    }
+
+    public void fxThemeHandler(ActionEvent actionEvent){
+
     }
 
     public void initialize(){
