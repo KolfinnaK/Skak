@@ -1,6 +1,6 @@
 package vidmot.nodes;
 
-import com.chess.presenter.GameMediator;
+import presenter.GameMediator;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;

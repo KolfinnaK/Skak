@@ -1,7 +1,7 @@
 package vidmot.nodes;
 
-import com.chess.presenter.NotationPresenter;
-import com.chess.view.Observer;
+import presenter.NotationPresenter;
+import vidmot.Observer;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;

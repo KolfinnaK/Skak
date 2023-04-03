@@ -1,9 +1,9 @@
 package vidmot.nodes;
 
-import com.chess.model.util.Pieces;
-import com.chess.presenter.BoardPresenter;
-import com.chess.presenter.TilePresenter;
-import com.chess.view.Observer;
+import vinnsla.util.Pieces;
+import presenter.BoardPresenter;
+import presenter.TilePresenter;
+import vidmot.Observer;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

@@ -1,6 +1,6 @@
 package vidmot.nodes;
 
-import com.chess.view.scenes.HomeScene;
+//import com.chess.view.scenes.HomeScene;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -68,7 +68,7 @@ public class TopBarNode extends Pane {
 
         homeButton.setOnMouseClicked(mouseEvent -> {
             Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            stage.setScene(new HomeScene(stage.getScene().getWidth(), stage.getScene().getHeight()));
+            //stage.setScene(new HomeScene(stage.getScene().getWidth(), stage.getScene().getHeight()));
         });
         homeButton.setOnMouseEntered(mouseEvent -> homeButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));
         homeButton.setOnMouseExited(mouseEvent -> homeButton.setStyle(TOP_BAR_STYLE));

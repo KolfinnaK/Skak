@@ -1,6 +1,6 @@
 package vidmot.nodes;
 
-import com.chess.presenter.TimerPresenter;
+import presenter.TimerPresenter;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;

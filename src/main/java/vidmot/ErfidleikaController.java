@@ -20,16 +20,22 @@ public class ErfidleikaController extends UpphafController {
     private Button fxAudvelt;
     @FXML
     private Button fxErfitt;
+
     private String bot;
+    private SkakController skakController;
 
     @FXML
     public void fxAudveltHandler() {
         bot = "audvelt";
+        skakController.setBot(bot);
+        ViewSwitcher.switchTo(View.TIMAMORK);
     }
 
     @FXML
     public void fxErfittHandler() {
         bot = "erfitt";
+        skakController.setBot(bot);
+        ViewSwitcher.switchTo(View.TIMAMORK);
     }
 }
 

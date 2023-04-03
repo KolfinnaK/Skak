@@ -33,42 +33,46 @@ public class UpphafController{
     @FXML
     private Button fxLeikmadur;
 
-    Media media = new Media("resourses/audio/music.wav");
-    MediaPlayer mediaPlayer = new MediaPlayer(media);
-    private SkakApplication skakApplication;
+    //Media media = new Media("audio/music.wav");
+    //MediaPlayer mediaPlayer = new MediaPlayer(media);
+    private SkakController skakController;
+    public boolean isLocalTime;
 
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
+        skakController.setLocalTime(!isLocalTime);
+
     }
 
     public void fxLeikmadurHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.TIMAMORK);
+        skakController.setLocalTime(isLocalTime);
     }
 
    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
-        if(mediaPlayer.isMute()){
+        /*if(mediaPlayer.isMute()){
             mediaPlayer.play();
         }
-        mediaPlayer.setMute(true);
+        mediaPlayer.setMute(true);*/
     }
 
     public void fxClassicHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add("resources/stylesheets/classic-styles.css"); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add("stylesheets/classic-styles.css"); //ekki rétt path
     }
 
     public void fxCottonCandyHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add("resources/stylesheets/cottoncandy-styles.css"); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add("stylesheets/cottoncandy-styles.css"); //ekki rétt path
     }
 
     public void fxTropicalHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add("resources/stylesheets/tropical-styles.css"); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add("stylesheets/tropical-styles.css"); //ekki rétt path
     }
 
     public void initialize(){
-        Image img = new Image("main/resources/images/home_icon.png"); //ekki rétt path
-        ImageView view = new ImageView(img);
-        fxHomeButton.setGraphic(view);
-        mediaPlayer.play();
+        //Image img = new Image("images/home_icon.png"); //ekki rétt path
+        //ImageView view = new ImageView(img);
+        //fxHomeButton.setGraphic(view);
+        //mediaPlayer.play();
     }
 
 }

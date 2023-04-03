@@ -1,8 +1,8 @@
 package vidmot.nodes;
 
-import com.chess.model.util.Colors;
-import com.chess.presenter.BoardPresenter;
-import com.chess.view.Observer;
+import vinnsla.util.Colors;
+import presenter.BoardPresenter;
+import vidmot.Observer;
 import javafx.animation.FadeTransition;
 import javafx.animation.PathTransition;
 import javafx.beans.binding.Bindings;
