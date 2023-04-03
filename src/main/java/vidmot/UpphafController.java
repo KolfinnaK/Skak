@@ -49,8 +49,20 @@ public class UpphafController{
         skakController.setLocalTime(isLocalTime);
     }
 
-   public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
+   public void fxHljodtakkiHandler(ActionEvent actionEvent){
        mediaPlayer.setMute(!mediaPlayer.isMute());
+
+       ImageView image;
+       if (mediaPlayer.isMute()) {
+           image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
+           image.setFitWidth(fxHljodtakki.getWidth());
+           image.setFitHeight(fxHljodtakki.getHeight());
+       } else {
+           image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
+           image.setFitWidth(fxHljodtakki.getWidth());
+           image.setFitHeight(fxHljodtakki.getHeight());
+       }
+       fxHljodtakki.setGraphic(image);
    }
 
     public void fxThemeHandler(ActionEvent actionEvent){
@@ -71,7 +83,15 @@ public class UpphafController{
     }
 
     public void initialize(){
-        //Image img = new Image("images/home_icon.png"); //ekki rétt path
+        ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
+        homeIcon.setFitWidth(53); // Change 30 to the width you want
+        homeIcon.setFitHeight(34); // Change 30 to the height you want
+        homeIcon.setPreserveRatio(true);
+        fxHomeButton.setGraphic(homeIcon);
+        ImageView muteIcon = new ImageView(new Image(getClass().getResource("images/mute.png").toExternalForm()));
+        muteIcon.setFitHeight(34);
+        muteIcon.setFitWidth(38);
+        fxHljodtakki.setGraphic(muteIcon);
         //ImageView view = new ImageView(img);
         //fxHomeButton.setGraphic(view);
         //mediaPlayer.play();
