@@ -57,10 +57,12 @@ public class UpphafController{
            image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
            image.setFitWidth(fxHljodtakki.getWidth());
            image.setFitHeight(fxHljodtakki.getHeight());
+           image.setPreserveRatio(true);
        } else {
            image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
            image.setFitWidth(fxHljodtakki.getWidth());
            image.setFitHeight(fxHljodtakki.getHeight());
+           image.setPreserveRatio(true);
        }
        fxHljodtakki.setGraphic(image);
    }
@@ -70,32 +72,32 @@ public class UpphafController{
     }
 
     public void fxClassicHandler(ActionEvent actionEvent){
-        //fxHomeButton.getScene().getStylesheets().add("classic-styles.css"); //ekki rétt path
         fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/classic-styles.css").toExternalForm());}
 
     public void fxCottonCandyHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm()); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm());
 
     }
 
     public void fxTropicalHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/tropical-styles.css").toExternalForm()); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/tropical-styles.css").toExternalForm());
     }
 
     public void initialize(){
         ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
-        homeIcon.setFitWidth(53); // Change 30 to the width you want
-        homeIcon.setFitHeight(34); // Change 30 to the height you want
+        homeIcon.setFitWidth(53);
+        homeIcon.setFitHeight(34);
         homeIcon.setPreserveRatio(true);
         fxHomeButton.setGraphic(homeIcon);
+
         ImageView muteIcon = new ImageView(new Image(getClass().getResource("images/mute.png").toExternalForm()));
         muteIcon.setFitHeight(34);
         muteIcon.setFitWidth(38);
+        muteIcon.setPreserveRatio(true);
         fxHljodtakki.setGraphic(muteIcon);
-        //ImageView view = new ImageView(img);
-        //fxHomeButton.setGraphic(view);
-        //mediaPlayer.play();
+
         mediaPlayer.setAutoPlay(true);
+
     }
 
 }
