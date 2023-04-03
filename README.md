@@ -1,16 +1,17 @@
 # Skák
 
 Verkaskipting: 
-- Gera upphafssenuna í scenebuilder: Lilja
-- Gera fjögur mismunandi stylesheets og finna flotta liti: Lilja
-- Gera þema takkann: Óli
+- Gera upphafssenuna í scenebuilder: Lilja (búið)
+- Gera fjögur mismunandi stylesheets og finna flotta liti: Lilja 
+- Gera þema takkann: Lilja (búið) en kannski laga þannig þemun óvirkist ekki
 - Gera erfiðleikasenuna í scenebuilder: Kolfinna
 - Gera tímamarkasenuna í scenebuilder: Hekla
 - Gera skáksenuna í scenebuilder
 - Gera alert dialog: Sindri
-- Gera hljóðtakkann og virknina: Óli
-- Útfæra ViewSwitcher: Lilja (búið)
-- Gera sérhæfða componenta fyrir homebutton og hljóðtakkann
+- Gera hljóðtakkann og virknina: Kolfinna (búið)
+- Útfæra ViewSwitcher: Lilja (búið) --> komast að því af hverju það virkar ekki að skipta um senu
+- Setja myndir á homebutton og hljóðtakkann: Hekla
+- Búa til leikborðið í Scenebuilder
 
 Þema: 
 - Drop down menu
@@ -35,10 +36,12 @@ Upphafssena:
 
 Erfiðleikastigssena: 
 - Velja á milli erfitt eða létt (cheddar eða bleu)
+- þurfum einhvern veginn að geyma hvaða AI var valinn, mögulega hægt með tilviksbreytu í SkakController
 - takkarnir leiða mann inn í tímamarkasenu
 
 Tímamarkasena: 
 - fjórir mismunandi takkar: 1, 3, 5 eða 10 mín
+- þurfum að geyma hvaða tími var valinn, mögulega hægt með tilviksbreytu í SkakController
 - takkarnir leiða mann inn í skáksenuna
 
 Skáksenan: 
@@ -47,10 +50,16 @@ Skáksenan:
 - inniheldur tvö listview þar sem drepnir taflmenn birtast
 - inniheldur tvö labels, leikmaður 1 og leikmaður 2
 
+Leikborðið:
+- búa til leikborðið sér í Scenebuilder
+- grid pane sem inniheldur reitina?
+- skoða hvernig leikborðið er byggt upp í Chess forritinu
+
 
 Alert dialog: 
 - Birtist ef maður velur home button
 - Spyr hvort maður vilji alveg örugglega hætta eða hvort maður vilji halda áfram
+- fer með mann aftur á upphafsskjá og upphafsstillir allar stillingar
 
 
 

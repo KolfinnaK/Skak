@@ -47,8 +47,23 @@ public class UpphafController{
         skakController.setLocalTime(isLocalTime);
     }
 
-   public void fxHljodtakkiHandler(ActionEvent actionEvent){ 
+   public void fxHljodtakkiHandler(ActionEvent actionEvent){
+
        mediaPlayer.setMute(!mediaPlayer.isMute());
+
+       ImageView image;
+       if (mediaPlayer.isMute()) {
+           image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
+           image.setFitWidth(fxHljodtakki.getWidth());
+           image.setFitHeight(fxHljodtakki.getHeight());
+           image.setPreserveRatio(true);
+       } else {
+           image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
+           image.setFitWidth(fxHljodtakki.getWidth());
+           image.setFitHeight(fxHljodtakki.getHeight());
+           image.setPreserveRatio(true);
+       }
+       fxHljodtakki.setGraphic(image);
    }
 
     public void fxHomeButtonHandler(ActionEvent actionEvent){
@@ -68,14 +83,18 @@ public class UpphafController{
     }
 
     public void initialize(){
-        Image img = new Image(getClass().getResource("images/home_icon.png").toExternalForm()); //ekki rétt path
-        ImageView view = new ImageView(img);
+        ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
+        homeIcon.setFitWidth(53);
+        homeIcon.setFitHeight(34);
+        homeIcon.setPreserveRatio(true);
+        fxHomeButton.setGraphic(homeIcon);
 
-        //fxHomeButton.getStyleClass().add("mynd");
-        mediaPlayer.play();
+        ImageView muteIcon = new ImageView(new Image(getClass().getResource("images/mute.png").toExternalForm()));
+        muteIcon.setFitHeight(34);
+        muteIcon.setFitWidth(38);
+        muteIcon.setPreserveRatio(true);
+        fxHljodtakki.setGraphic(muteIcon);
 
-        //fxHomeButton.setGraphic(view);
-        //mediaPlayer.play();
         mediaPlayer.setAutoPlay(true);
 
     }
