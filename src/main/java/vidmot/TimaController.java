@@ -1,6 +1,9 @@
 package vidmot;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /******************************************************************************
@@ -14,5 +17,20 @@ import javafx.stage.Stage;
  *
  *****************************************************************************/
 public class TimaController {
+
+    @FXML
+    private Button fxHomeButton;
+    @FXML
+    private Button fxHljodtakki;
+
+    private SkakController skakController;
+
+    @FXML
+    public void fxHomeButtonHandler(ActionEvent actionEvent){
+        fxHomeButton.getScene().getStylesheets().clear();
+        skakController.setBot("");
+        skakController.setTimer(null);
+
+    }
 
 }

@@ -27,8 +27,6 @@ public class UpphafController{
     @FXML
     private Button fxHljodtakki;
     @FXML
-    private Menu fxTheme;
-    @FXML
     private Button fxTolva;
     @FXML
     private Button fxLeikmadur;
@@ -49,12 +47,12 @@ public class UpphafController{
         skakController.setLocalTime(isLocalTime);
     }
 
-   public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
+   public void fxHljodtakkiHandler(ActionEvent actionEvent){ 
        mediaPlayer.setMute(!mediaPlayer.isMute());
    }
 
-    public void fxThemeHandler(ActionEvent actionEvent){
-
+    public void fxHomeButtonHandler(ActionEvent actionEvent){
+        fxHomeButton.getScene().getStylesheets().clear();
     }
 
     public void fxClassicHandler(ActionEvent actionEvent){

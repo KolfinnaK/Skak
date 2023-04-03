@@ -13,6 +13,11 @@
     -fx-font-Family: "Arial";
 }
 
+.menu{
+    -fx-text-fill: #a6e2f7;
+    -fx-background-color: #faa12d; //appelsínugulur
+ }
+
 .mynd{
     -fx-background-image: url("home_icon.png");
         -fx-background-size: 100%, 100%;

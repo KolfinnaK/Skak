@@ -9,11 +9,13 @@ import presenter.GameMediator;
 import presenter.MediatorConstructionFlags;
 
 import java.util.ResourceBundle;
+import java.util.Timer;
 
 public class SkakController{
 
     private String bot;
     private boolean isLocalTime;
+    private Timer timer;
 
     public String getBot() {
         return bot;
@@ -25,6 +27,10 @@ public class SkakController{
 
     public void setLocalTime(boolean localTime) {
         isLocalTime = localTime;
+    }
+
+    public void setTimer(Timer timer) {
+        this.timer = timer;
     }
 
 

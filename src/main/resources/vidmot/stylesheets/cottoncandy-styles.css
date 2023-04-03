@@ -11,6 +11,11 @@
     -fx-font-Family: "Arial";
 }
 
+.menu{
+    -fx-text-fill: #4d4c4c; //dökkgrár
+    -fx-background-color: #70defa; //ljósblár
+ }
+
 .mynd{
     -fx-background-image: url("home_icon.png");
     -fx-background-size: 100%, 100%;
