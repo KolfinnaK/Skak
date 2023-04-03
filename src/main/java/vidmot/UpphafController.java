@@ -3,13 +3,11 @@ package vidmot;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.scene.media.*;
+
 
 /******************************************************************************
  *  Nafn    : Lilja Kolbrún Schopka
@@ -28,14 +26,15 @@ public class UpphafController{
     @FXML
     private Button fxHljodtakki;
     @FXML
-    private MenuBar fxTheme;
+    private Menu fxTheme;
     @FXML
     private Button fxTolva;
     @FXML
     private Button fxLeikmadur;
 
-    Media media = new Media(UpphafController.class.getResource("music.wav").toExternalForm());
-    MediaPlayer mediaPlayer = new MediaPlayer(media);
+    //Media media = new Media(UpphafController.class.getResource("music.wav").toExternalForm());
+    //MediaPlayer mediaPlayer = new MediaPlayer(media);
+    private SkakApplication skakApplication;
 
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
@@ -45,16 +44,30 @@ public class UpphafController{
         ViewSwitcher.switchTo(View.TIMAMORK);
     }
 
-    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
-        if(mediaPlayer.isMute()){
+   public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
+        /*if(mediaPlayer.isMute()){
             mediaPlayer.play();
         }
-        mediaPlayer.setMute(true);
+        mediaPlayer.setMute(true);*/
+    }
+
+    public void fxClassicHandler(ActionEvent actionEvent){
+        fxHomeButton.getScene().getStylesheets().add("resources/stylesheets/classic-styles.css"); //ekki rétt path
+    }
+
+    public void fxCottonCandyHandler(ActionEvent actionEvent){
+        fxHomeButton.getScene().getStylesheets().add("resources/stylesheets/cottoncandy-styles.css"); //ekki rétt path
+    }
+
+    public void fxTropicalHandler(ActionEvent actionEvent){
+        fxHomeButton.getScene().getStylesheets().add("resources/stylesheets/tropical-styles.css"); //ekki rétt path
     }
 
     public void initialize(){
-        fxHomeButton.setGraphic(new ImageView(new Image(UpphafController.class.getResourceAsStream("home_icon.png"))));
-        mediaPlayer.play();
+        Image img = new Image("main/resources/images/home_icon.png"); //ekki rétt path
+        ImageView view = new ImageView(img);
+        fxHomeButton.setGraphic(view);
+        //mediaPlayer.play();
     }
 
 }

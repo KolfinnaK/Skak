@@ -1,0 +1,12 @@
+.root{
+    -fx-background-color: #d6d6d6; //ljósgrár
+}
+
+.button{
+    -fx-background-color: #0f4519; //dökkgrænn
+}
+
+.label{
+    -fx-text-fill: #f7f7f7; //hvítur
+    -fx-font-Family: "Arial";
+}
