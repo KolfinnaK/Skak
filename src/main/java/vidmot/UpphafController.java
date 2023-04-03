@@ -33,8 +33,8 @@ public class UpphafController{
     @FXML
     private Button fxLeikmadur;
 
-    //Media media = new Media("audio/music.wav");
-    //MediaPlayer mediaPlayer = new MediaPlayer(media);
+    Media media = new Media(getClass().getResource("audio/music.wav").toExternalForm());
+    MediaPlayer mediaPlayer = new MediaPlayer(media);
     private SkakController skakController;
     public boolean isLocalTime;
 
@@ -50,31 +50,34 @@ public class UpphafController{
     }
 
    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
-        /*if(mediaPlayer.isMute()){
-            mediaPlayer.play();
-        }
+       // if(mediaPlayer.isMute()){
+         //   mediaPlayer.play();
+        //}
+    // mediaPlayer.setMute(true);
+        //else {
+          //  mediaPlayer.setMute(true);
+        //}
+       mediaPlayer.setAutoPlay(true);
 
-        mediaPlayer.setMute(true);
 
-        else {
-            mediaPlayer.setMute(true);
-        }*/
-    }
+
+   }
 
     public void fxThemeHandler(ActionEvent actionEvent){
 
     }
 
     public void fxClassicHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add("stylesheets/classic-styles.css"); //ekki rétt path
-    }
+        //fxHomeButton.getScene().getStylesheets().add("classic-styles.css"); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/classic-styles.css").toExternalForm());}
 
     public void fxCottonCandyHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add("stylesheets/cottoncandy-styles.css"); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm()); //ekki rétt path
+
     }
 
     public void fxTropicalHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add("stylesheets/tropical-styles.css"); //ekki rétt path
+        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/tropical-styles.css").toExternalForm()); //ekki rétt path
     }
 
     public void initialize(){
