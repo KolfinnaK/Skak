@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.scene.media.*;
 
 
 /******************************************************************************
@@ -32,8 +33,8 @@ public class UpphafController{
     @FXML
     private Button fxLeikmadur;
 
-    //Media media = new Media(UpphafController.class.getResource("music.wav").toExternalForm());
-    //MediaPlayer mediaPlayer = new MediaPlayer(media);
+    Media media = new Media("resourses/audio/music.wav");
+    MediaPlayer mediaPlayer = new MediaPlayer(media);
     private SkakApplication skakApplication;
 
     public void fxTolvaHandler(ActionEvent actionEvent){
@@ -45,10 +46,10 @@ public class UpphafController{
     }
 
    public void fxHljodtakkiHandler(ActionEvent actionEvent){ //veit ekki hvort þetta sé rétt
-        /*if(mediaPlayer.isMute()){
+        if(mediaPlayer.isMute()){
             mediaPlayer.play();
         }
-        mediaPlayer.setMute(true);*/
+        mediaPlayer.setMute(true);
     }
 
     public void fxClassicHandler(ActionEvent actionEvent){
@@ -67,7 +68,7 @@ public class UpphafController{
         Image img = new Image("main/resources/images/home_icon.png"); //ekki rétt path
         ImageView view = new ImageView(img);
         fxHomeButton.setGraphic(view);
-        //mediaPlayer.play();
+        mediaPlayer.play();
     }
 
 }

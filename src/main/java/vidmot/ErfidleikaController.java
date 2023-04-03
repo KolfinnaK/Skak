@@ -20,15 +20,16 @@ public class ErfidleikaController extends UpphafController {
     private Button fxAudvelt;
     @FXML
     private Button fxErfitt;
+    private String bot;
 
     @FXML
     public void fxAudveltHandler() {
-
+        bot = "audvelt";
     }
 
     @FXML
     public void fxErfittHandler() {
-
+        bot = "erfitt";
     }
 }
 

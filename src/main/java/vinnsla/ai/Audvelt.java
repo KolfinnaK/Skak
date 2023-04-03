@@ -6,10 +6,10 @@ import vinnsla.util.Tile;
 
 import java.util.Set;
 
-public class Bleu implements AIInterface {
+public class Audvelt implements AIInterface {
     private ChessGameInterface game;
 
-    public Bleu(ChessGameInterface game) {
+    public Audvelt(ChessGameInterface game) {
         this.game = game;
     }
 
