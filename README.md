@@ -10,7 +10,7 @@ Verkaskipting:
 - Gera alert dialog: Sindri
 - Gera hljóðtakkann og virknina: Kolfinna (búið)
 - Útfæra ViewSwitcher: Lilja (búið) --> komast að því af hverju það virkar ekki að skipta um senu
-- Setja myndir á homebutton og hljóðtakkann: Hekla
+- Setja myndir á homebutton og hljóðtakkann: Kolfinna (búið)
 - Búa til leikborðið í Scenebuilder
 
 Þema: 
