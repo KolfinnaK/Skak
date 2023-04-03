@@ -8,10 +8,10 @@ import vinnsla.util.Tile;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Cheddar implements AIInterface {
+public class Erfitt implements AIInterface {
     private ChessGameInterface game;
 
-    public Cheddar(ChessGameInterface game) {
+    public Erfitt(ChessGameInterface game) {
         this.game = game;
     }
 
