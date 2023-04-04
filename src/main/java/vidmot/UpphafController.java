@@ -69,6 +69,7 @@ public class UpphafController{
 
     public void fxHomeButtonHandler(ActionEvent actionEvent){
         fxHomeButton.getScene().getStylesheets().clear();
+        ViewSwitcher.switchTo(View.UPPHAFSSENA);
     }
 
     public void fxClassicHandler(ActionEvent actionEvent) {
