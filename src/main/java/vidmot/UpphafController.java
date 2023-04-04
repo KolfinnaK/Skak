@@ -53,14 +53,14 @@ public class UpphafController{
 
        ImageView image;
        if (mediaPlayer.isMute()) {
-           image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
-           image.setFitWidth(fxHljodtakki.getWidth());
-           image.setFitHeight(fxHljodtakki.getHeight());
+           image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
+           image.setFitHeight(30);
+           image.setFitWidth(25);
            image.setPreserveRatio(true);
        } else {
-           image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
-           image.setFitWidth(fxHljodtakki.getWidth());
-           image.setFitHeight(fxHljodtakki.getHeight());
+           image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
+           image.setFitHeight(30);
+           image.setFitWidth(25);
            image.setPreserveRatio(true);
        }
        fxHljodtakki.setGraphic(image);
@@ -84,16 +84,16 @@ public class UpphafController{
 
     public void initialize(){
         ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
-        homeIcon.setFitWidth(53);
-        homeIcon.setFitHeight(34);
+        homeIcon.setFitWidth(30);
+        homeIcon.setFitHeight(25);
         homeIcon.setPreserveRatio(true);
         fxHomeButton.setGraphic(homeIcon);
 
-        ImageView muteIcon = new ImageView(new Image(getClass().getResource("images/mute.png").toExternalForm()));
-        muteIcon.setFitHeight(34);
-        muteIcon.setFitWidth(38);
-        muteIcon.setPreserveRatio(true);
-        fxHljodtakki.setGraphic(muteIcon);
+        ImageView playIcon = new ImageView(new Image(getClass().getResource("images/play.png").toExternalForm()));
+        playIcon.setFitHeight(30);
+        playIcon.setFitWidth(25);
+        playIcon.setPreserveRatio(true);
+        fxHljodtakki.setGraphic(playIcon);
 
         mediaPlayer.setAutoPlay(true);
 
