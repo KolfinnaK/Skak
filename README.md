@@ -65,6 +65,7 @@ Alert dialog:
 # ATH, laga:
 - Hljóðið byrjar alltaf aftur upp á nýtt með hverri nýrri fxml skrá sem við förum í
 - Hljóðtakkinn er einmitt öguft við hljóðið, þ.e mute þegar það er hljóð
+- Þegar maður fer í aðra senu þá glithca home og hljóð takki
 
 
 
