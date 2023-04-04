@@ -34,6 +34,7 @@ public class UpphafController{
     private SkakController skakController;
     public boolean isLocalTime;
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
+    private String selectedStylesheet = "";
 
 
     public void fxTolvaHandler(ActionEvent actionEvent){
@@ -70,17 +71,33 @@ public class UpphafController{
         fxHomeButton.getScene().getStylesheets().clear();
     }
 
-    public void fxClassicHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/classic-styles.css").toExternalForm());}
-
-    public void fxCottonCandyHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm());
-
+    public void fxClassicHandler(ActionEvent actionEvent) {
+        String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();
+        if (!selectedStylesheet.equals(newStylesheet)) {
+            fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
+            fxHomeButton.getScene().getStylesheets().add(newStylesheet);
+            selectedStylesheet = newStylesheet;
+        }
     }
 
-    public void fxTropicalHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().add(getClass().getResource("stylesheets/tropical-styles.css").toExternalForm());
+    public void fxCottonCandyHandler(ActionEvent actionEvent) {
+        String newStylesheet = getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
+        if (!selectedStylesheet.equals(newStylesheet)) {
+            fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
+            fxHomeButton.getScene().getStylesheets().add(newStylesheet);
+            selectedStylesheet = newStylesheet;
+        }
     }
+
+    public void fxTropicalHandler(ActionEvent actionEvent) {
+        String newStylesheet = getClass().getResource("stylesheets/tropical-styles.css").toExternalForm();
+        if (!selectedStylesheet.equals(newStylesheet)) {
+            fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
+            fxHomeButton.getScene().getStylesheets().add(newStylesheet);
+            selectedStylesheet = newStylesheet;
+        }
+    }
+
 
     public void initialize(){
         ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
