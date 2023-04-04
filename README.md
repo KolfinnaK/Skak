@@ -9,7 +9,8 @@ Verkaskipting:
 - Gera skáksenuna í scenebuilder
 - Gera alert dialog: Sindri
 - Gera hljóðtakkann og virknina: Kolfinna (búið)
-- Útfæra ViewSwitcher: Lilja (búið) --> komast að því af hverju það virkar ekki að skipta um senu
+- Útfæra ViewSwitcher: Lilja (búið) --> komast að því af hverju það virkar ekki að skipta um senu,
+-- HEKLA: ég breytti í application, núna hægt að skipta um senu, fer yfir í tími og erfiðleikastig 
 - Setja myndir á homebutton og hljóðtakkann: Kolfinna (búið)
 - Búa til leikborðið í Scenebuilder
 
