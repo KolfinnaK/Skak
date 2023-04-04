@@ -31,10 +31,10 @@ public class UpphafController{
     @FXML
     private Button fxLeikmadur;
 
-    Media media = new Media(getClass().getResource("audio/music.wav").toExternalForm());
-    MediaPlayer mediaPlayer = new MediaPlayer(media);
     private SkakController skakController;
     public boolean isLocalTime;
+    private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
+
 
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
