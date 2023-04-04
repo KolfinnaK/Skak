@@ -4,6 +4,7 @@
 
 .button{
     -fx-background-color: #70defa; //ljósblár
+    -fx-text-fill: #4d4c4c; //dökkgrár
 }
 
 .label{
