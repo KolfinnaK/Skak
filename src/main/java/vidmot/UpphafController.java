@@ -38,13 +38,13 @@ public class UpphafController{
 
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
-        skakController.setLocalTime(!isLocalTime);
+        //skakController.setLocalTime(!isLocalTime);
 
     }
 
     public void fxLeikmadurHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.TIMAMORK);
-        skakController.setLocalTime(isLocalTime);
+        //skakController.setLocalTime(isLocalTime);
     }
 
    public void fxHljodtakkiHandler(ActionEvent actionEvent){
