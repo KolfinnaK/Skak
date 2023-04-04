@@ -4,7 +4,7 @@ Verkaskipting:
 - Gera upphafssenuna í scenebuilder: Lilja (búið)
 - Gera fjögur mismunandi stylesheets og finna flotta liti: Lilja 
 - Gera þema takkann: Lilja (búið) en kannski laga þannig þemun óvirkist ekki
-- Gera erfiðleikasenuna í scenebuilder: Kolfinna
+- Gera erfiðleikasenuna í scenebuilder: Kolfinna (búið)
 - Gera tímamarkasenuna í scenebuilder: Hekla
 - Gera skáksenuna í scenebuilder
 - Gera alert dialog: Sindri
@@ -63,9 +63,7 @@ Alert dialog:
 - fer með mann aftur á upphafsskjá og upphafsstillir allar stillingar
 
 # ATH, laga:
-- Hljóðið byrjar alltaf aftur upp á nýtt með hverri nýrri fxml skrá sem við förum í
-- Hljóðtakkinn er einmitt öguft við hljóðið, þ.e mute þegar það er hljóð
-- Þegar maður fer í aðra senu þá glithca home og hljóð takki
+- 
 
 
 
