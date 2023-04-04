@@ -24,13 +24,17 @@ import javafx.stage.Stage;
  *
  *****************************************************************************/
 public class TimaController extends UpphafController{
-    private int timi;
-    private Timeline timeline;
+
+    @FXML
     private Label timaLabel;
+    @FXML
     private Button fxHomeButton;
     @FXML
     private Button fxHljodtakki;
+
     private SkakController skakController;
+    private int timi;
+    private Timeline timeline;
 
 
     public void fx5minHandler(ActionEvent actionEvent) {
@@ -53,7 +57,7 @@ public class TimaController extends UpphafController{
     }
 
     @FXML
-    public void fxHomeButtonHandler(ActionEvent actionEvent){
+    public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
         fxHomeButton.getScene().getStylesheets().clear();
         skakController.setBot("");
         skakController.setTimer(null);

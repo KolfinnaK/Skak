@@ -42,9 +42,10 @@ public class ErfidleikaController extends UpphafController {
     }
 
     @FXML
-    public void fxHomeButtonHandler(ActionEvent actionEvent){
+    public void fxHomeButtonHandler2(ActionEvent actionEvent){
         fxHomeButton.getScene().getStylesheets().clear();
         skakController.setBot("");
+        ViewSwitcher.switchTo(View.UPPHAFSSENA);
     }
 }
 
