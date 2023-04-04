@@ -62,8 +62,8 @@ Alert dialog:
 - fer með mann aftur á upphafsskjá og upphafsstillir allar stillingar
 
 # ATH, laga:
--hljóðið byrjar alltaf aftur upp á nýtt með hverri nýrri fxml skrá sem við förum í
--hljóð takkinn er einmitt öguft við hljóðið, þ.e mute þegar það er hljóð
+- Hljóðið byrjar alltaf aftur upp á nýtt með hverri nýrri fxml skrá sem við förum í
+- Hljóðtakkinn er einmitt öguft við hljóðið, þ.e mute þegar það er hljóð
 
 
 
