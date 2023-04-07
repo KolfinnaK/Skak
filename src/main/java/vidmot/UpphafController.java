@@ -9,6 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.media.*;
 
+import java.util.Optional;
+
 
 /******************************************************************************
  *  Nafn    : Lilja Kolbrún Schopka
@@ -68,9 +70,29 @@ public class UpphafController{
    }
 
     public void fxHomeButtonHandler(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().clear();
-        ViewSwitcher.switchTo(View.UPPHAFSSENA);
+        fxHomeButton.setOnAction(event -> {
+            if (!event.isConsumed()) {
+                event.consume();
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Ertu viss?");
+                alert.setHeaderText(null);
+                alert.setContentText("Vilt þú fara til baka á upphafsskjá og hreinsa þema?");
+
+                ButtonType yesButton = new ButtonType("Já", ButtonBar.ButtonData.OK_DONE);
+                ButtonType noButton = new ButtonType("Nei", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+                alert.getButtonTypes().setAll(yesButton, noButton);
+
+                Optional<ButtonType> result = alert.showAndWait();
+                if (result.isPresent() && result.get() == yesButton) {
+                    fxHomeButton.getScene().getStylesheets().clear();
+                    ViewSwitcher.switchTo(View.UPPHAFSSENA);
+                }
+            }
+        });
     }
+
 
     public void fxClassicHandler(ActionEvent actionEvent) {
         String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();

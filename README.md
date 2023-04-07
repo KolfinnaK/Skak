@@ -3,7 +3,7 @@
 Verkaskipting: 
 - Gera upphafssenuna í scenebuilder: Lilja (búið)
 - Gera fjögur mismunandi stylesheets og finna flotta liti: Lilja 
-- Gera þema takkann: Lilja (búið) en kannski laga þannig þemun óvirkist ekki
+- Gera þema takkann: Lilja (búið) en kannski laga þannig þemun óvirkist ekki, Kolfinna - held ég lagaði það
 - Gera erfiðleikasenuna í scenebuilder: Kolfinna (búið)
 - Gera tímamarkasenuna í scenebuilder: Hekla
 - Gera skáksenuna í scenebuilder
@@ -12,7 +12,7 @@ Verkaskipting:
 - Útfæra ViewSwitcher: Lilja (búið) --> komast að því af hverju það virkar ekki að skipta um senu,
 -- HEKLA: ég breytti í application, núna hægt að skipta um senu, fer yfir í tími og erfiðleikastig 
 - Setja myndir á homebutton og hljóðtakkann: Kolfinna (búið)
-- Búa til leikborðið í Scenebuilder
+- Búa til leikborðið í Scenebuilder Kolfinna (búið)
 
 Þema: 
 - Drop down menu
