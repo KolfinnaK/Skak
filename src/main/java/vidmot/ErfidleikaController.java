@@ -40,12 +40,5 @@ public class ErfidleikaController extends UpphafController {
         skakController.setBot(bot);
         ViewSwitcher.switchTo(View.TIMAMORK);
     }
-
-    @FXML
-    public void fxHomeButtonHandler2(ActionEvent actionEvent){
-        fxHomeButton.getScene().getStylesheets().clear();
-        skakController.setBot("");
-        ViewSwitcher.switchTo(View.UPPHAFSSENA);
-    }
 }
 
