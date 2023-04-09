@@ -12,6 +12,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 //>>>>>>> Stashed changes
 import javafx.stage.Stage;
+import presenter.TimerPresenter;
 
 /******************************************************************************
  *  Nafn    : Lilja Kolbrún Schopka
@@ -38,29 +39,33 @@ public class TimaController extends UpphafController{
 
 
     public void fx5minHandler(ActionEvent actionEvent) {
-        this.timi=5;
+        this.timi=5; //þarf þetta nokkuð?
         timaLabel.setText(String.valueOf(this.timi));
+        skakController.setDuration(5000);
         //timaLabel.setText(timi.toString));
         ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx3minHandler(ActionEvent actionEvent) {
         ViewSwitcher.switchTo(View.SKAKSENA);
+        skakController.setDuration(3000);
     }
 
     public void fx1minHandler(ActionEvent actionEvent) {
         ViewSwitcher.switchTo(View.SKAKSENA);
+        skakController.setDuration(1000);
     }
 
     public void fx10minHandler(ActionEvent actionEvent) {
         ViewSwitcher.switchTo(View.SKAKSENA);
+        skakController.setDuration(10000);
     }
 
     @FXML
     public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
         fxHomeButton.getScene().getStylesheets().clear();
         skakController.setBot("");
-        skakController.setTimer(null);
+        skakController.setDuration(0);
 
     }
 

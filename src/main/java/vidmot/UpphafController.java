@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.scene.media.*;
+import presenter.MediatorConstructionFlags;
 
 import java.util.Optional;
 
@@ -41,12 +42,14 @@ public class UpphafController{
 
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
+        skakController.setConstructionFlag(MediatorConstructionFlags.TIMED_AI);
         //skakController.setLocalTime(!isLocalTime);
 
     }
 
     public void fxLeikmadurHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.TIMAMORK);
+        skakController.setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
         //skakController.setLocalTime(isLocalTime);
     }
 
