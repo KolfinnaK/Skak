@@ -13,6 +13,7 @@ Verkaskipting:
 -- HEKLA: ég breytti í application, núna hægt að skipta um senu, fer yfir í tími og erfiðleikastig 
 - Setja myndir á homebutton og hljóðtakkann: Kolfinna (búið)
 - Búa til leikborðið í Scenebuilder Kolfinna (búið)
+- Tengja viðmót og vinnslu
 
 Þema: 
 - Drop down menu
