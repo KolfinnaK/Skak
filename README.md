@@ -7,7 +7,7 @@ Verkaskipting:
 - Gera erfiðleikasenuna í scenebuilder: Kolfinna (búið)
 - Gera tímamarkasenuna í scenebuilder: Hekla
 - Gera skáksenuna í scenebuilder
-- Gera alert dialog: Sindri
+- Gera alert dialog: Sindri - Kolfinna (eiginlega búið, nema þarf að laga aðeins)
 - Gera hljóðtakkann og virknina: Kolfinna (búið)
 - Útfæra ViewSwitcher: Lilja (búið) --> komast að því af hverju það virkar ekki að skipta um senu,
 -- HEKLA: ég breytti í application, núna hægt að skipta um senu, fer yfir í tími og erfiðleikastig 
