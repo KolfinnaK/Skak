@@ -64,7 +64,7 @@ Alert dialog:
 - fer með mann aftur á upphafsskjá og upphafsstillir allar stillingar
 
 # ATH, laga:
-- 
+- Breyta dialog aðeins, maður þarf líka að ýta á home button tvisvar til að það virki, vtk afh
 
 
 
