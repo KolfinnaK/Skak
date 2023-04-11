@@ -7,7 +7,8 @@ public enum View {
     UPPHAFSSENA("upphaf-view.fxml"),
     ERFIDLEIKASENA("erfidleika-view.fxml"),
     TIMAMORK("timi-view.fxml"),
-    SKAKSENA("skak-view.fxml");
+    SKAKBORD("skak-view.fxml"),
+    SKAKSENA("skaksena-view.fxml");
 
     private final String fileName;
 

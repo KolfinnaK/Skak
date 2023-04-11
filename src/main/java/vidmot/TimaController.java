@@ -1,18 +1,16 @@
 package vidmot;
 
+import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 //<<<<<<< Updated upstream
 //=======
 import javafx.scene.control.Label;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 //>>>>>>> Stashed changes
-import javafx.stage.Stage;
-import presenter.TimerPresenter;
+import javafx.util.Duration;
 
 /******************************************************************************
  *  Nafn    : Lilja Kolbrún Schopka
@@ -24,55 +22,83 @@ import presenter.TimerPresenter;
  *
  *
  *****************************************************************************/
-public class TimaController extends UpphafController{
-
+public class TimaController extends UpphafController {
     @FXML
-    private Label timaLabel;
+   private Label klukka;
+    @FXML
+    private Label klukka2;
     @FXML
     private Button fxHomeButton;
     @FXML
     private Button fxHljodtakki;
-
+    @FXML
     private SkakController skakController;
-    private int timi;
-    private Timeline timeline;
+    public static int timiEftirShared;
+    public static int timiEftir2Shared;
+    public int timiEftir;
+    public int timiEftir2;
+    private Timeline timeline1;
+    private Timeline timeline2;
+    private boolean erKlukka1adTeljaNidur=true;
 
+    public void setTimiEftir(int timiEftir) {
+        this.timiEftir = timiEftir;
+    }
 
-    public void fx5minHandler(ActionEvent actionEvent) {
-<<<<<<< HEAD
-        this.timi=5; //þetta er ekki rétt
-=======
-        this.timi=5; //þarf þetta nokkuð?
->>>>>>> c479f462188755b5a2b1e5fa8a86e09950b20667
-        timaLabel.setText(String.valueOf(this.timi));
-        skakController.setDuration(5000);
-        //timaLabel.setText(timi.toString));
+    private void setTimiEftir2(int timiEftir2) {
+        this.timiEftir2 = timiEftir2;
+    }
+
+    public void fx1minHandler(ActionEvent actionEvent) {
+        setTimiEftir(60);
+        timiEftirShared=60;
+
+        setTimiEftir2(60);
+        timiEftir2Shared=60;
+
         ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx3minHandler(ActionEvent actionEvent) {
+        setTimiEftir(180);
+        timiEftirShared=180;
+
+        setTimiEftir2(180);
+        timiEftir2Shared=180;
+
         ViewSwitcher.switchTo(View.SKAKSENA);
-        skakController.setDuration(3000);
     }
 
-    public void fx1minHandler(ActionEvent actionEvent) {
+    public void fx5minHandler(ActionEvent actionEvent) {
+        setTimiEftir(300);
+        timiEftirShared=300;
+
+        setTimiEftir2(300);
+        timiEftir2Shared=300;
+
         ViewSwitcher.switchTo(View.SKAKSENA);
-        skakController.setDuration(1000);
     }
 
     public void fx10minHandler(ActionEvent actionEvent) {
+        setTimiEftir(600);
+        timiEftirShared=600;
+
+        setTimiEftir2(600);
+        timiEftir2Shared=600;
+
         ViewSwitcher.switchTo(View.SKAKSENA);
-        skakController.setDuration(10000);
     }
 
     @FXML
-    public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
-        fxHomeButton.getScene().getStylesheets().clear();
-        skakController.setBot("");
-        skakController.setDuration(0);
+  //  public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
+    //    fxHomeButton.getScene().getStylesheets().clear();
+      //  skakController.setBot("");
+        //skakController.setDuration(0);
+
+    //}
+    public void initialize(){
 
     }
-
 }
 
 
