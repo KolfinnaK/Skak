@@ -7,15 +7,17 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import presenter.GameMediator;
 import presenter.MediatorConstructionFlags;
+import presenter.TimerPresenter;
 
 import java.util.ResourceBundle;
 import java.util.Timer;
 
-public class SkakController{
+public class SkakController {
 
     private String bot;
     private boolean isLocalTime;
-    private Timer timer;
+    private int duration;
+    private MediatorConstructionFlags constructionFlag;
 
     public String getBot() {
         return bot;
@@ -29,12 +31,16 @@ public class SkakController{
         isLocalTime = localTime;
     }
 
-    public void setTimer(Timer timer) {
-        this.timer = timer;
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
+        this.constructionFlag = constructionFlag;
     }
 
 
     public void initialize() {
-
+        new GameMediator(constructionFlag, duration, bot);
     }
 }

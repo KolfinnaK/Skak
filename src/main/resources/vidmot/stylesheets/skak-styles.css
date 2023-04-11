@@ -1,0 +1,20 @@
+.grid-pane {
+    -fx-background-color: white;
+}
+
+.grid-pane .cell {
+    -fx-background-color: white;
+}
+
+.grid-pane .cell:nth-child(odd) {
+    -fx-background-color: black;
+}
+
+.grid-pane .cell:nth-child(even) {
+    -fx-background-color: white;
+}
+
+.grid-pane .row:nth-child(odd) .cell:nth-child(odd),
+.grid-pane .row:nth-child(even) .cell:nth-child(even) {
+    -fx-rotate: 180;
+}

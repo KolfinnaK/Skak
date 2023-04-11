@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
@@ -37,12 +38,12 @@
         </menus>
       </MenuBar>
       <Button fx:id="fxHljodtakki" layoutX="556.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
-      <Button fx:id="fxTolva" layoutX="161.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxTolvaHandler" prefHeight="53.0" prefWidth="108.0" text="Tölva">
+      <Button fx:id="fxTolva" layoutX="165.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxTolvaHandler" prefHeight="53.0" prefWidth="108.0" text="Tölva">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="fxLeikmadur" layoutX="353.0" layoutY="202.0" mnemonicParsing="false" onAction="#fxLeikmadurHandler" prefHeight="53.0" prefWidth="108.0" text="Tveir leikmenn">
+      <Button fx:id="fxLeikmadur" layoutX="341.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxLeikmadurHandler" prefHeight="53.0" prefWidth="108.0" text="Tveir leikmenn">
          <font>
             <Font size="14.0" />
          </font>
@@ -52,6 +53,14 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="207.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="208.0" fitWidth="122.0" layoutX="477.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/mynd1.png" />
+         </image></ImageView>
+      <ImageView fitHeight="208.0" fitWidth="145.0" layoutX="19.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/mynd2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
