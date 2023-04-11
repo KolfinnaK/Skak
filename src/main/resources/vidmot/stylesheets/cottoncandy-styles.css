@@ -14,8 +14,8 @@
 
 .menu{
     -fx-text-fill: #4d4c4c; //dökkgrár
-    -fx-background-color: #70defa; //ljósblár
- }
+    -fx-background-color:#70defa;  //ljósblár
+}
 
 .mynd{
     -fx-background-image: url("home_icon.png");
