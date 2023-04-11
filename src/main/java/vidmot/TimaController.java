@@ -38,7 +38,7 @@ public class TimaController extends UpphafController{
 
 
     public void fx5minHandler(ActionEvent actionEvent) {
-        this.timi=5;
+        this.timi=5; //þetta er ekki rétt
         timaLabel.setText(String.valueOf(this.timi));
         //timaLabel.setText(timi.toString));
         ViewSwitcher.switchTo(View.SKAKSENA);
