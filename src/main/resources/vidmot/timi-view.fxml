@@ -55,7 +55,5 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="klukka" layoutX="237.0" layoutY="317.0" prefHeight="28.0" prefWidth="123.0" />
-      <Label fx:id="klukka2" layoutX="243.0" layoutY="353.0" prefHeight="28.0" prefWidth="111.0" />
     </children>
 </AnchorPane>
