@@ -88,14 +88,6 @@ public class TimaController extends UpphafController {
 
         ViewSwitcher.switchTo(View.SKAKSENA);
     }
-
-    @FXML
-    public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
-        fxHomeButton.getScene().getStylesheets().clear();
-        skakController.setBot("");
-        //það þarf einhvern veginn að núllstilla tímann
-
-    }
     public void initialize(){
 
     }

@@ -91,6 +91,7 @@ public class UpphafController{
                 if (result.isPresent() && result.get() == yesButton) {
                     fxHomeButton.getScene().getStylesheets().clear();
                     ViewSwitcher.switchTo(View.UPPHAFSSENA);
+                    skakController.setBot("");
                 }
             }
         });
