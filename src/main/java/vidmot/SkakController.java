@@ -6,7 +6,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -24,14 +27,16 @@ public class SkakController extends UpphafController {
     public Label klukka1; //tók labelið úr skakfxml, þannig bæta aftur inn
     @FXML
     public Label klukka2;
+    @FXML
+    public Button fxHomeButton;
+    @FXML
+    public Button fxHljodtakki;
     public int timiEftir;
     public int timiEftir2;
     private Timeline timeline1;
     private Timeline timeline2;
     private boolean erKlukka1adTeljaNidur=true;
     private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
-
-
 
     private String bot;
     private boolean isLocalTime;
@@ -55,7 +60,20 @@ public class SkakController extends UpphafController {
     }
 
     public void initialize() {
-      //GameMediator leikur = new GameMediator(constructionFlag, duration, bot);
+        ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
+        homeIcon.setFitWidth(30);
+        homeIcon.setFitHeight(25);
+        homeIcon.setPreserveRatio(true);
+        fxHomeButton.setGraphic(homeIcon);
+
+        ImageView playIcon = new ImageView(new Image(getClass().getResource("images/play.png").toExternalForm()));
+        playIcon.setFitHeight(30);
+        playIcon.setFitWidth(25);
+        playIcon.setPreserveRatio(true);
+        fxHljodtakki.setGraphic(playIcon);
+
+        duration = timaController.getDuration();
+        //GameMediator leikur = new GameMediator(constructionFlag, duration, bot);
 
         timiEftir = TimaController.getTimiEftirShared();
         timiEftir2 = TimaController.getTimiEftir2Shared();
@@ -106,5 +124,6 @@ public class SkakController extends UpphafController {
             timeline1.play();
         } erKlukka1adTeljaNidur=!erKlukka1adTeljaNidur;
     }
+
 
 }

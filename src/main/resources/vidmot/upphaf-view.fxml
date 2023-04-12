@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="394.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.UpphafController">
+<AnchorPane prefHeight="393.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.UpphafController">
    <children>
       <Label layoutX="249.0" layoutY="99.0" text="Verið velkomin!" textAlignment="CENTER">
          <font>
@@ -28,10 +28,8 @@
       <Button fx:id="fxHomeButton" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
       <MenuBar layoutX="80.0" layoutY="13.0" minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="28.0" prefWidth="43.0">
 
-      <MenuBar fx:id="fxTheme" layoutX="80.0" layoutY="13.0" prefHeight="26.0" prefWidth="68.0">
-
         <menus>
-          <Menu mnemonicParsing="false" text="Þema">
+          <Menu fx:id="fxTheme" mnemonicParsing="false" text="Þema">
             <items>
               <MenuItem mnemonicParsing="false" text="Klassískt" />
                   <MenuItem mnemonicParsing="false" text="Cotton candy" />
@@ -43,7 +41,10 @@
             <Insets left="-5.0" right="-5.0" />
          </padding>
       </MenuBar>
-      <Button fx:id="fxHljodtakki" layoutX="556.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
+      <Button fx:id="fxHljodtakki" layoutX="562.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" ">
+         <padding>
+            <Insets left="-5.0" top="-5.0" />
+         </padding></Button>
       <Button fx:id="fxTolva" layoutX="165.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxTolvaHandler" prefHeight="53.0" prefWidth="108.0" text="Tölva">
          <font>
             <Font size="14.0" />
@@ -69,7 +70,4 @@
          </image>
       </ImageView>
    </children>
-   <padding>
-      <Insets left="10.0" right="10.0" />
-   </padding>
 </AnchorPane>

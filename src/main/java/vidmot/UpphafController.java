@@ -43,7 +43,6 @@ public class UpphafController{
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
         skakController.setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
-        //skakController.setLocalTime(!isLocalTime);
 
     }
 
