@@ -19,7 +19,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="147.0" layoutY="133.0" text="Viltu spila við tölvuna eða annan leikmann?">
+      <Label layoutX="157.0" layoutY="141.0" text="Viltu spila við tölvuna eða annan leikmann?">
          <font>
             <Font size="18.0" />
          </font>
@@ -45,7 +45,6 @@
       </MenuBar>
       <Button fx:id="fxHljodtakki" layoutX="556.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
       <Button fx:id="fxTolva" layoutX="165.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxTolvaHandler" prefHeight="53.0" prefWidth="108.0" text="Tölva">
-
          <font>
             <Font size="14.0" />
          </font>
@@ -60,10 +59,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="208.0" fitWidth="122.0" layoutX="477.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="208.0" fitWidth="246.0" layoutX="14.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/mynd1.png" />
          </image></ImageView>
+      <ImageView fitHeight="208.0" fitWidth="145.0" layoutX="491.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/mynd2.png" />
+         </image>
+      </ImageView>
    </children>
    <padding>
       <Insets left="10.0" right="10.0" />
