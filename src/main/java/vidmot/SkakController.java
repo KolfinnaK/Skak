@@ -24,7 +24,7 @@ import java.util.TimerTask;
 public class SkakController extends UpphafController {
 
     @FXML
-    public Label klukka1; //tók labelið úr skakfxml, þannig bæta aftur inn
+    public Label klukka1;
     @FXML
     public Label klukka2;
     @FXML

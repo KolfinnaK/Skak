@@ -10,11 +10,10 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<?import vidmot.nodes.BoardNode?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
    <children>
-      <Label fx:id="klukka1" layoutX="36.0" layoutY="308.0" prefHeight="49.0" prefWidth="75.0" />
-      <Label fx:id="klukka2" layoutX="36.0" layoutY="59.0" prefHeight="49.0" prefWidth="75.0" />
+      <Label fx:id="klukka1" layoutX="43.0" layoutY="227.0" prefHeight="49.0" prefWidth="75.0" />
+      <Label fx:id="klukka2" layoutX="36.0" layoutY="129.0" prefHeight="49.0" prefWidth="75.0" />
       <Line endX="400.5" layoutX="212.0" layoutY="50.0" startX="-239.5" />
       <Button fx:id="fxHomeButton" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
       <MenuBar layoutX="80.0" layoutY="13.0" minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="28.0" prefWidth="43.0">
