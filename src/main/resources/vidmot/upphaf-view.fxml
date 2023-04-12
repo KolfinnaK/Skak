@@ -59,7 +59,7 @@
          </image></ImageView>
       <ImageView fitHeight="208.0" fitWidth="145.0" layoutX="19.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/mynd2.png" />
+            <Image url="@images/mynd1.png" />
          </image>
       </ImageView>
    </children>

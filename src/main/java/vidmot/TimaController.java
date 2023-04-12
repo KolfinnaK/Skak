@@ -90,12 +90,12 @@ public class TimaController extends UpphafController {
     }
 
     @FXML
-  //  public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
-    //    fxHomeButton.getScene().getStylesheets().clear();
-      //  skakController.setBot("");
-        //skakController.setDuration(0);
+    public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
+        fxHomeButton.getScene().getStylesheets().clear();
+        skakController.setBot("");
+        //það þarf einhvern veginn að núllstilla tímann
 
-    //}
+    }
     public void initialize(){
 
     }

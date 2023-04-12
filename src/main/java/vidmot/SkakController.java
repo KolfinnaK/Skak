@@ -54,7 +54,7 @@ public class SkakController extends TimaController {
     }
 
     public void initialize() {
-       new GameMediator(constructionFlag, duration, bot);
+      GameMediator leikur = new GameMediator(constructionFlag, duration, bot);
 
         timiEftir=TimaController.timiEftirShared;
         timiEftir2=TimaController.timiEftir2Shared;
