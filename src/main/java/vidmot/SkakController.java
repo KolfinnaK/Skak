@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SkakController extends TimaController {
+public class SkakController extends UpphafController {
 
     @FXML
     public Label klukka1; //tók labelið úr skakfxml, þannig bæta aftur inn
@@ -27,8 +27,9 @@ public class SkakController extends TimaController {
     public int timiEftir;
     public int timiEftir2;
     private Timeline timeline1;
-   private Timeline timeline2;
+    private Timeline timeline2;
     private boolean erKlukka1adTeljaNidur=true;
+    private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
 
 
 
@@ -54,10 +55,10 @@ public class SkakController extends TimaController {
     }
 
     public void initialize() {
-      GameMediator leikur = new GameMediator(constructionFlag, duration, bot);
+      //GameMediator leikur = new GameMediator(constructionFlag, duration, bot);
 
-        timiEftir=TimaController.timiEftirShared;
-        timiEftir2=TimaController.timiEftir2Shared;
+        timiEftir = TimaController.getTimiEftirShared();
+        timiEftir2 = TimaController.getTimiEftir2Shared();
 
         timeline1 = new Timeline(
                 new KeyFrame(Duration.seconds(1), this::updateTimer1));

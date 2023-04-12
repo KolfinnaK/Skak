@@ -35,70 +35,60 @@ public class TimaController extends UpphafController {
     private SkakController skakController;
     public static int timiEftirShared;
     public static int timiEftir2Shared;
-    public int timiEftir;
-    public int timiEftir2;
+
     private Timeline timeline1;
     private Timeline timeline2;
     private boolean erKlukka1adTeljaNidur=true;
 
-    public void setTimiEftir(int timiEftir) {
-        this.timiEftir = timiEftir;
-    }
-
-    private void setTimiEftir2(int timiEftir2) {
-        this.timiEftir2 = timiEftir2;
-    }
 
     public void fx1minHandler(ActionEvent actionEvent) {
-        setTimiEftir(60);
         timiEftirShared=60;
-
-        setTimiEftir2(60);
         timiEftir2Shared=60;
 
         ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx3minHandler(ActionEvent actionEvent) {
-        setTimiEftir(180);
         timiEftirShared=180;
-
-        setTimiEftir2(180);
         timiEftir2Shared=180;
 
         ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx5minHandler(ActionEvent actionEvent) {
-        setTimiEftir(300);
         timiEftirShared=300;
-
-        setTimiEftir2(300);
         timiEftir2Shared=300;
 
         ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx10minHandler(ActionEvent actionEvent) {
-        setTimiEftir(600);
         timiEftirShared=600;
-
-        setTimiEftir2(600);
         timiEftir2Shared=600;
 
         ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
-    @FXML
-    public void fxHomeButtonHandler3(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
+   /* @FXML
+    public void fxHomeButtonHandler(ActionEvent actionEvent){ //virkar ekki að skipta yfir í upphafssenu
         fxHomeButton.getScene().getStylesheets().clear();
         skakController.setBot("");
         //það þarf einhvern veginn að núllstilla tímann
 
-    }
+    }*/
     public void initialize(){
 
     }
+
+    public static int getTimiEftirShared() {
+        return timiEftirShared;
+    }
+
+    public static int getTimiEftir2Shared() {
+        return timiEftir2Shared;
+    }
+
+
 }
 
 
