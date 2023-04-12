@@ -27,10 +27,7 @@ public class TimaController extends UpphafController {
    private Label klukka;
     @FXML
     private Label klukka2;
-    @FXML
-    private Button fxHomeButton;
-    @FXML
-    private Button fxHljodtakki;
+
     @FXML
     private SkakController skakController;
     public static int timiEftirShared;
@@ -87,9 +84,6 @@ public class TimaController extends UpphafController {
         timiEftir2Shared=600;
 
         ViewSwitcher.switchTo(View.SKAKSENA);
-    }
-    public void initialize(){
-
     }
 }
 
