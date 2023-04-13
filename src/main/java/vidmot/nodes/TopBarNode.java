@@ -14,6 +14,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import vidmot.View;
+import vidmot.ViewSwitcher;
 
 public class TopBarNode extends Pane {
     private HBox root;
@@ -21,7 +23,7 @@ public class TopBarNode extends Pane {
     private static final int TOP_BAR_HEIGHT = 40;
     private static final String TOP_BAR_STYLE = "-fx-background-color: rgb(73, 204, 132);",
             HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: rgb(43, 174, 102);",
-            HOME_ICON_FILE_PATH = "file:./src/main/java/com/chess/view/resources/home_icon.png";
+            HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png";
     private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
 
     public TopBarNode() {
@@ -40,7 +42,7 @@ public class TopBarNode extends Pane {
         buildHomeButton();
         getChildren().add(root);
         root.getChildren().add(homeButton);
-        Label title = new Label("Chess");
+        Label title = new Label("Skák");
         title.setFont(new Font("Impact", 20));
         title.setAlignment(Pos.CENTER);
         title.setTextAlignment(TextAlignment.CENTER);
@@ -67,7 +69,8 @@ public class TopBarNode extends Pane {
         homeButton.setGraphic(imageView);
 
         homeButton.setOnMouseClicked(mouseEvent -> {
-            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            ViewSwitcher.switchTo(View.UPPHAFSSENA);
+            //Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             //stage.setScene(new HomeScene(stage.getScene().getWidth(), stage.getScene().getHeight()));
         });
         homeButton.setOnMouseEntered(mouseEvent -> homeButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));

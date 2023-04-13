@@ -111,11 +111,11 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(600, 600, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            stage.setScene(new ChessBoardScene(600, 500, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(600, 600, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
+            stage.setScene(new ChessBoardScene(600, 500, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
         }
 
     }
