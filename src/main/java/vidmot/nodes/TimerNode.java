@@ -16,7 +16,7 @@ public class TimerNode extends StackPane {
 
     public TimerNode(TimerPresenter timerPresenter) {
         background = new Rectangle(80, 40);
-        background.setFill(new Color(43.0/255, 173.0/255, 167.0/255, 1.0));
+        background.setFill(new Color(146.0/255, 230.0/255, 129.0/255, 1.0));
         label = new Label();
         label.setFont(new Font("Impact", 20));
         this.timerPresenter = timerPresenter;

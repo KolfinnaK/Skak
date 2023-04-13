@@ -5,14 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-<<<<<<< Updated upstream
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-=======
+
 import javafx.scene.control.*;
->>>>>>> Stashed changes
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -25,11 +25,11 @@ import vidmot.TimaController;
 import vidmot.View;
 import vidmot.ViewSwitcher;
 
-<<<<<<< Updated upstream
+
 import java.io.IOException;
-=======
+
 import java.util.Optional;
->>>>>>> Stashed changes
+
 
 public class TopBarNode extends Pane {
     private HBox root;
@@ -106,23 +106,21 @@ public class TopBarNode extends Pane {
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == yesButton) {
                     homeButton.getScene().getStylesheets().clear();
-                    ViewSwitcher.switchTo(View.UPPHAFSSENA);
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("file:./src/main/java/vidmot/upphaf-view.fxml"));
+                    try {
+                        Parent root = loader.load();
+                        Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+                        stage.setScene(scene);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    //ViewSwitcher.switchTo(View.UPPHAFSSENA);
                     timaController.setBot("");
                 }
             }
-            //Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
 
-            //stage.setScene(new HomeScene(stage.getScene().getWidth(), stage.getScene().getHeight()));
-            /*FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/upphaf-view.fxml"));
-            try {
-                Parent root = loader.load();
-                Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
-                stage.setScene(scene);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*/
-        });
-        homeButton.setOnMouseEntered(mouseEvent -> homeButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));
-        homeButton.setOnMouseExited(mouseEvent -> homeButton.setStyle(TOP_BAR_STYLE));
+        }});
+            homeButton.setOnMouseEntered(mouseEvent -> homeButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));
+            homeButton.setOnMouseExited(mouseEvent -> homeButton.setStyle(TOP_BAR_STYLE));
+
     }
 }

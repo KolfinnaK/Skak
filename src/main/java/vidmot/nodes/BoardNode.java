@@ -27,7 +27,7 @@ public class BoardNode extends Pane implements Observer {
     private final String MESSAGE_FONT = "Impact";
     private TilePane board;
     private StackPane messageNode;
-    private static final Color MESSAGE_COLOR = new Color(0.8275, 0.3176, 0.6, 0.8);
+    private static final Color MESSAGE_COLOR = new Color(0.631, 0.969, 0.561, 0.6);
     private BoardPresenter presenter;
 
     public BoardNode(BoardPresenter presenter) {

@@ -45,15 +45,15 @@ public class TilePresenter implements Observable {
 
     public String getStyle() {
         if (hoveredOver && (available || containsPieceOfCurrentPlayersColor))
-            return "-fx-background-color: rgb(155, 49, 148);";
+            return "-fx-background-color: #69a35d;"; //dekkri grænn
         if (row % 2 == col % 2) {
             if (available)
-                return "-fx-background-color: rgb(205, 99, 198);";
+                return "-fx-background-color: #80c971;"; //ljósari grænn
             else
-                return "-fx-background-color: rgb(73, 204, 132);";
+                return "-fx-background-color: #828583;"; //Grár
         } else {
             if (available)
-                return "-fx-background-color: rgb(255, 149, 248);";
+                return "-fx-background-color: #92e681;"; //ljósgrænn
             else
                 return "-fx-background-color: rgb(255, 249, 248);";
         }
