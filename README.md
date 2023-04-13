@@ -65,16 +65,10 @@ Alert dialog:
 - fer með mann aftur á upphafsskjá og upphafsstillir allar stillingar
 
 # ATH, laga:
-- Breyta dialog aðeins, maður þarf líka að ýta á home button tvisvar til að það virki, vtk afh
-- Tveir leikmenn takkinn virkar ekki
-- Laga font á erfiðleikasenu og tímamarkasenu 
-- home button í skáksenunni
-- taka til og eyða því sem við ætlum ekki að nota (skáksena)
-- laga liti á skáksenu
-- bæta við menu og hljóðtakka í skáksenu (ef við náum því ekki þá taka út þema takkann?)
-- menu, home og sound komið i skaksenu en þema virkar ekki og home er ehv glitchy
-- ef maður ytir a home button ur skaksenu þa detta allir handlerar bara ut og getum ekki byrjað nyjan leik
-- 
+- Dialog virkar ekki nema maður ýtir tvisvar á takkann
+- Eftir að maður ýtir á home button úr ChessBoardScene getur maður ekki ýtt á Tveir leikmenn né tölvu
+- Í ChessBoardScene þarf að laga staðsetningu og stærð takkana (hljod, home og þema)
+- Þema takkinn í chessboardscene gerir ekkert, þurfum kannski ný stylesheets fyrir þetta scene?
 
 
 
