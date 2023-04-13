@@ -1,16 +1,18 @@
 .root{
     -fx-background-color: #a6e2f7; //ljósblár
+    -fx-font-family: "Impact";
 }
 
 .button{
     -fx-background-color: #faa12d; //appelsínugulur
     -fx-text-fill: #a6e2f7;
+    -fx-font-family: "Impact";
 }
 
 
 .label{
     -fx-text-fill: #4d4c4c; //dökkgrár
-    -fx-font-Family: "Arial";
+    -fx-font-family: "Impact";
 }
 
 .menu{

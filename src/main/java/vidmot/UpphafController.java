@@ -142,6 +142,9 @@ public class UpphafController{
 
         mediaPlayer.setAutoPlay(true);
 
+        //String newStylesheet = getClass().getResource("stylesheets/upphaf-styles.css").toExternalForm(); virkar ekki:((
+        //fxHomeButton.getScene().getStylesheets().add(newStylesheet);
+
     }
 
     public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {

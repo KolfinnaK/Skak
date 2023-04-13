@@ -147,15 +147,15 @@ public class BoardNode extends Pane implements Observer {
     @Override
     public void update() {
         if (presenter.isGameInStalemate()) {
-            buildMessageNode( "Stalemate!");
+            buildMessageNode( "Jafntefli!");
         } else if (presenter.isPlayerInCheckmate() && presenter.getCurrentPlayersColor() == Colors.BLACK) {
-            buildMessageNode( "White won!");
+            buildMessageNode( "Hvítur sigrar!");
         } else if (presenter.isPlayerInCheckmate() && presenter.getCurrentPlayersColor() == Colors.WHITE) {
-            buildMessageNode( "Black won!");
+            buildMessageNode( "Svartur sigrar!");
         } else if (presenter.isWhiteOutOfTime()) {
-            buildMessageNode("Black won!");
+            buildMessageNode("Svartur sigrar!");
         } else if (presenter.isBlackOutOfTime()) {
-            buildMessageNode( "White won!");
+            buildMessageNode( "Hvítur sigrar!");
         } else {
             return; // if nothing was updated, don't play the animation
         }
