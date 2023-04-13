@@ -14,8 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.*;
 
 
-import javafx.scene.control.*;
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -108,7 +106,7 @@ public class TopBarNode extends Pane {
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == yesButton) {
                     homeButton.getScene().getStylesheets().clear();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("file:./src/main/java/vidmot/upphaf-view.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/vidmot/upphaf-view.fxml"));;
                     try {
                         Parent root = loader.load();
                         Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
