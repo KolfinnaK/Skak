@@ -1,6 +1,7 @@
 package vidmot.nodes;
 
 //import com.chess.view.scenes.HomeScene;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -34,10 +35,12 @@ import java.util.Optional;
 
 
 public class TopBarNode extends Pane {
-    private HBox root;
+    private final HBox root;
     private Button homeButton;
     private Button soundButton;
-    private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
+    private MenuBar themeMenu;
+    private final MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
+    private String selectedStylesheet = "";
     private static final int TOP_BAR_HEIGHT = 40;
     private static final int TOP_BAR_WIDTH = 618;
     private static final String TOP_BAR_STYLE = "-fx-background-color: #0f4519;", //dökkgrænn
@@ -47,7 +50,8 @@ public class TopBarNode extends Pane {
             MUTE_FILE_PATH = "file:./src/main/resources/vidmot/images/mute.png",
                     TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
     private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
-    private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
+    private final TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
+
 
     public TopBarNode() {
         setMinHeight(TOP_BAR_HEIGHT);
@@ -72,16 +76,77 @@ public class TopBarNode extends Pane {
         title.setStyle(TITLE_COLOR);
         title.setAlignment(Pos.CENTER);
         title.setTextAlignment(TextAlignment.CENTER);
-        HBox.setMargin(title, new Insets(0, 0, 0, -100)); // Add margin to move the title label to the right
+        HBox.setMargin(title, new Insets(0, 0, 0, -100));
         title.minWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
         title.maxWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
         HBox.setHgrow(title, Priority.ALWAYS);
         root.getChildren().add(title);
         buildSoundButton();
         root.getChildren().add(soundButton);
+        buildThemeMenu();
+        root.getChildren().add(themeMenu);
+    }
+
+    private void buildThemeMenu() {
+        themeMenu = new MenuBar();
+        themeMenu.setLayoutX(80.0);
+        themeMenu.setLayoutY(13.0);
+        themeMenu.setMinHeight(0.0);
+        themeMenu.setMinWidth(0.0);
+        themeMenu.setPickOnBounds(false);
+        themeMenu.setPrefHeight(28.0);
+        themeMenu.setPrefWidth(43.0);
+        themeMenu.getStylesheets().add("@stylesheets/upphaf-styles.css");
+
+        Menu fxTheme = new Menu();
+        fxTheme.setText("Þema");
+
+        MenuItem fxClassicItem = new MenuItem();
+        fxClassicItem.setText("Klassískt");
+        fxClassicItem.setOnAction(event -> fxClassicHandler(event));
+
+        MenuItem fxCottonCandyItem = new MenuItem();
+        fxCottonCandyItem.setText("Cotton candy");
+        fxCottonCandyItem.setOnAction(event -> fxCottonCandyHandler(event));
+
+        MenuItem fxTropicalItem = new MenuItem();
+        fxTropicalItem.setText("Tropical");
+        fxTropicalItem.setOnAction(event -> fxTropicalHandler(event));
+
+        fxTheme.getItems().addAll(fxClassicItem, fxCottonCandyItem, fxTropicalItem);
+
+        themeMenu.getMenus().add(fxTheme);
+
+        themeMenu.setPadding(new Insets(-5.0, -5.0, 0.0, 0.0));
 
     }
 
+    public void fxClassicHandler(ActionEvent actionEvent) {
+        String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();
+        if (!selectedStylesheet.equals(newStylesheet)) {
+            homeButton.getScene().getStylesheets().remove(selectedStylesheet);
+            homeButton.getScene().getStylesheets().add(newStylesheet);
+            selectedStylesheet = newStylesheet;
+        }
+    }
+
+    public void fxCottonCandyHandler(ActionEvent actionEvent) {
+        String newStylesheet = getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
+        if (!selectedStylesheet.equals(newStylesheet)) {
+            homeButton.getScene().getStylesheets().remove(selectedStylesheet);
+            homeButton.getScene().getStylesheets().add(newStylesheet);
+            selectedStylesheet = newStylesheet;
+        }
+    }
+
+    public void fxTropicalHandler(ActionEvent actionEvent) {
+        String newStylesheet = getClass().getResource("stylesheets/tropical-styles.css").toExternalForm();
+        if (!selectedStylesheet.equals(newStylesheet)) {
+            homeButton.getScene().getStylesheets().remove(selectedStylesheet);
+            homeButton.getScene().getStylesheets().add(newStylesheet);
+            selectedStylesheet = newStylesheet;
+        }
+    }
 
     private void buildHomeButton() {
         homeButton = new Button();
