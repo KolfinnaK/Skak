@@ -13,7 +13,8 @@ Verkaskipting:
 -- HEKLA: ég breytti í application, núna hægt að skipta um senu, fer yfir í tími og erfiðleikastig 
 - Setja myndir á homebutton og hljóðtakkann: Kolfinna (búið)
 - Búa til leikborðið í Scenebuilder Kolfinna (búið)
-- Tengja viðmót og vinnslu
+- Tengja viðmót og vinnslu: Lilja (búið semi)
+
 
 Þema: 
 - Drop down menu
@@ -65,6 +66,15 @@ Alert dialog:
 
 # ATH, laga:
 - Breyta dialog aðeins, maður þarf líka að ýta á home button tvisvar til að það virki, vtk afh
+- Tveir leikmenn takkinn virkar ekki
+- Laga font á erfiðleikasenu og tímamarkasenu 
+- home button í skáksenunni
+- taka til og eyða því sem við ætlum ekki að nota (skáksena)
+- laga stærð á skáksenu
+- laga liti á skáksenu
+- bæta við menu og hljóðtakka í skáksenu (ef við náum því ekki þá taka út þema takkann?)
+- 
+- 
 
 
 
