@@ -70,7 +70,6 @@ Alert dialog:
 - Laga font á erfiðleikasenu og tímamarkasenu 
 - home button í skáksenunni
 - taka til og eyða því sem við ætlum ekki að nota (skáksena)
-- laga stærð á skáksenu
 - laga liti á skáksenu
 - bæta við menu og hljóðtakka í skáksenu (ef við náum því ekki þá taka út þema takkann?)
 - 
