@@ -13,7 +13,7 @@
 <?import javafx.scene.image.ImageView?>
 
 <?import javafx.geometry.Insets?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.UpphafController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.ErfidleikaController">
     <children>
         <Label layoutX="233.0" layoutY="136.0" text="Veldu erfiðleikastig:">
             <font>
@@ -38,12 +38,12 @@
             </padding>
         </MenuBar>
         <Button fx:id="fxHljodtakki" layoutX="556.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
-        <Button fx:id="fxTolva" layoutX="161.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxTolvaHandler" prefHeight="53.0" prefWidth="108.0" text="Auðvelt">
+        <Button fx:id="fxAudvelt" layoutX="161.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxAudveltHandler" prefHeight="53.0" prefWidth="108.0" text="Auðvelt">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button fx:id="fxLeikmadur" layoutX="353.0" layoutY="202.0" mnemonicParsing="false" onAction="#fxLeikmadurHandler" prefHeight="53.0" prefWidth="108.0" text="Erfitt">
+        <Button fx:id="fxErfitt" layoutX="353.0" layoutY="202.0" mnemonicParsing="false" onAction="#fxErfittHandler" prefHeight="53.0" prefWidth="108.0" text="Erfitt">
             <font>
                 <Font size="14.0" />
             </font>

@@ -26,19 +26,27 @@ public class ErfidleikaController extends UpphafController {
 
     private String bot;
     private SkakController skakController;
+    //private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
 
     @FXML
     public void fxAudveltHandler() {
-        bot = "audvelt";
-        skakController.setBot(bot);
+        setBot("audvelt");
         ViewSwitcher.switchTo(View.TIMAMORK);
     }
 
     @FXML
     public void fxErfittHandler() {
-        bot = "erfitt";
-        skakController.setBot(bot);
+        setBot("erfitt");
         ViewSwitcher.switchTo(View.TIMAMORK);
     }
+
+    public String getBot() {
+        return bot;
+    }
+
+    public void setBot(String bot) {
+        this.bot = bot;
+    }
+
 }
 

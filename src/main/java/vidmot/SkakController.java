@@ -75,8 +75,6 @@ public class SkakController extends UpphafController {
         duration = timaController.getDuration();
         //GameMediator leikur = new GameMediator(constructionFlag, duration, bot);
 
-        timiEftir = TimaController.getTimiEftirShared();
-        timiEftir2 = TimaController.getTimiEftir2Shared();
 
         timeline1 = new Timeline(
                 new KeyFrame(Duration.seconds(1), this::updateTimer1));

@@ -35,20 +35,22 @@ public class UpphafController{
     private Button fxLeikmadur;
 
     private SkakController skakController;
+    private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
     public boolean isLocalTime;
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
     private String selectedStylesheet = "";
+    private MediatorConstructionFlags constructionFlag;
 
 
     public void fxTolvaHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
-        skakController.setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
+        setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
 
     }
 
     public void fxLeikmadurHandler(ActionEvent actionEvent){
         ViewSwitcher.switchTo(View.TIMAMORK);
-        skakController.setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
+        setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
         //skakController.setLocalTime(isLocalTime);
     }
 
@@ -140,6 +142,14 @@ public class UpphafController{
 
         mediaPlayer.setAutoPlay(true);
 
+    }
+
+    public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
+        this.constructionFlag = constructionFlag;
+    }
+
+    public MediatorConstructionFlags getConstructionFlag() {
+        return constructionFlag;
     }
 
 }
