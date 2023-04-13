@@ -128,7 +128,7 @@ public class TopBarNode extends Pane {
                     } catch (IOException e) {
                         e.printStackTrace();
                     //ViewSwitcher.switchTo(View.UPPHAFSSENA);
-                    timaController.setBot("");
+                    timaController.setBot(null);
                 }
             }
 
