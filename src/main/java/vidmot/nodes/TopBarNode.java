@@ -5,14 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-<<<<<<< Updated upstream
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-=======
 import javafx.scene.control.*;
->>>>>>> Stashed changes
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -25,11 +22,10 @@ import vidmot.TimaController;
 import vidmot.View;
 import vidmot.ViewSwitcher;
 
-<<<<<<< Updated upstream
 import java.io.IOException;
-=======
+
 import java.util.Optional;
->>>>>>> Stashed changes
+
 
 public class TopBarNode extends Pane {
     private HBox root;
