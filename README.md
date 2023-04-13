@@ -72,7 +72,8 @@ Alert dialog:
 - taka til og eyða því sem við ætlum ekki að nota (skáksena)
 - laga liti á skáksenu
 - bæta við menu og hljóðtakka í skáksenu (ef við náum því ekki þá taka út þema takkann?)
-- 
+- menu, home og sound komið i skaksenu en þema virkar ekki og home er ehv glitchy
+- ef maður ytir a home button ur skaksenu þa detta allir handlerar bara ut og getum ekki byrjað nyjan leik
 - 
 
 
