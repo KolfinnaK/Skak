@@ -3,6 +3,10 @@ package vidmot;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.scene.media.*;
 import presenter.MediatorConstructionFlags;
 
+import java.io.IOException;
 import java.util.Optional;
 
 
@@ -40,12 +45,12 @@ public class UpphafController{
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
     private String selectedStylesheet = "";
     private MediatorConstructionFlags constructionFlag;
-
+    public static int isBot = 0;
 
     public void fxTolvaHandler(ActionEvent actionEvent){
+        isBot = 1;
         ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
         setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
-
     }
 
     public void fxLeikmadurHandler(ActionEvent actionEvent){

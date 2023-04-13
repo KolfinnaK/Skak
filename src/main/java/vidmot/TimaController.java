@@ -133,7 +133,11 @@ public class TimaController extends UpphafController {
         playIcon.setPreserveRatio(true);
         fxHljodtakki.setGraphic(playIcon);
 
-        bot = erfidleikaController.getBot();
+        if(isBot == 1){
+            bot = erfidleikaController.getBot();
+        }
+
+        //bot = erfidleikaController.getBot();
     }
 
     /*public static int getTimiEftirShared() {
