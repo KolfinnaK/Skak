@@ -1,9 +1,12 @@
 package vidmot.nodes;
 
 //import com.chess.view.scenes.HomeScene;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -16,6 +19,8 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import vidmot.View;
 import vidmot.ViewSwitcher;
+
+import java.io.IOException;
 
 public class TopBarNode extends Pane {
     private HBox root;
@@ -69,9 +74,17 @@ public class TopBarNode extends Pane {
         homeButton.setGraphic(imageView);
 
         homeButton.setOnMouseClicked(mouseEvent -> {
-            ViewSwitcher.switchTo(View.UPPHAFSSENA);
-            //Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            //ViewSwitcher.switchTo(View.UPPHAFSSENA);
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
             //stage.setScene(new HomeScene(stage.getScene().getWidth(), stage.getScene().getHeight()));
+            /*FXMLLoader loader = new FXMLLoader(getClass().getResource("resources/upphaf-view.fxml"));
+            try {
+                Parent root = loader.load();
+                Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }*/
         });
         homeButton.setOnMouseEntered(mouseEvent -> homeButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));
         homeButton.setOnMouseExited(mouseEvent -> homeButton.setStyle(TOP_BAR_STYLE));
