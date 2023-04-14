@@ -157,11 +157,10 @@ public class TopBarNode extends Pane {
 
         // add image to the button
         ImageView imageView = new ImageView(new Image(HOME_ICON_FILE_PATH, 20, 20, false, false));
-        imageView.minWidth(homeButton.getWidth());
-        imageView.maxWidth(homeButton.getWidth());
-        imageView.minHeight(homeButton.getHeight());
-        imageView.maxHeight(homeButton.getHeight());
+        imageView.setFitWidth(30);
+        imageView.setFitHeight(25);
         homeButton.setGraphic(imageView);
+
 
         homeButton.setOnMouseClicked(mouseEvent -> {
 
@@ -212,10 +211,9 @@ public class TopBarNode extends Pane {
 
         // add image to the button
         ImageView imageView = new ImageView(new Image(PLAY_FILE_PATH, 20, 20, false, false));
-        imageView.minWidth(soundButton.getWidth());
-        imageView.maxWidth(soundButton.getWidth());
-        imageView.minHeight(soundButton.getHeight());
-        imageView.maxHeight(soundButton.getHeight());
+        imageView.setFitWidth(25);
+        imageView.setFitHeight(30);
+
         soundButton.setGraphic(imageView);
 
         // add event handler to play sound when button is clicked
