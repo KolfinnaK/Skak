@@ -65,10 +65,8 @@ Alert dialog:
 - fer með mann aftur á upphafsskjá og upphafsstillir allar stillingar
 
 # ATH, laga:
-- Dialog virkar ekki nema maður ýtir tvisvar á takkann
-- Eftir að maður ýtir á home button úr ChessBoardScene getur maður ekki ýtt á Tveir leikmenn né tölvu
-- Í ChessBoardScene þarf að laga staðsetningu og stærð takkana (hljod, home og þema)
-- Þema takkinn í chessboardscene gerir ekkert, þurfum kannski ný stylesheets fyrir þetta scene?
+- Þarf að laga TopBarNode, takkar á vitlausum stað, home button virkar ekki alveg rétt (ekki hægt að ýta á hann nema maður ýti neðst) og ekki heldur þema menu
+- Þema clearast alltaf þegar maður fer í nýja senu þótt maður hafi valið þema
 
 
 
