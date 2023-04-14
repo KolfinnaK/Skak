@@ -29,6 +29,12 @@ public class ChessBoardScene extends Scene {
         topBar.maxWidthProperty().bind(widthProperty());
         topBar.setMaxHeight(40);
         topBar.setMinHeight(40);
+        if(UpphafController.hallo==2){
+        root.setStyle("-fx-background-color: #facff5;");}
+        else if(UpphafController.hallo==1){
+            root.setStyle("-fx-background-color: #d6d6d6;");}
+        else if(UpphafController.hallo==3){
+            root.setStyle("-fx-background-color: #faa12d;");}
     }
 
     private void constructSceneGraph(GameMediator gameMediator) {

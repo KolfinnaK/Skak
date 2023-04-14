@@ -7,6 +7,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import vidmot.UpphafController;
 
 public class TimerNode extends StackPane {
     private AnimationTimer timer;
@@ -16,7 +17,14 @@ public class TimerNode extends StackPane {
 
     public TimerNode(TimerPresenter timerPresenter) {
         background = new Rectangle(80, 40);
-        background.setFill(new Color(146.0/255, 230.0/255, 129.0/255, 1.0));
+        if(UpphafController.hallo==2){
+            background.setFill(Color.HOTPINK);
+        }
+        else if(UpphafController.hallo==1){
+            background.setFill(Color.GREEN);
+        } else if(UpphafController.hallo==3){
+            background.setFill(Color.LIGHTBLUE);}
+        else background.setFill(new Color(146.0/255, 230.0/255, 129.0/255, 1.0));
         label = new Label();
         label.setFont(new Font("Impact", 20));
         this.timerPresenter = timerPresenter;
