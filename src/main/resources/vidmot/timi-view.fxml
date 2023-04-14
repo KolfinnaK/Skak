@@ -21,7 +21,7 @@
         </Label>
         <Line endX="401.0" layoutX="212.0" layoutY="50.0" startX="-239.5" />
         <Button fx:id="fxHomeButton" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
-        <MenuBar layoutX="80.0" layoutY="13.0" minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="28.0" prefWidth="43.0" stylesheets="@stylesheets/upphaf-styles.css">
+        <MenuBar layoutX="80.0" layoutY="13.0" minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="28.0" prefWidth="43.0">
 
             <menus>
                 <Menu fx:id="fxTheme" mnemonicParsing="false" text="Þema">

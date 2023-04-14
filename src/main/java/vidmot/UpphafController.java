@@ -17,68 +17,68 @@ import presenter.MediatorConstructionFlags;
 import java.io.IOException;
 import java.util.Optional;
 
-
-/******************************************************************************
- *  Nafn    : Lilja Kolbrún Schopka
- *  T-póstur: lks17@hi.is
- *
- *  Lýsing  :
- *
- *
- *
- *
- *****************************************************************************/
-public class UpphafController{
+public class UpphafController {
 
     @FXML
     private Button fxHomeButton;
     @FXML
     private Button fxHljodtakki;
-    @FXML
-    private Button fxTolva;
-    @FXML
-    private Button fxLeikmadur;
 
-    private SkakController skakController;
-    private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
-    public boolean isLocalTime;
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
     private String selectedStylesheet = "";
     private MediatorConstructionFlags constructionFlag;
-    public static int isBot = 0;
+    public static int isBot;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
-    public void fxTolvaHandler(ActionEvent actionEvent){
+    public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
+        this.constructionFlag = constructionFlag;
+    }
+
+    public MediatorConstructionFlags getConstructionFlag() {
+        return constructionFlag;
+    }
+
+    public void fxTolvaHandler(ActionEvent event) throws IOException {
         isBot = 1;
-        ViewSwitcher.switchTo(View.ERFIDLEIKASENA);
+        Parent root = FXMLLoader.load(getClass().getResource("/vidmot/erfidleika-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
     }
 
-    public void fxLeikmadurHandler(ActionEvent actionEvent){
-        ViewSwitcher.switchTo(View.TIMAMORK);
+    public void fxLeikmadurHandler(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
-        //skakController.setLocalTime(isLocalTime);
     }
 
-   public void fxHljodtakkiHandler(ActionEvent actionEvent){
+    public void fxHljodtakkiHandler(ActionEvent actionEvent) {
 
-       mediaPlayer.setMute(!mediaPlayer.isMute());
+        mediaPlayer.setMute(!mediaPlayer.isMute());
 
-       ImageView image;
-       if (mediaPlayer.isMute()) {
-           image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
-           image.setFitHeight(30);
-           image.setFitWidth(25);
-           image.setPreserveRatio(true);
-       } else {
-           image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
-           image.setFitHeight(30);
-           image.setFitWidth(25);
-           image.setPreserveRatio(true);
-       }
-       fxHljodtakki.setGraphic(image);
-   }
+        ImageView image;
+        if (mediaPlayer.isMute()) {
+            image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
+            image.setFitHeight(30);
+            image.setFitWidth(25);
+            image.setPreserveRatio(true);
+        } else {
+            image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
+            image.setFitHeight(30);
+            image.setFitWidth(25);
+            image.setPreserveRatio(true);
+        }
+        fxHljodtakki.setGraphic(image);
+    }
 
-    public void fxHomeButtonHandler(ActionEvent actionEvent){
+    public void fxHomeButtonHandler(ActionEvent actionEvent) {
         fxHomeButton.setOnAction(event -> {
             if (!event.isConsumed()) {
                 event.consume();
@@ -96,13 +96,22 @@ public class UpphafController{
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == yesButton) {
                     fxHomeButton.getScene().getStylesheets().clear();
-                    ViewSwitcher.switchTo(View.UPPHAFSSENA);
-                    skakController.setBot("");
+                    try {
+                        root = FXMLLoader.load(getClass().getResource("/vidmot/upphaf-view.fxml"));
+                        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                        scene = new Scene(root);
+                        stage.setScene(scene);
+                        stage.show();
+                        isBot = 0;
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
                 }
             }
         });
     }
-
 
     public void fxClassicHandler(ActionEvent actionEvent) {
         String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();
@@ -131,8 +140,7 @@ public class UpphafController{
         }
     }
 
-
-    public void initialize(){
+    public void initialize() {
         ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
         homeIcon.setFitWidth(30);
         homeIcon.setFitHeight(25);
@@ -147,17 +155,5 @@ public class UpphafController{
 
         mediaPlayer.setAutoPlay(true);
 
-        //String newStylesheet = getClass().getResource("stylesheets/upphaf-styles.css").toExternalForm(); virkar ekki:((
-        //fxHomeButton.getScene().getStylesheets().add(newStylesheet);
-
     }
-
-    public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
-        this.constructionFlag = constructionFlag;
-    }
-
-    public MediatorConstructionFlags getConstructionFlag() {
-        return constructionFlag;
-    }
-
 }

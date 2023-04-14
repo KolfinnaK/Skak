@@ -11,7 +11,7 @@ public class GameMediator implements Mediator {
         if (flag == MediatorConstructionFlags.TIMED_LOCAL)
             this.boardPresenter = new LocalBoardPresenter(this);
         else if (flag == MediatorConstructionFlags.TIMED_AI)
-            this.boardPresenter = new AIBoardPresenter(this, botName);
+        this.boardPresenter = new AIBoardPresenter(this, botName);
         this.whiteTimerPresenter = new TimerPresenter(duration + 1000, Colors.WHITE, this);
         this.blackTimerPresenter = new TimerPresenter(duration, Colors.BLACK, this);
         currentTimerPresenter = whiteTimerPresenter;

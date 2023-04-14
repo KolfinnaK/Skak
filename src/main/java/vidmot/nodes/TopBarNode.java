@@ -25,13 +25,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import vidmot.MediaManager;
-import vidmot.TimaController;
-import vidmot.View;
-import vidmot.ViewSwitcher;
 
 import java.io.IOException;
 
 import java.util.Optional;
+
+import static vidmot.UpphafController.isBot;
 
 
 public class TopBarNode extends Pane {
@@ -50,7 +49,7 @@ public class TopBarNode extends Pane {
             MUTE_FILE_PATH = "file:./src/main/resources/vidmot/images/mute.png",
                     TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
     private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
-    private final TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
+
 
 
     public TopBarNode() {
@@ -96,7 +95,7 @@ public class TopBarNode extends Pane {
         themeMenu.setPickOnBounds(false);
         themeMenu.setPrefHeight(28.0);
         themeMenu.setPrefWidth(43.0);
-        themeMenu.getStylesheets().add("@stylesheets/upphaf-styles.css");
+        themeMenu.getStylesheets().add("/vidmot/stylesheets/upphaf-styles.css");
 
         Menu fxTheme = new Menu();
         fxTheme.setText("Þema");
@@ -167,7 +166,7 @@ public class TopBarNode extends Pane {
         homeButton.setOnMouseClicked(mouseEvent -> {
 
             //ViewSwitcher.switchTo(View.UPPHAFSSENA);
-            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            Stage stage = (Stage) homeButton.getScene().getWindow();
 
             if (!mouseEvent.isConsumed()) {
                 mouseEvent.consume();
@@ -184,16 +183,17 @@ public class TopBarNode extends Pane {
 
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == yesButton) {
-                    homeButton.getScene().getStylesheets().clear();
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/vidmot/upphaf-view.fxml"));;
                     try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vidmot/upphaf-view.fxml"));
                         Parent root = loader.load();
                         Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
                         stage.setScene(scene);
+                        isBot = 0;
                     } catch (IOException e) {
                         e.printStackTrace();
+
                     //ViewSwitcher.switchTo(View.UPPHAFSSENA);
-                    timaController.setBot(null);
+
                 }
             }
 

@@ -21,6 +21,8 @@ import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/* erum ekki að nota þetta
+
 public class SkakController extends UpphafController {
 
     @FXML
@@ -55,9 +57,9 @@ public class SkakController extends UpphafController {
         isLocalTime = localTime;
     }
 
-    public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
-        this.constructionFlag = constructionFlag;
-    }
+    //public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
+      //  this.constructionFlag = constructionFlag;
+   // }
 
     public void initialize() {
         ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
@@ -125,3 +127,5 @@ public class SkakController extends UpphafController {
 
 
 }
+
+ */

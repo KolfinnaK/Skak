@@ -15,6 +15,10 @@ import java.util.Map;
  * <p>
  * EÞH - changed to include caching of controllers
  */
+
+/* erum ekki að nota þetta
+
+
 public class ViewSwitcher {
     private static final Map<View, Parent> cache = new HashMap<>();
     private static final Map<View, Object> controllers = new HashMap<>();
@@ -54,3 +58,4 @@ public class ViewSwitcher {
         return controllers.get(v);
     }
 }
+ */

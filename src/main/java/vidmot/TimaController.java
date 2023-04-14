@@ -1,39 +1,21 @@
 package vidmot;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-//<<<<<<< Updated upstream
-//=======
-import javafx.scene.control.Label;
-//>>>>>>> Stashed changes
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 import presenter.GameMediator;
 import presenter.MediatorConstructionFlags;
+import java.io.IOException;
 
-/******************************************************************************
- *  Nafn    : Lilja Kolbrún Schopka
- *  T-póstur: lks17@hi.is
- *
- *  Lýsing  :
- *
- *
- *
- *
- *****************************************************************************/
 public class TimaController extends UpphafController {
-    @FXML
-    private Label klukka;
-    @FXML
-    private Label klukka2;
+
     @FXML
     private Button fxHomeButton;
     @FXML
@@ -41,14 +23,40 @@ public class TimaController extends UpphafController {
     public static int timiEftirShared;
     public static int timiEftir2Shared;
 
-    private Timeline timeline1;
-    private Timeline timeline2;
     private int duration;
-    private String bot;
-    private boolean erKlukka1adTeljaNidur=true;
-    private MediatorConstructionFlags constructionFlag;
-    private UpphafController upphafController = (UpphafController) ViewSwitcher.lookup(View.UPPHAFSSENA);
-    private ErfidleikaController erfidleikaController = (ErfidleikaController) ViewSwitcher.lookup(View.ERFIDLEIKASENA);
+    public static String bot;
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    @FXML
+    public void fxAudveltHandler(ActionEvent actionEvent)  throws IOException {
+     bot = ("audvelt");
+     root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
+     stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+     scene = new Scene(root);
+     stage.setScene(scene);
+     stage.show();
+
+    }
+
+
+    @FXML
+    public void fxErfittHandler(ActionEvent actionEvent)  throws IOException {
+
+        bot=("erfitt");
+        root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    public static String getBot() {
+        return bot;
+    }
 
 
     public void fx1minHandler(ActionEvent actionEvent) {
@@ -65,7 +73,6 @@ public class TimaController extends UpphafController {
             stage.setScene(new ChessBoardScene(618, 393, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
         }
 
-        //ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx3minHandler(ActionEvent actionEvent) {
@@ -82,8 +89,6 @@ public class TimaController extends UpphafController {
             stage.setScene(new ChessBoardScene(618, 393, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
         }
 
-
-        //ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx5minHandler(ActionEvent actionEvent) {
@@ -100,8 +105,6 @@ public class TimaController extends UpphafController {
             stage.setScene(new ChessBoardScene(618, 393, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
         }
 
-
-        //ViewSwitcher.switchTo(View.SKAKSENA);
     }
 
     public void fx10minHandler(ActionEvent actionEvent) {
@@ -134,30 +137,12 @@ public class TimaController extends UpphafController {
         fxHljodtakki.setGraphic(playIcon);
 
         if(isBot == 1){
-            bot = erfidleikaController.getBot();
+            bot = getBot();
+            System.out.println("Bot: " + bot);
         }
-
-        //bot = erfidleikaController.getBot();
-    }
-
-    /*public static int getTimiEftirShared() {
-        return timiEftirShared;
-    }
-
-    public static int getTimiEftir2Shared() {
-        return timiEftir2Shared;
-    }*/
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setBot(String bot) {
-        this.bot = bot;
-    }
-
-    public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
-        this.constructionFlag = constructionFlag;
+        else {
+            bot = null;
+        }
     }
 
 }
