@@ -49,7 +49,6 @@ public class TimaController extends UpphafController {
 
     @FXML
     public void fxErfittHandler(ActionEvent actionEvent)  throws IOException {
-
         bot=("erfitt");
         root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
