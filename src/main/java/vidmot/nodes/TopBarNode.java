@@ -48,7 +48,7 @@ public class TopBarNode extends Pane {
             PLAY_FILE_PATH = "file:./src/main/resources/vidmot/images/play.png",
             MUTE_FILE_PATH = "file:./src/main/resources/vidmot/images/mute.png",
                     TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
-    private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 50);
+    private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
 
 
 
@@ -66,22 +66,22 @@ public class TopBarNode extends Pane {
         root.maxWidthProperty().bind(widthProperty());
         root.setStyle(TOP_BAR_STYLE);
         root.setPadding(TOP_BAR_PADDING);
-        root.setAlignment(Pos.CENTER);
+        root.setAlignment(Pos.CENTER_LEFT);
         buildHomeButton();
         buildSoundButton();
         getChildren().add(root);
         root.getChildren().add(homeButton);
         root.getChildren().add(soundButton);
-        Label title = new Label("Skák");
-        title.setFont(new Font("Impact", 20));
-        title.setStyle(TITLE_COLOR);
-        title.setAlignment(Pos.CENTER);
-        title.setTextAlignment(TextAlignment.CENTER);
+        //Label title = new Label("Skák");
+        //title.setFont(new Font("Impact", 20));
+        //title.setStyle(TITLE_COLOR);
+        //title.setAlignment(Pos.TOP_CENTER);
+        //title.setTextAlignment(TextAlignment.CENTER);
         //HBox.setMargin(title, new Insets(0, 0, 0, -100));
-        title.minWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
-        title.maxWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
-        HBox.setHgrow(title, Priority.ALWAYS);
-        root.getChildren().add(title);
+        //title.minWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
+        //title.maxWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
+        //HBox.setHgrow(title, Priority.ALWAYS);
+        //root.getChildren().add(title);
 
         //buildThemeMenu();
         //root.getChildren().add(themeMenu);
@@ -165,7 +165,6 @@ public class TopBarNode extends Pane {
 
         homeButton.setOnMouseClicked(mouseEvent -> {
 
-            //ViewSwitcher.switchTo(View.UPPHAFSSENA);
             Stage stage = (Stage) homeButton.getScene().getWindow();
 
             if (!mouseEvent.isConsumed()) {
@@ -191,8 +190,6 @@ public class TopBarNode extends Pane {
                         isBot = 0;
                     } catch (IOException e) {
                         e.printStackTrace();
-
-                    //ViewSwitcher.switchTo(View.UPPHAFSSENA);
 
                 }
             }
