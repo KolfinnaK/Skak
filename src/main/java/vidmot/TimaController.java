@@ -41,7 +41,7 @@ public class TimaController extends UpphafController {
         root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add(UpphafController.selectedStylesheet);
+        scene.getStylesheets().add(selectedStylesheet);
         stage.setScene(scene);
         stage.show();
 
@@ -53,7 +53,7 @@ public class TimaController extends UpphafController {
         root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        scene.getStylesheets().add(UpphafController.selectedStylesheet);
+        scene.getStylesheets().add(selectedStylesheet);
         stage.setScene(scene);
         stage.show();
     }

@@ -7,11 +7,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import vidmot.UpphafController;
 
 public class TimerNode extends StackPane {
     private AnimationTimer timer;
-    private TimerPresenter timerPresenter;
     private Rectangle background;
+    private TimerPresenter timerPresenter;
     private Label label;
 
     public TimerNode(TimerPresenter timerPresenter) {

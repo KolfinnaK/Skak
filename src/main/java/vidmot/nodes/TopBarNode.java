@@ -5,16 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
-
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-
 import javafx.scene.control.*;
-
-
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -25,6 +20,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import vidmot.MediaManager;
+import vidmot.UpphafController;
 
 import java.io.IOException;
 
@@ -39,9 +35,9 @@ public class TopBarNode extends Pane {
     private Button soundButton;
     private MenuBar themeMenu;
     private final MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
-    private String selectedStylesheet = "";
+
     private static final int TOP_BAR_HEIGHT = 40;
-    private static final int TOP_BAR_WIDTH = 618;
+
     private static final String TOP_BAR_STYLE = "-fx-background-color: #0f4519;", //dökkgrænn
             HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: #d6d6d6;",
             HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png",
@@ -55,8 +51,7 @@ public class TopBarNode extends Pane {
     public TopBarNode() {
         setMinHeight(TOP_BAR_HEIGHT);
         setMaxHeight(TOP_BAR_HEIGHT);
-        setMinWidth(TOP_BAR_WIDTH);
-        setMaxWidth(TOP_BAR_WIDTH);
+
 
         root = new HBox();
 
@@ -64,106 +59,41 @@ public class TopBarNode extends Pane {
         root.maxHeightProperty().bind(heightProperty());
         root.minWidthProperty().bind(widthProperty());
         root.maxWidthProperty().bind(widthProperty());
-        root.setStyle(TOP_BAR_STYLE);
-        root.setPadding(TOP_BAR_PADDING);
-        root.setAlignment(Pos.CENTER);
+        root.getStylesheets().add(UpphafController.selectedStylesheet);
+        root.getStyleClass().add("fxtopBar");
+        root.setAlignment(Pos.CENTER_LEFT);
         buildHomeButton();
         getChildren().add(root);
         root.getChildren().add(homeButton);
         Label title = new Label("Skák");
-        title.setFont(new Font("Impact", 20));
-        title.setStyle(TITLE_COLOR);
+        title.getStyleClass().add("fxtitle");
         title.setAlignment(Pos.CENTER);
         title.setTextAlignment(TextAlignment.CENTER);
-        HBox.setMargin(title, new Insets(0, 0, 0, -100));
         title.minWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
         title.maxWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty()));
         HBox.setHgrow(title, Priority.ALWAYS);
         root.getChildren().add(title);
         buildSoundButton();
         root.getChildren().add(soundButton);
-        buildThemeMenu();
-        root.getChildren().add(themeMenu);
-    }
-
-    private void buildThemeMenu() {
-        themeMenu = new MenuBar();
-        themeMenu.setLayoutX(80.0);
-        themeMenu.setLayoutY(13.0);
-        themeMenu.setMinHeight(0.0);
-        themeMenu.setMinWidth(0.0);
-        themeMenu.setPickOnBounds(false);
-        themeMenu.setPrefHeight(28.0);
-        themeMenu.setPrefWidth(43.0);
-        themeMenu.getStylesheets().add("/vidmot/stylesheets/upphaf-styles.css");
-
-        Menu fxTheme = new Menu();
-        fxTheme.setText("Þema");
-
-        MenuItem fxClassicItem = new MenuItem();
-        fxClassicItem.setText("Klassískt");
-        fxClassicItem.setOnAction(event -> fxClassicHandler(event));
-
-        MenuItem fxCottonCandyItem = new MenuItem();
-        fxCottonCandyItem.setText("Cotton candy");
-        fxCottonCandyItem.setOnAction(event -> fxCottonCandyHandler(event));
-
-        MenuItem fxTropicalItem = new MenuItem();
-        fxTropicalItem.setText("Tropical");
-        fxTropicalItem.setOnAction(event -> fxTropicalHandler(event));
-
-        fxTheme.getItems().addAll(fxClassicItem, fxCottonCandyItem, fxTropicalItem);
-
-        themeMenu.getMenus().add(fxTheme);
-
-        themeMenu.setPadding(new Insets(-5.0, -5.0, 0.0, 0.0));
 
     }
 
-    public void fxClassicHandler(ActionEvent actionEvent) {
-        String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();
-        if (!selectedStylesheet.equals(newStylesheet)) {
-            homeButton.getScene().getStylesheets().remove(selectedStylesheet);
-            homeButton.getScene().getStylesheets().add(newStylesheet);
-            selectedStylesheet = newStylesheet;
-        }
-    }
-
-    public void fxCottonCandyHandler(ActionEvent actionEvent) {
-        String newStylesheet = getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
-        if (!selectedStylesheet.equals(newStylesheet)) {
-            homeButton.getScene().getStylesheets().remove(selectedStylesheet);
-            homeButton.getScene().getStylesheets().add(newStylesheet);
-            selectedStylesheet = newStylesheet;
-        }
-    }
-
-    public void fxTropicalHandler(ActionEvent actionEvent) {
-        String newStylesheet = getClass().getResource("stylesheets/tropical-styles.css").toExternalForm();
-        if (!selectedStylesheet.equals(newStylesheet)) {
-            homeButton.getScene().getStylesheets().remove(selectedStylesheet);
-            homeButton.getScene().getStylesheets().add(newStylesheet);
-            selectedStylesheet = newStylesheet;
-        }
-    }
 
     private void buildHomeButton() {
         homeButton = new Button();
-        homeButton.minHeightProperty().bind(root.heightProperty().subtract(root.getPadding().getBottom() + root.getPadding().getTop()));
+        homeButton.minHeightProperty().bind(root.heightProperty().subtract(10));
         homeButton.maxHeightProperty().bind(homeButton.minHeightProperty());
         homeButton.minWidthProperty().bind(homeButton.minHeightProperty());
         homeButton.maxWidthProperty().bind(homeButton.minHeightProperty());
-        homeButton.setStyle(root.getStyle());
+        homeButton.setAlignment(Pos.CENTER_LEFT);
+        homeButton.getStyleClass().add("fxhomeButton");
 
-        // add image to the button
-        ImageView imageView = new ImageView(new Image(HOME_ICON_FILE_PATH, 20, 20, false, false));
-        imageView.setFitWidth(30);
-        imageView.setFitHeight(25);
-        homeButton.setGraphic(imageView);
+
+
+        // add image to the butto
 
 
         homeButton.setOnMouseClicked(mouseEvent -> {
-
             //ViewSwitcher.switchTo(View.UPPHAFSSENA);
             Stage stage = (Stage) homeButton.getScene().getWindow();
 
@@ -187,27 +117,37 @@ public class TopBarNode extends Pane {
                         Parent root = loader.load();
                         Scene scene = new Scene(root, stage.getScene().getWidth(), stage.getScene().getHeight());
                         stage.setScene(scene);
+                        scene.getStylesheets().add(UpphafController.selectedStylesheet);
+                        stage.show();
                         isBot = 0;
                     } catch (IOException e) {
                         e.printStackTrace();
-
-                    //ViewSwitcher.switchTo(View.UPPHAFSSENA);
-
-                }
+                    }
             }
-
         }});
-            homeButton.setOnMouseEntered(mouseEvent -> homeButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));
-            homeButton.setOnMouseExited(mouseEvent -> homeButton.setStyle(TOP_BAR_STYLE));
+        /*
+        homeButton.setOnMouseEntered(mouseEvent -> homeButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));
+        homeButton.setOnMouseExited(mouseEvent -> homeButton.setStyle(TOP_BAR_STYLE));
+        */
     }
 
     private void buildSoundButton() {
         soundButton = new Button();
+
+        soundButton.setLayoutX(0.0);
+        soundButton.setLayoutY(13.0);
+        soundButton.setMinHeight(0.0);
+        soundButton.setMinWidth(0.0);
+        soundButton.setPickOnBounds(false);
+        soundButton.setPrefHeight(28.0);
+        soundButton.setPrefWidth(43.0);
         soundButton.minHeightProperty().bind(root.heightProperty().subtract(root.getPadding().getBottom() + root.getPadding().getTop()));
         soundButton.maxHeightProperty().bind(soundButton.minHeightProperty());
         soundButton.minWidthProperty().bind(soundButton.minHeightProperty());
         soundButton.maxWidthProperty().bind(soundButton.minHeightProperty());
-        soundButton.setStyle(root.getStyle());
+        soundButton.setAlignment(Pos.CENTER_RIGHT);
+
+        soundButton.getStyleClass().add("fxsoundButton");
 
         // add image to the button
         ImageView imageView = new ImageView(new Image(PLAY_FILE_PATH, 20, 20, false, false));
@@ -232,7 +172,6 @@ public class TopBarNode extends Pane {
                 image.setFitWidth(25);
                 image.setPreserveRatio(true);
             }
-            soundButton.setGraphic(image);
         });
 
         soundButton.setOnMouseEntered(mouseEvent -> soundButton.setStyle(HIGHLIGHTED_TOP_BAR_BUTTON_STYLE));

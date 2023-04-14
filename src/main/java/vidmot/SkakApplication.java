@@ -15,6 +15,7 @@ public class SkakApplication extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/vidmot/upphaf-view.fxml"));
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm());
         stage.setTitle("Skák");
         stage.setScene(scene);
         stage.show();

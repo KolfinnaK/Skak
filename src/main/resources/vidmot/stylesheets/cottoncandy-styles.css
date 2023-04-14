@@ -20,8 +20,71 @@
 }
 
 .mynd{
-    -fx-background-image: url("home_icon.png");
+    -fx-background-image: url("../images/home_icon.png");
     -fx-background-size: 100%, 100%;
 }
 
+.fxtopBar{
+    -fx-background-color: #facff5; //ljósblár
+    -fx-padding: 5 5 5 5;
+}
+.fxtitle{
+    -fx-font-size: 20px;
+    -fx-font-family: "Impact";
+    -fx-text-fill: #000000; //dökkgrár
+}
+.fxhomeButton {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 100%, 100%;
+    -fx-background-image: url("../images/home_icon.png");
+    -fx-background-repeat: no-repeat;
+}
+.fxhomeButton:hover {
+    -fx-background-color: #ffffff; //ljósblár
+    -fx-background-size: 100%, 100%;
+    -fx-background-image: url("../images/home_icon.png");
+    -fx-background-repeat: no-repeat;
+}
+.fxhomeButton:pressed {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 95%, 95%;
+    -fx-background-image: url("../images/home_icon.png");
+    -fx-background-repeat: no-repeat;
+}
+.fxsoundButton {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 100%, 100%;
+    -fx-background-image: url("../images/play.png");
+    -fx-background-repeat: no-repeat;
+}
+.fxsoundButton:hover {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 100%, 100%;
+    -fx-background-image: url("../images/play.png");
+    -fx-background-repeat: no-repeat;
+}
+.fxsoundButton:pressed {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 95%, 95%;
+    -fx-background-image: url("../images/play.png");
+    -fx-background-repeat: no-repeat;
+}
+.fxsoundButton.mute {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 100%, 100%;
+    -fx-background-image: url("../images/mute.png");
 
+    -fx-background-repeat: no-repeat;
+}
+.fxsoundButton.mute:hover {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 100%, 100%;
+    -fx-background-image: url("../images/mute.png");
+    -fx-background-repeat: no-repeat;
+}
+.fxsoundButton.mute:pressed {
+    -fx-background-color: #facff5; //ljósblár
+    -fx-background-size: 95%, 95%;
+    -fx-background-image: url("../images/mute.png");
+    -fx-background-repeat: no-repeat;
+}

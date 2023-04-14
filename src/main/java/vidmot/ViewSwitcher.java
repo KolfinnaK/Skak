@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class ViewSwitcher {
     private static final Map<View, Parent> cache = new HashMap<>();
-    private static final Map<View, Object> controllers = new HashMap<>();
+    public static Map<View, Object> controllers = new HashMap<>();
     private static Scene scene;
 
     public static void setScene(Scene scene) {
@@ -37,9 +37,12 @@ public class ViewSwitcher {
             Parent root;
             FXMLLoader loader = null;
             if (cache.containsKey(view)) {
+                System.out.println(cache);
                 System.out.println("Loading from cache");
                 root = cache.get(view);
+
             } else {
+                System.out.println(cache);
                 System.out.println("Loading from FXML");
                 loader = new
                         FXMLLoader(ViewSwitcher.class.getResource(view.getFileName()));

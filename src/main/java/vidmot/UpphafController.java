@@ -27,7 +27,7 @@ public class UpphafController {
     private Button fxHljodtakki;
 
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
-    public static String selectedStylesheet = "";
+    public static String selectedStylesheet =  UpphafController.class.getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
     private MediatorConstructionFlags constructionFlag;
     public static int isBot;
     private Stage stage;
@@ -99,7 +99,6 @@ public class UpphafController {
 
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == yesButton) {
-                fxHomeButton.getScene().getStylesheets().clear();
                 try {
                     root = FXMLLoader.load(getClass().getResource("/vidmot/upphaf-view.fxml"));
                     stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

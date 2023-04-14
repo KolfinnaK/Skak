@@ -25,6 +25,7 @@ public class ChessBoardScene extends Scene {
     private void initializeComponents() {
         root = (VBox) getRoot();
         topBar = new TopBarNode();
+        topBar.getStylesheets().add(UpphafController.selectedStylesheet);
         topBar.minWidthProperty().bind(widthProperty());
         topBar.maxWidthProperty().bind(widthProperty());
         topBar.setMaxHeight(40);
