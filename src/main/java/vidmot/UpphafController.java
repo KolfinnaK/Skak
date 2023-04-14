@@ -1,17 +1,19 @@
 package vidmot;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import javafx.scene.media.*;
 import presenter.MediatorConstructionFlags;
 
 import java.io.IOException;
@@ -25,7 +27,7 @@ public class UpphafController {
     private Button fxHljodtakki;
 
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
-    private String selectedStylesheet = "";
+    public static String selectedStylesheet = "";
     private MediatorConstructionFlags constructionFlag;
     public static int isBot;
     private Stage stage;
@@ -42,18 +44,20 @@ public class UpphafController {
 
     public void fxTolvaHandler(ActionEvent event) throws IOException {
         isBot = 1;
-        Parent root = FXMLLoader.load(getClass().getResource("/vidmot/erfidleika-view.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/vidmot/erfidleika-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        scene.getStylesheets().add(selectedStylesheet);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
     }
 
     public void fxLeikmadurHandler(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        scene.getStylesheets().add(selectedStylesheet);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
@@ -78,7 +82,6 @@ public class UpphafController {
         fxHljodtakki.setGraphic(image);
     }
 
-
     public void fxHomeButtonHandler(ActionEvent actionEvent) {
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
         if (!actionEvent.isConsumed()) {
@@ -101,6 +104,7 @@ public class UpphafController {
                     root = FXMLLoader.load(getClass().getResource("/vidmot/upphaf-view.fxml"));
                     stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     scene = new Scene(root);
+                    scene.getStylesheets().add(selectedStylesheet);
                     stage.setScene(scene);
                     stage.show();
                     isBot = 0;
@@ -117,6 +121,7 @@ public class UpphafController {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
             fxHomeButton.getScene().getStylesheets().add(newStylesheet);
             selectedStylesheet = newStylesheet;
+
         }
     }
 
@@ -153,6 +158,5 @@ public class UpphafController {
         fxHljodtakki.setGraphic(playIcon);
 
         mediaPlayer.setAutoPlay(true);
-
     }
 }

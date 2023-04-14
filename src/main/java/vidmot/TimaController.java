@@ -7,15 +7,18 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import presenter.GameMediator;
 import presenter.MediatorConstructionFlags;
+
 import java.io.IOException;
 
 public class TimaController extends UpphafController {
 
+    public Menu fxTheme;
     @FXML
     private Button fxHomeButton;
     @FXML
@@ -27,20 +30,22 @@ public class TimaController extends UpphafController {
     public static String bot;
 
     private Stage stage;
+
     private Scene scene;
     private Parent root;
 
     @FXML
     public void fxAudveltHandler(ActionEvent actionEvent)  throws IOException {
-     bot = ("audvelt");
-     root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
-     stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-     scene = new Scene(root);
-     stage.setScene(scene);
-     stage.show();
+
+        bot = ("audvelt");
+        root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(UpphafController.selectedStylesheet);
+        stage.setScene(scene);
+        stage.show();
 
     }
-
 
     @FXML
     public void fxErfittHandler(ActionEvent actionEvent)  throws IOException {
@@ -49,6 +54,7 @@ public class TimaController extends UpphafController {
         root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        scene.getStylesheets().add(UpphafController.selectedStylesheet);
         stage.setScene(scene);
         stage.show();
     }
@@ -144,7 +150,6 @@ public class TimaController extends UpphafController {
             bot = null;
         }
     }
-
 }
 
 
