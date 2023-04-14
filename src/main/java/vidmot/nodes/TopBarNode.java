@@ -24,11 +24,11 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 import vidmot.MediaManager;
-=======
+//=======
 import vidmot.*;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
 import java.io.IOException;
 
@@ -38,38 +38,38 @@ import static vidmot.UpphafController.isBot;
 
 
 public class TopBarNode extends Pane {
-<<<<<<< Updated upstream
-    private final HBox root;
-=======
+//<<<<<<< Updated upstream
+    //private final HBox root;
+//=======
     private HBox root;
     public UpphafController upphafController;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     private Button homeButton;
     private Button soundButton;
     private MenuBar themeMenu;
     private final MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
     private String selectedStylesheet = "";
     private static final int TOP_BAR_HEIGHT = 40;
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
     private static final int TOP_BAR_WIDTH = 618;
-    private static final String TOP_BAR_STYLE = "-fx-background-color: #0f4519;", //dökkgrænn
-            HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: #d6d6d6;",
-            HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png",
-            PLAY_FILE_PATH = "file:./src/main/resources/vidmot/images/play.png",
-            MUTE_FILE_PATH = "file:./src/main/resources/vidmot/images/mute.png",
-                    TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
+    private static String TOP_BAR_STYLE = "-fx-background-color: #0f4519;"; //dökkgrænn
+            private static final String HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: #d6d6d6;";
+    private static final String HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png";
+    private static final String PLAY_FILE_PATH = "file:./src/main/resources/vidmot/images/play.png";
+    private static final String MUTE_FILE_PATH = "file:./src/main/resources/vidmot/images/mute.png";
+    private static String TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
     private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
 
 
-=======
-    private static String TOP_BAR_STYLE = "-fx-background-color: #0f4519;", //dökkgrænn
-            HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: #facff5;", //breytti óvart
-            HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png",
-            TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
-    private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
-    private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
-    private SkakController skakController= (SkakController) ViewSwitcher.lookup(View.SKAKSENA);
->>>>>>> Stashed changes
+//=======
+  //  private static String TOP_BAR_STYLE = "-fx-background-color: #0f4519;", //dökkgrænn
+    //        HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: #facff5;", //breytti óvart
+      //      HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png",
+        //    TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
+    //private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
+    //private TimaController timaController = (TimaController) ViewSwitcher.lookup(View.TIMAMORK);
+    //private SkakController skakController= (SkakController) ViewSwitcher.lookup(View.SKAKSENA);
+//>>>>>>> Stashed changes
 
     public TopBarNode() {
         setMinHeight(TOP_BAR_HEIGHT);
@@ -86,7 +86,7 @@ public class TopBarNode extends Pane {
         Label title = new Label("Skák");
         title.setFont(new Font("Impact", 20));
         if(UpphafController.hallo==2){
-            TOP_BAR_STYLE="-fx-background-color: #facff5;"; //bleikur
+            TOP_BAR_STYLE="-fx-background-color: #70defa;"; //bleikur
             TITLE_COLOR = "-fx-text-fill: #70defa;"; //blar
             root.setStyle(TOP_BAR_STYLE);
             title.setStyle(TITLE_COLOR);
@@ -96,7 +96,7 @@ public class TopBarNode extends Pane {
             root.setStyle(TOP_BAR_STYLE);
             title.setStyle(TITLE_COLOR);
         } else if(UpphafController.hallo==3){
-        TOP_BAR_STYLE="-fx-background-color: #a6e2f7;";
+        TOP_BAR_STYLE="-fx-background-color: #faa12d;";
         TITLE_COLOR = "-fx-text-fill: #faa12d;";
         root.setStyle(TOP_BAR_STYLE);
         title.setStyle(TITLE_COLOR);}
@@ -109,7 +109,7 @@ public class TopBarNode extends Pane {
         buildSoundButton();
         getChildren().add(root);
         root.getChildren().add(homeButton);
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
         root.getChildren().add(soundButton);
         //Label title = new Label("Skák");
         //title.setFont(new Font("Impact", 20));
@@ -185,18 +185,18 @@ public class TopBarNode extends Pane {
             homeButton.getScene().getStylesheets().add(newStylesheet);
             selectedStylesheet = newStylesheet;
         }
-=======
+//=======
 
 
-        title.setAlignment(Pos.CENTER);
-        title.setTextAlignment(TextAlignment.CENTER);
-        title.minWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty().multiply(2)));
-        title.maxWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty().multiply(2)));
-        HBox.setHgrow(title, Priority.ALWAYS);
-        root.getChildren().add(title);
+        //title.setAlignment(Pos.CENTER);
+        //title.setTextAlignment(TextAlignment.CENTER);
+        //title.minWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty().multiply(2)));
+        //title.maxWidthProperty().bind(root.widthProperty().subtract(homeButton.widthProperty().multiply(2)));
+        //HBox.setHgrow(title, Priority.ALWAYS);
+        //root.getChildren().add(title);
         //Scene scene = new Scene(root);
        //scene.getStylesheets().add(getClass().getResource("/stylesheets/cottoncandy-styles.css").toExternalForm());
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     }
 
     private void buildHomeButton() {
@@ -216,12 +216,12 @@ public class TopBarNode extends Pane {
 
         homeButton.setOnMouseClicked(mouseEvent -> {
 
-<<<<<<< Updated upstream
-            Stage stage = (Stage) homeButton.getScene().getWindow();
-=======
+//<<<<<<< Updated upstream
+          //  Stage stage = (Stage) homeButton.getScene().getWindow();
+//=======
            // ViewSwitcher.switchTo(View.UPPHAFSSENA);
             Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
             if (!mouseEvent.isConsumed()) {
                 mouseEvent.consume();
@@ -238,15 +238,15 @@ public class TopBarNode extends Pane {
 
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == yesButton) {
-<<<<<<< Updated upstream
-=======
+//<<<<<<< Updated upstream
+//=======
                     homeButton.getScene().getStylesheets().clear();
                    //ViewSwitcher.switchTo(View.UPPHAFSSENA);
                     //skakController.setBot("");
 
 
-                  FXMLLoader loader = new FXMLLoader(getClass().getResource("/vidmot/upphaf-view.fxml"));
->>>>>>> Stashed changes
+                 // FXMLLoader loader = new FXMLLoader(getClass().getResource("/vidmot/upphaf-view.fxml"));
+//>>>>>>> Stashed changes
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/vidmot/upphaf-view.fxml"));
                         Parent root = loader.load();
@@ -254,14 +254,14 @@ public class TopBarNode extends Pane {
                         stage.setScene(scene);
                         isBot = 0;
                     } catch (IOException e) {
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
                         e.printStackTrace();
 
-=======
+//=======
                        e.printStackTrace();
-                    ViewSwitcher.switchTo(View.UPPHAFSSENA);
-                    timaController.setBot("");
->>>>>>> Stashed changes
+                    //ViewSwitcher.switchTo(View.UPPHAFSSENA);
+                    //timaController.setBot("");
+//>>>>>>> Stashed changes
                 }
             }}
 

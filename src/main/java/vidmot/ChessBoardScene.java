@@ -34,7 +34,7 @@ public class ChessBoardScene extends Scene {
         else if(UpphafController.hallo==1){
             root.setStyle("-fx-background-color: #d6d6d6;");}
         else if(UpphafController.hallo==3){
-            root.setStyle("-fx-background-color: #faa12d;");}
+            root.setStyle("-fx-background-color: #a6e2f7");}
     }
 
     private void constructSceneGraph(GameMediator gameMediator) {

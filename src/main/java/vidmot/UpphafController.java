@@ -29,14 +29,14 @@ public class UpphafController {
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
     public static String selectedStylesheet = "";
     private MediatorConstructionFlags constructionFlag;
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
     public static int isBot;
     private Stage stage;
     private Scene scene;
     private Parent root;
-=======
+//=======
     public static int hallo;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
     public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
         this.constructionFlag = constructionFlag;
@@ -101,7 +101,7 @@ public class UpphafController {
 
             alert.getButtonTypes().setAll(yesButton, noButton);
 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == yesButton) {
                 fxHomeButton.getScene().getStylesheets().clear();
@@ -115,17 +115,17 @@ public class UpphafController {
                     isBot = 0;
                 } catch (IOException e) {
                     e.printStackTrace();
-=======
-                Optional<ButtonType> result = alert.showAndWait();
+//=======
+               // Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == yesButton) {
                     fxHomeButton.getScene().getStylesheets().clear();
-                    ViewSwitcher.switchTo(View.UPPHAFSSENA);
-                    skakController.setBot(""); //á þetta að vera
->>>>>>> Stashed changes
+                //    ViewSwitcher.switchTo(View.UPPHAFSSENA);
+                  //  skakController.setBot(""); //á þetta að vera
+//>>>>>>> Stashed changes
                 }
             }
         }
-    }
+    }}
 
     public void fxClassicHandler(ActionEvent actionEvent) {
         hallo=1;
