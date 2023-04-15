@@ -40,10 +40,6 @@ public class UpphafController {
         this.constructionFlag = constructionFlag;
     }
 
-    public MediatorConstructionFlags getConstructionFlag() {
-        return constructionFlag;
-    }
-
     public void fxTolvaHandler(ActionEvent event) throws IOException {
         isBot = 1;
         root = FXMLLoader.load(getClass().getResource("/vidmot/erfidleika-view.fxml"));
@@ -52,7 +48,7 @@ public class UpphafController {
         scene.getStylesheets().add(selectedStylesheet);
         stage.setScene(scene);
         stage.show();
-        setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
+        setConstructionFlag(MediatorConstructionFlags.TIMED_AI);
     }
 
     public void fxLeikmadurHandler(ActionEvent event) throws IOException {
