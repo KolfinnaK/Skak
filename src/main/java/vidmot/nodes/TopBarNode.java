@@ -22,11 +22,18 @@ import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+<<<<<<< Updated upstream
 //<<<<<<< Updated upstream
 import vidmot.MediaManager;
 //=======
 import vidmot.*;
 //>>>>>>> Stashed changes
+=======
+
+import vidmot.MediaManager;
+
+import vidmot.*;
+>>>>>>> Stashed changes
 
 import java.io.IOException;
 
@@ -36,8 +43,13 @@ import static vidmot.UpphafController.isBot;
 
 
 public class TopBarNode extends Pane {
+<<<<<<< Updated upstream
 
     private HBox root;
+=======
+    private HBox root;
+    public UpphafController upphafController;
+>>>>>>> Stashed changes
     private Button homeButton;
     private Button soundButton;
     private MenuBar themeMenu;
@@ -45,12 +57,21 @@ public class TopBarNode extends Pane {
     private String selectedStylesheet = "";
     private static final int TOP_BAR_HEIGHT = 40;
     private static final int TOP_BAR_WIDTH = 618;
+<<<<<<< Updated upstream
     private static String TOP_BAR_STYLE = "-fx-background-color: #0f4519;"; //dökkgrænn
             private static final String HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: #d6d6d6;";
     private static final String HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png";
     private static final String PLAY_FILE_PATH = "file:./src/main/resources/vidmot/images/play.png";
     private static final String MUTE_FILE_PATH = "file:./src/main/resources/vidmot/images/mute.png";
     private static String TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
+=======
+    private static String TOP_BAR_STYLE = "-fx-background-color: #0f4519;", //dökkgrænn
+            HIGHLIGHTED_TOP_BAR_BUTTON_STYLE = "-fx-background-color: #d6d6d6;",
+            HOME_ICON_FILE_PATH = "file:./src/main/resources/vidmot/images/home_icon.png",
+            PLAY_FILE_PATH = "file:./src/main/resources/vidmot/images/play.png",
+            MUTE_FILE_PATH = "file:./src/main/resources/vidmot/images/mute.png",
+                    TITLE_COLOR = "-fx-text-fill: #d6d6d6;";
+>>>>>>> Stashed changes
     private static final Insets TOP_BAR_PADDING = new Insets(5, 5, 5, 5);
 
 
@@ -167,6 +188,7 @@ public class TopBarNode extends Pane {
             homeButton.getScene().getStylesheets().add(newStylesheet);
             selectedStylesheet = newStylesheet;
         }
+<<<<<<< Updated upstream
 //=======
 
 
@@ -179,6 +201,8 @@ public class TopBarNode extends Pane {
         //Scene scene = new Scene(root);
        //scene.getStylesheets().add(getClass().getResource("/stylesheets/cottoncandy-styles.css").toExternalForm());
 //>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     }
 
     private void buildHomeButton() {
@@ -198,7 +222,12 @@ public class TopBarNode extends Pane {
 
         homeButton.setOnMouseClicked(mouseEvent -> {
 
+<<<<<<< Updated upstream
             Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+=======
+            Stage stage = (Stage) homeButton.getScene().getWindow();
+
+>>>>>>> Stashed changes
             if (!mouseEvent.isConsumed()) {
                 mouseEvent.consume();
 
@@ -214,7 +243,10 @@ public class TopBarNode extends Pane {
 
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == yesButton) {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                     homeButton.getScene().getStylesheets().clear();
 
                     try {
@@ -224,8 +256,13 @@ public class TopBarNode extends Pane {
                         stage.setScene(scene);
                         isBot = 0;
                     } catch (IOException e) {
+<<<<<<< Updated upstream
                         e.printStackTrace();
 
+=======
+
+                        e.printStackTrace();
+>>>>>>> Stashed changes
                 }
             }}
 
