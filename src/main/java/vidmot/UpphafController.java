@@ -29,14 +29,12 @@ public class UpphafController {
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
     public static String selectedStylesheet = "";
     private MediatorConstructionFlags constructionFlag;
-//<<<<<<< Updated upstream
     public static int isBot;
     private Stage stage;
     private Scene scene;
     private Parent root;
-//=======
-    public static int hallo;
-//>>>>>>> Stashed changes
+    public static int thema;
+
 
     public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
         this.constructionFlag = constructionFlag;
@@ -94,14 +92,14 @@ public class UpphafController {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Ertu viss?");
             alert.setHeaderText(null);
-            alert.setContentText("Vilt þú fara til baka á upphafsskjá og hreinsa þema?");
+            alert.setContentText("Vilt þú fara til baka á upphafsskjá?");
 
             ButtonType yesButton = new ButtonType("Já", ButtonBar.ButtonData.OK_DONE);
             ButtonType noButton = new ButtonType("Nei", ButtonBar.ButtonData.CANCEL_CLOSE);
 
             alert.getButtonTypes().setAll(yesButton, noButton);
 
-//<<<<<<< Updated upstream
+
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == yesButton) {
                 fxHomeButton.getScene().getStylesheets().clear();
@@ -115,20 +113,17 @@ public class UpphafController {
                     isBot = 0;
                 } catch (IOException e) {
                     e.printStackTrace();
-//=======
-               // Optional<ButtonType> result = alert.showAndWait();
+
                 if (result.isPresent() && result.get() == yesButton) {
                     fxHomeButton.getScene().getStylesheets().clear();
-                //    ViewSwitcher.switchTo(View.UPPHAFSSENA);
-                  //  skakController.setBot(""); //á þetta að vera
-//>>>>>>> Stashed changes
+
                 }
             }
         }
     }}
 
     public void fxClassicHandler(ActionEvent actionEvent) {
-        hallo=1;
+        thema = 1;
         String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
@@ -139,7 +134,7 @@ public class UpphafController {
     }
 
     public void fxCottonCandyHandler(ActionEvent actionEvent) {
-        hallo=2;
+        thema = 2;
         String newStylesheet = getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
@@ -149,7 +144,7 @@ public class UpphafController {
     }
 
     public void fxTropicalHandler(ActionEvent actionEvent) {
-        hallo=3;
+        thema = 3;
         String newStylesheet = getClass().getResource("stylesheets/tropical-styles.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);

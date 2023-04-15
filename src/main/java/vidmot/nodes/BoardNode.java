@@ -1,5 +1,6 @@
 package vidmot.nodes;
 
+import vidmot.UpphafController;
 import vinnsla.util.Colors;
 import presenter.BoardPresenter;
 import vidmot.Observer;
@@ -27,7 +28,7 @@ public class BoardNode extends Pane implements Observer {
     private final String MESSAGE_FONT = "Impact";
     private TilePane board;
     private StackPane messageNode;
-    private static final Color MESSAGE_COLOR = new Color(0.631, 0.969, 0.561, 0.6);
+    private static Color MESSAGE_COLOR = new Color(0.631, 0.969, 0.561, 0.6);
     private BoardPresenter presenter;
 
     public BoardNode(BoardPresenter presenter) {
@@ -85,7 +86,17 @@ public class BoardNode extends Pane implements Observer {
         Rectangle background = new Rectangle();
 
         // build background for the message
-        background.setFill(MESSAGE_COLOR);
+        if(UpphafController.thema == 2){
+            MESSAGE_COLOR = new Color(0.961, 0.576, 0.953, 0.6);
+            background.setFill(MESSAGE_COLOR);
+        }
+        else if(UpphafController.thema == 3){
+            MESSAGE_COLOR = new Color(0.98, 0.63, 0.176, 0.6);
+            background.setFill(MESSAGE_COLOR);
+        }
+        else{
+            background.setFill(MESSAGE_COLOR);
+        }
         background.widthProperty().bind(root.widthProperty().divide(2));
         background.heightProperty().bind(root.heightProperty().divide(3));
 

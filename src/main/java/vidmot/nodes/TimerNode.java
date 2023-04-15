@@ -17,13 +17,15 @@ public class TimerNode extends StackPane {
 
     public TimerNode(TimerPresenter timerPresenter) {
         background = new Rectangle(80, 40);
-        if(UpphafController.hallo==2){
-            background.setFill(Color.LIGHTBLUE);
+        if(UpphafController.thema == 2){
+            background.setFill(new Color(0.439, 0.870, 0.98, 1.0));
         }
-        else if(UpphafController.hallo==1){
-            background.setFill(Color.DARKGREEN);
-        } else if(UpphafController.hallo==3){
-            background.setFill(Color.ORANGE);}
+        else if(UpphafController.thema == 1){
+            background.setFill(new Color(0.502,0.788, 0.443, 1.0));
+        }
+        else if(UpphafController.thema == 3){
+            background.setFill(Color.ORANGE);
+        }
         else background.setFill(new Color(146.0/255, 230.0/255, 129.0/255, 1.0));
         label = new Label();
         label.setFont(new Font("Impact", 20));
