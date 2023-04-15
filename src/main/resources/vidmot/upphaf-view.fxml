@@ -16,12 +16,12 @@
    <children>
       <Label layoutX="249.0" layoutY="99.0" text="Verið velkomin!" textAlignment="CENTER">
          <font>
-            <Font name="Impact" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <Label layoutX="157.0" layoutY="141.0" text="Viltu spila við tölvuna eða annan leikmann?">
          <font>
-            <Font name="Impact" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <Line endX="406.0" layoutX="212.0" layoutY="50.0" startX="-239.5" />
@@ -31,9 +31,9 @@
         <menus>
           <Menu fx:id="fxTheme" mnemonicParsing="false" text="Þema">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />
-                  <MenuItem mnemonicParsing="false" onAction="#fxCottonCandyHandler" text="Cotton candy" />
-                  <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Tropical" />
+              <MenuItem mnemonicParsing="false" text="Klassískt" onAction="#fxClassicHandler"/>
+                  <MenuItem mnemonicParsing="false" text="Cotton candy" onAction="#fxCottonCandyHandler" />
+                  <MenuItem mnemonicParsing="false" text="Tropical" onAction="#fxTropicalHandler" />
             </items>
           </Menu>
         </menus>
@@ -41,20 +41,23 @@
             <Insets left="-5.0" right="-5.0" />
          </padding>
       </MenuBar>
-      <Button fx:id="fxHljodtakki" layoutX="556.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
+      <Button fx:id="fxHljodtakki" layoutX="562.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" ">
+         <padding>
+            <Insets left="-5.0" top="-5.0" />
+         </padding></Button>
       <Button fx:id="fxTolva" layoutX="165.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxTolvaHandler" prefHeight="53.0" prefWidth="108.0" text="Tölva">
          <font>
-            <Font name="Impact" size="14.0" />
+            <Font size="14.0" />
          </font>
       </Button>
       <Button fx:id="fxLeikmadur" layoutX="341.0" layoutY="203.0" mnemonicParsing="false" onAction="#fxLeikmadurHandler" prefHeight="53.0" prefWidth="108.0" text="Tveir leikmenn">
          <font>
-            <Font name="Impact" size="14.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="275.0" layoutY="13.0" prefHeight="17.0" prefWidth="68.0" text="Skák" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="273.0" layoutY="16.0" prefHeight="17.0" prefWidth="68.0" text="Skák" textAlignment="CENTER">
          <font>
-            <Font name="Impact" size="26.0" />
+            <Font size="18.0" />
          </font>
       </Label>
       <ImageView fitHeight="208.0" fitWidth="246.0" layoutX="14.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
