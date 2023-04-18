@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.ChessBoardScene" />
+<VBox alignment="TOP_CENTER" minHeight="530.0" minWidth="700.0" prefHeight="530.0" prefWidth="700.0" stylesheets="@stylesheets/cloud-styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
+   <children>
+      <AnchorPane maxHeight="30.0" maxWidth="1050.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" styleClass="fxtitleBar" VBox.vgrow="ALWAYS">
+         <children>
+            <MenuButton alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="457.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" styleClass="fxthemeMenu" text="Þemar" textAlignment="CENTER" textFill="#4d4d4d" AnchorPane.rightAnchor="150.0">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Cloudy" />
+                  <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />
+                  <MenuItem mnemonicParsing="false" onAction="#fxCottonCandyHandler" text="Cotton candy" />
+                  <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Tropical" />
+               </items>
+               <font>
+                  <Font name="Trebuchet MS Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="CLOSED_HAND" />
+               </cursor>
+            </MenuButton>
+            <ToggleButton fx:id="fxFullscreenButton" alignment="CENTER_RIGHT" layoutX="600.0" mnemonicParsing="false" onAction="#fxFullscreenButtonHandler" prefHeight="30.0" prefWidth="50.0" styleClass="fxfullscreenButton" AnchorPane.rightAnchor="50.0" />
+            <Button alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false" onAction="#fxMinimizeButtonHandler" prefHeight="30.0" prefWidth="50.0" styleClass="fxminimizeButton" AnchorPane.rightAnchor="100.0" />
+            <Button alignment="CENTER_RIGHT" layoutX="650.0" mnemonicParsing="false" onAction="#fxCloseButtonHandler" prefHeight="30.0" prefWidth="50.0" styleClass="fxcloseButton" AnchorPane.rightAnchor="0.0" />
+            <Label layoutX="40.0" prefHeight="30.0" prefWidth="93.0" text="Skák &amp; Mát" textFill="#ccc9c6">
+               <font>
+                  <Font name="Trebuchet MS" size="18.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="30.0" prefWidth="30.0" styleClass="fxpedIcon" />
+         </children>
+      </AnchorPane>
+      <AnchorPane id="fxTopBar" fx:id="fxTopBar" maxHeight="76.0" maxWidth="1050.0" minHeight="76.0" minWidth="700.0" prefHeight="76.0" prefWidth="700.0" styleClass="fxTopBar" VBox.vgrow="ALWAYS">
+         <children>
+            <Label alignment="CENTER" cacheShape="false" contentDisplay="CENTER" layoutX="460.0" layoutY="11.0" prefHeight="54.0" prefWidth="200.0" styleClass="fxTopBarLogo" text="Skák &amp; Mát" textAlignment="CENTER" textFill="#1a4e66" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="460.0" AnchorPane.rightAnchor="40.0">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="35.0" />
+               </font>
+            </Label>
+            <ToggleButton fx:id="fxHljodtakkiToggle" alignment="CENTER_RIGHT" cache="true" cacheHint="QUALITY" layoutX="82.0" layoutY="8.0" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxTopBarHljod" AnchorPane.topAnchor="8.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ToggleButton>
+            <Button fx:id="fxHomeButton" cancelButton="true" contentDisplay="CENTER" layoutX="24.0" layoutY="8.0" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxheimaTakki" text=" " AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="8.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

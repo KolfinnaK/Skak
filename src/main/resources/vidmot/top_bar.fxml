@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root fx:id="fxTopBar" maxHeight="114.0" maxWidth="1050.0" minHeight="76.0" minWidth="700.0" prefHeight="76.0" prefWidth="700.0" styleClass="fxTopBar" stylesheets="@stylesheets/cloud-styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.nodes.TopBarNode">
+    <children>
+        <Label alignment="CENTER" cacheShape="false" contentDisplay="CENTER" layoutX="467.0" layoutY="10.0" prefHeight="56.0" prefWidth="200.0" styleClass="fxTopBarLogo" text="Skák &amp; Mát" textAlignment="CENTER" textFill="#1a4e66">
+            <font>
+                <Font name="Trebuchet MS Bold" size="35.0" />
+            </font>
+        </Label>
+        <ToggleButton alignment="CENTER_LEFT" cache="true" cacheHint="QUALITY" layoutX="80.0" layoutY="10.0" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxTopBarHljod">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </ToggleButton>
+        <Button cancelButton="true" contentDisplay="CENTER" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#fxHeimTakkiHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxheimaTakki" text=" " />
+    </children>
+   <padding>
+      <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+   </padding>
+</fx:root>

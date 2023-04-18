@@ -1,40 +1,42 @@
 package vidmot;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-
-
-import presenter.GameMediator;
+import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import presenter.GameMediator;
 import vidmot.nodes.GameNode;
 import vidmot.nodes.TopBarNode;
 
-public class ChessBoardScene extends Scene {
-    private VBox root;
+public class ChessBoardScene extends AnchorPane {
     private TopBarNode topBar;
+    @FXML
+    private AnchorPane root;
     private Pane game;
 
-    public ChessBoardScene(double width, double height, GameMediator gameMediator) {
-        super(new VBox(), width, height);
+
+    public ChessBoardScene(GameMediator gameMediator) {
+        super(new AnchorPane());
         initializeComponents();
         constructSceneGraph(gameMediator);
         buildComponents();
     }
 
-    private void initializeComponents() {
-        root = (VBox) getRoot();
-        topBar = new TopBarNode();
-        topBar.getStylesheets().add(UpphafController.selectedStylesheet);
-        topBar.minWidthProperty().bind(widthProperty());
-        topBar.maxWidthProperty().bind(widthProperty());
-        topBar.setMaxHeight(40);
-        topBar.setMinHeight(40);
+    private void initializeComponents(){
+        root = new AnchorPane();
+
     }
 
     private void constructSceneGraph(GameMediator gameMediator) {
         game = new GameNode(gameMediator);
-        root.getChildren().addAll(topBar, game);
+        root.getChildren().add(game);
+        AnchorPane.setTopAnchor(game, 0.0);
+        AnchorPane.setBottomAnchor(game, 0.0);
+        AnchorPane.setLeftAnchor(game, 0.0);
+        AnchorPane.setRightAnchor(game, 0.0);
     }
 
     private void buildComponents() {
@@ -42,8 +44,7 @@ public class ChessBoardScene extends Scene {
     }
 
     private void buildBoardComponent() {
-        VBox parent = (VBox) game.getParent();
-        VBox.setVgrow(game, Priority.ALWAYS);
+        AnchorPane parent = (AnchorPane) game.getParent();
         game.minWidthProperty().bind(parent.widthProperty());
         game.maxWidthProperty().bind(parent.widthProperty());
     }

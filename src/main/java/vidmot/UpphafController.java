@@ -1,17 +1,14 @@
 package vidmot;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import presenter.MediatorConstructionFlags;
@@ -19,20 +16,27 @@ import presenter.MediatorConstructionFlags;
 import java.io.IOException;
 import java.util.Optional;
 
-public class UpphafController {
+public class UpphafController  {
 
     @FXML
     private Button fxHomeButton;
     @FXML
-    private Button fxHljodtakki;
+    private ToggleButton fxHljodtakkiToggle;
+    @FXML
+    private ToggleButton fxFullscreenButton;
 
+
+
+    private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
+    private double xOffset = 0.0, yOffset = 0.0;
     private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
-    public static String selectedStylesheet =  UpphafController.class.getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
+    public static String selectedStylesheet =  UpphafController.class.getResource("stylesheets/cloud-styles.css").toExternalForm();
     private MediatorConstructionFlags constructionFlag;
     public static int isBot;
     private Stage stage;
     private Scene scene;
     private Parent root;
+
 
     public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
         this.constructionFlag = constructionFlag;
@@ -40,6 +44,27 @@ public class UpphafController {
 
     public MediatorConstructionFlags getConstructionFlag() {
         return constructionFlag;
+    }
+    public void fxMinimizeButtonHandler(ActionEvent event){
+        Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene.setIconified(true);
+    }
+    public void fxFullscreenButtonHandler(ActionEvent event){
+        Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        if (scene.getWidth() == MAX_WIDTH && scene.getHeight() == MAX_HEIGHT){
+            scene.setWidth(MIN_WIDTH);
+            scene.setHeight(MIN_HEIGHT);
+            fxFullscreenButton.setSelected(false);
+        } else {
+            scene.setWidth(MAX_WIDTH);
+            scene.setHeight(MAX_HEIGHT);
+            fxFullscreenButton.setSelected(true);
+        }
+    }
+
+    public void fxCloseButtonHandler(ActionEvent event){
+        Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene.close();
     }
 
     public void fxTolvaHandler(ActionEvent event) throws IOException {
@@ -67,19 +92,6 @@ public class UpphafController {
 
         mediaPlayer.setMute(!mediaPlayer.isMute());
 
-        ImageView image;
-        if (mediaPlayer.isMute()) {
-            image = new ImageView(getClass().getResource("images/mute.png").toExternalForm());
-            image.setFitHeight(30);
-            image.setFitWidth(25);
-            image.setPreserveRatio(true);
-        } else {
-            image = new ImageView(getClass().getResource("images/play.png").toExternalForm());
-            image.setFitHeight(30);
-            image.setFitWidth(25);
-            image.setPreserveRatio(true);
-        }
-        fxHljodtakki.setGraphic(image);
     }
 
     public void fxHomeButtonHandler(ActionEvent actionEvent) {
@@ -107,6 +119,7 @@ public class UpphafController {
                     stage.setScene(scene);
                     stage.show();
                     isBot = 0;
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -116,6 +129,15 @@ public class UpphafController {
 
     public void fxClassicHandler(ActionEvent actionEvent) {
         String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();
+        if (!selectedStylesheet.equals(newStylesheet)) {
+            fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
+            fxHomeButton.getScene().getStylesheets().add(newStylesheet);
+            selectedStylesheet = newStylesheet;
+
+        }
+    }
+    public void fxCloudHandler(ActionEvent actionEvent) {
+        String newStylesheet = getClass().getResource("stylesheets/cloud-styles.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
             fxHomeButton.getScene().getStylesheets().add(newStylesheet);
@@ -143,19 +165,11 @@ public class UpphafController {
     }
 
     public void initialize() {
+
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
-        ImageView homeIcon = new ImageView(new Image(getClass().getResource("images/home_icon.png").toExternalForm()));
-        homeIcon.setFitWidth(30);
-        homeIcon.setFitHeight(25);
-        homeIcon.setPreserveRatio(true);
-        fxHomeButton.setGraphic(homeIcon);
-
-        ImageView playIcon = new ImageView(new Image(getClass().getResource("images/play.png").toExternalForm()));
-        playIcon.setFitHeight(30);
-        playIcon.setFitWidth(25);
-        playIcon.setPreserveRatio(true);
-        fxHljodtakki.setGraphic(playIcon);
-
         mediaPlayer.setAutoPlay(true);
+        if (mediaPlayer.isMute()){
+            fxHljodtakkiToggle.setSelected(true);
+        }
     }
 }

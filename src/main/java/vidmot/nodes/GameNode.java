@@ -26,6 +26,7 @@ public class GameNode extends Pane {
         build();
     }
 
+
     public void build() {
         root = new HBox();
         getChildren().add(root);
@@ -41,7 +42,7 @@ public class GameNode extends Pane {
 
         infoBox = new VBox();
         root.getChildren().add(infoBox);
-        PlayerInfoNode blackPlayerInfoNode = new PlayerInfoNode(blackTimer, "Leikmaður 2");
+        PlayerInfoNode blackPlayerInfoNode = new PlayerInfoNode(blackTimer, "Player 2");
         blackPlayerInfoNode.minWidthProperty().bind(infoBox.widthProperty());
         blackPlayerInfoNode.maxWidthProperty().bind(infoBox.widthProperty());
         blackPlayerInfoNode.minHeightProperty().bind(infoBox.heightProperty().divide(5));
@@ -50,7 +51,7 @@ public class GameNode extends Pane {
         infoBox.getChildren().add(notationNode);
         notationNode.minWidthProperty().bind(infoBox.widthProperty().multiply(4.0 / 5));
         notationNode.maxWidthProperty().bind(infoBox.widthProperty().multiply(4.0 / 5));
-        PlayerInfoNode whitePlayerInfoNode = new PlayerInfoNode(whiteTimer, "Leikmaður 1");
+        PlayerInfoNode whitePlayerInfoNode = new PlayerInfoNode(whiteTimer, "Player 1");
         whitePlayerInfoNode.minWidthProperty().bind(infoBox.widthProperty());
         whitePlayerInfoNode.maxWidthProperty().bind(infoBox.widthProperty());
         whitePlayerInfoNode.minHeightProperty().bind(infoBox.heightProperty().divide(5));
@@ -67,3 +68,4 @@ public class GameNode extends Pane {
         HBox.setHgrow(board, Priority.ALWAYS);
     }
 }
+
