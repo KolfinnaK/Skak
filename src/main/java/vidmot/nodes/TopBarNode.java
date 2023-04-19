@@ -30,13 +30,9 @@ public class TopBarNode extends HBox {
     private HBox root;
     private Button fxHeimaTakki;
     private ToggleButton fxHljodtakkiToggle;
-
     private HBox fxTakkaGeymsla;
-
     private Pane fxTitleLBarLogo;
-
     private double xOffset = 0.0, yOffset = 0.0;
-
     private final MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
 
 

@@ -22,14 +22,10 @@ import vidmot.nodes.TopBarNode;
 
 public class ChessBoardScene extends Scene {
     private TopBarNode topBar;
-
     private TitleBarNode titleBar;
-
     private VBox root;
     private Pane game;
-
     private double xOffset = 0.0, yOffset = 0.0;
-
 
 
     public ChessBoardScene(GameMediator gameMediator) {

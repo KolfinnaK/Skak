@@ -17,6 +17,16 @@ import presenter.MediatorConstructionFlags;
 import java.io.IOException;
 import java.util.Optional;
 
+/****************************************************************************************************************************
+ * Lýsing: Controller klasi fyrir upphafssenuna sem inniheldur handlera fyrir takkana í senunni
+ * og einnig fyrir þema menuinn.
+ *
+ *
+ *
+ *
+ *
+ *****************************************************************************************************************************/
+
 public class UpphafController  {
 
     @FXML
@@ -46,6 +56,7 @@ public class UpphafController  {
     public MediatorConstructionFlags getConstructionFlag() {
         return constructionFlag;
     }
+
     public void fxMinimizeButtonHandler(ActionEvent event){
         Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene.setIconified(true);

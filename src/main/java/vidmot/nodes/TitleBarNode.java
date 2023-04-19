@@ -37,34 +37,23 @@ import java.util.Optional;
 public class TitleBarNode extends AnchorPane{
     private AnchorPane root;
     private Pane fxTitleLBarLogo;
-
     private  Label fxTitleLBarText;
-
     private MenuButton fxTitleLBarMenu;
-
     private Button fxTitleLBarClose;
-
     private ToggleButton fxTitleLBarFullScreen;
-
     private Button fxTitleLBarMinimize;
-
     private static final int HEIGHT = 30, MAX_WIDTH = 1050, MIN_WIDTH = 700;
-
     private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 18);
 
 
     public TitleBarNode() {
-
         root = new AnchorPane();
         root.setPrefSize(700, 30);
-
-
         //build buttons
         buildCloseButton();
         buildFullScreenButton();
         buildMinimizeButton();
         buildThemeMenu();
-
 
         getChildren().add(root);
         root.getChildren().add(fxTitleLBarMenu);
