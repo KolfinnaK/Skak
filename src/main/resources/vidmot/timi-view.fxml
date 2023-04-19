@@ -1,66 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
+<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" stylesheets="@stylesheets/cloud-styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
     <children>
-        <Label layoutX="212.0" layoutY="139.0" text="Hversu mikinn tíma viltu? ">
-            <font>
-                <Font name="Impact" size="18.0" />
-            </font>
-        </Label>
-        <Line endX="401.0" layoutX="212.0" layoutY="50.0" startX="-239.5" />
-        <Button fx:id="fxHomeButton" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
-        <MenuBar layoutX="80.0" layoutY="13.0" minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="28.0" prefWidth="43.0">
-
-            <menus>
-                <Menu fx:id="fxTheme" mnemonicParsing="false" text="Þema">
+        <AnchorPane fx:id="fxtitleBar" maxHeight="30.0" maxWidth="1050.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" styleClass="fxtitleBar" VBox.vgrow="NEVER">
+            <children>
+                <MenuButton alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="457.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" styleClass="fxthemeMenu" text="Þemar" textAlignment="CENTER" textFill="#4d4d4d" AnchorPane.rightAnchor="150.0">
                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Cloudy" />
                         <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />
                         <MenuItem mnemonicParsing="false" onAction="#fxCottonCandyHandler" text="Cotton candy" />
                         <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Tropical" />
                     </items>
-                </Menu>
-            </menus>
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                    </cursor>
+                </MenuButton>
+                <ToggleButton fx:id="fxFullscreenButton" alignment="CENTER_RIGHT" layoutX="600.0" mnemonicParsing="false" onAction="#fxFullscreenButtonHandler" prefHeight="30.0" prefWidth="50.0" styleClass="fxfullscreenButton" AnchorPane.rightAnchor="50.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></ToggleButton>
+                <Button alignment="CENTER_RIGHT" layoutX="550.0" mnemonicParsing="false" onAction="#fxMinimizeButtonHandler" prefHeight="30.0" prefWidth="50.0" styleClass="fxminimizeButton" AnchorPane.rightAnchor="100.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></Button>
+                <Button alignment="CENTER_RIGHT" layoutX="650.0" mnemonicParsing="false" onAction="#fxCloseButtonHandler" prefHeight="30.0" prefWidth="50.0" styleClass="fxcloseButton" AnchorPane.rightAnchor="0.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor></Button>
+                <Label layoutX="40.0" prefHeight="30.0" prefWidth="93.0" text="Skák &amp; Mát" textFill="#ccc9c6">
+                    <font>
+                        <Font name="Trebuchet MS" size="18.0" />
+                    </font>
+                </Label>
+                <Pane cacheShape="false" prefHeight="30.0" prefWidth="30.0" styleClass="fxpedIcon" />
+            </children>
+        </AnchorPane>
+        <HBox alignment="CENTER_RIGHT" maxHeight="114.0" maxWidth="1050.0" minHeight="76.0" minWidth="700.0" prefHeight="76.0" styleClass="fxTopBar" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="404.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="fxHomeButton" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxheimaTakki" text=" ">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <ToggleButton fx:id="fxHljodtakkiToggle" cacheHint="QUALITY" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxTopBarHljod">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ToggleButton>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="15.0" />
+                    </padding>
+                </HBox>
+                <Pane prefHeight="53.0" prefWidth="155.0" styleClass="fxTopBarLogo" HBox.hgrow="ALWAYS" />
+            </children>
             <padding>
-                <Insets left="-5.0" right="-5.0" />
+                <Insets bottom="20.0" right="20.0" top="8.0" />
             </padding>
-        </MenuBar>
-        <Button fx:id="fxHljodtakki" layoutX="556.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="34.0" prefWidth="43.0" text=" " />
-        <Button fx:id="fx1min" layoutX="147.0" layoutY="202.0" mnemonicParsing="false" onAction="#fx1minHandler" prefHeight="42.0" prefWidth="65.0" text="1 mín">
-            <font>
-                <Font name="Impact" size="14.0" />
-            </font>
-        </Button>
-        <Button fx:id="fx3min" layoutX="234.0" layoutY="202.0" mnemonicParsing="false" onAction="#fx3minHandler" prefHeight="42.0" prefWidth="65.0" text="3 mín">
-            <font>
-                <Font name="Impact" size="14.0" />
-            </font>
-        </Button>
-        <Label alignment="CENTER" layoutX="273.0" layoutY="16.0" prefHeight="17.0" prefWidth="68.0" text="Skák" textAlignment="CENTER">
-            <font>
-                <Font name="Impact" size="18.0" />
-            </font>
-        </Label>
-      <Button fx:id="fx5min" layoutX="318.0" layoutY="202.0" mnemonicParsing="false" onAction="#fx5minHandler" prefHeight="42.0" prefWidth="65.0" text="5 mín">
-         <font>
-            <Font name="Impact" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="fx10min" layoutX="403.0" layoutY="202.0" mnemonicParsing="false" onAction="#fx10minHandler" prefHeight="42.0" prefWidth="65.0" text="10 mín">
-         <font>
-            <Font name="Impact" size="14.0" />
-         </font>
-      </Button>
+        </HBox>
+      <VBox alignment="TOP_CENTER" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" VBox.vgrow="ALWAYS">
+         <children>
+                <Label contentDisplay="RIGHT" lineSpacing="20.0" maxHeight="152.0" maxWidth="361.0" minHeight="42.0" minWidth="225.0" prefHeight="69.0" prefWidth="361.0" scaleShape="false" styleClass="fxmainMenuTexti" text="Hversu langan leik?" textFill="#3b3b3b" wrapText="true">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="38.0" />
+                    </font>
+                </Label>
+            <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="132.0" prefWidth="700.0" spacing="28.0" VBox.vgrow="NEVER">
+               <children>
+                      <Button fx:id="fx1min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fx1minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="1 mín" textFill="WHITE">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                      <Button fx:id="fx3min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fx3minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="3 mín" textFill="WHITE">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                      <Button fx:id="fx5min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fx5minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="5 mín" textFill="WHITE">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                      <Button fx:id="fx10min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#fx10minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="10 mín" textFill="WHITE">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="70.0" />
+         </padding>
+      </VBox>
     </children>
-</AnchorPane>
+</VBox>

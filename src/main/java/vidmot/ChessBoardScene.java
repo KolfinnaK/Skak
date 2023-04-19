@@ -1,42 +1,53 @@
 package vidmot;
 
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import presenter.GameMediator;
 import vidmot.nodes.GameNode;
+import vidmot.nodes.TitleBarNode;
 import vidmot.nodes.TopBarNode;
 
-public class ChessBoardScene extends AnchorPane {
+public class ChessBoardScene extends Scene {
     private TopBarNode topBar;
-    @FXML
-    private AnchorPane root;
+
+    private TitleBarNode titleBar;
+
+    private VBox root;
     private Pane game;
 
 
-    public ChessBoardScene(GameMediator gameMediator) {
-        super(new AnchorPane());
+    public ChessBoardScene(double width, double height, GameMediator gameMediator) {
+        super(new VBox(), width, height);
         initializeComponents();
         constructSceneGraph(gameMediator);
         buildComponents();
     }
 
     private void initializeComponents(){
-        root = new AnchorPane();
+        root = (VBox) getRoot();
+        root.getStylesheets().add(UpphafController.class.getResource("stylesheets/cloud-styles.css").toExternalForm());
+        titleBar = new TitleBarNode();
+        topBar = new TopBarNode();
+        VBox.setVgrow(topBar, Priority.ALWAYS);
+        topBar.getStyleClass().add("fxTopBar");
+        titleBar.getStyleClass().add("fxtitleBar");
 
     }
 
     private void constructSceneGraph(GameMediator gameMediator) {
         game = new GameNode(gameMediator);
-        root.getChildren().add(game);
-        AnchorPane.setTopAnchor(game, 0.0);
-        AnchorPane.setBottomAnchor(game, 0.0);
-        AnchorPane.setLeftAnchor(game, 0.0);
-        AnchorPane.setRightAnchor(game, 0.0);
+        root.getChildren().addAll(titleBar, topBar, game);
+
     }
 
     private void buildComponents() {
@@ -44,8 +55,11 @@ public class ChessBoardScene extends AnchorPane {
     }
 
     private void buildBoardComponent() {
-        AnchorPane parent = (AnchorPane) game.getParent();
+        VBox parent = (VBox) game.getParent();
+        VBox.setVgrow(game, Priority.ALWAYS);
         game.minWidthProperty().bind(parent.widthProperty());
-        game.maxWidthProperty().bind(parent.widthProperty());
+        game.minWidthProperty().bind(parent.widthProperty());
+        game.setMinHeight(424);
+        game.setMaxHeight(636);
     }
 }

@@ -120,24 +120,14 @@ public class TimaController extends UpphafController {
         duration = 600000;
 
         if(bot == null) {
-            root = FXMLLoader.load(getClass().getResource("/vidmot/Skaksena-view.fxml"));
-            stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            scene.getStylesheets().add(selectedStylesheet);
-            stage.setScene(scene);
-            stage.show();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
         }
         else{
-            Scene chessBoardScene = new ChessBoardScene(MIN_WIDTH, 500, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
-            root = FXMLLoader.load(getClass().getResource("/vidmot/Skaksena-view.fxml"));
-
-            stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            root.getChildrenUnmodifiable().add(chessBoardScene);
-            scene = new Scene(root);
-            scene.getStylesheets().add(selectedStylesheet);
-            stage.setScene(scene);
-            stage.show();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
         }
+
 
     }
 
