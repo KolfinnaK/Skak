@@ -26,8 +26,8 @@ public class ChessBoardScene extends Scene {
     private Pane game;
 
 
-    public ChessBoardScene(double width, double height, GameMediator gameMediator) {
-        super(new VBox(), width, height);
+    public ChessBoardScene(GameMediator gameMediator) {
+        super(new VBox());
         initializeComponents();
         constructSceneGraph(gameMediator);
         buildComponents();
@@ -37,6 +37,7 @@ public class ChessBoardScene extends Scene {
         root = (VBox) getRoot();
         root.getStylesheets().add(UpphafController.class.getResource("stylesheets/cloud-styles.css").toExternalForm());
         titleBar = new TitleBarNode();
+        VBox.setVgrow(titleBar, Priority.NEVER);
         topBar = new TopBarNode();
         VBox.setVgrow(topBar, Priority.ALWAYS);
         topBar.getStyleClass().add("fxTopBar");

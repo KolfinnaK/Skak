@@ -145,6 +145,7 @@ public class TileNode extends StackPane implements Observer {
         getChildren().remove(imageView);
         addImageView();
         imageView.setImage(getImage(tilePresenter.getPiece()));
-        setStyle(style);
+        getStyleClass().clear();
+        getStyleClass().add(style);
     }
 }

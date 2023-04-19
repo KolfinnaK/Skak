@@ -23,6 +23,8 @@ public class GameNode extends Pane {
         whiteTimer = new TimerNode(gameMediator.getWhiteTimerPresenter());
         blackTimer = new TimerNode(gameMediator.getBlackTimerPresenter());
         notationNode = new NotationNode(gameMediator.getGameNotationPresenter());
+        blackTimer.getStyleClass().add("fxTimerBackground");
+        whiteTimer.getStyleClass().add("fxTimerBackground");
         build();
     }
 
@@ -42,20 +44,20 @@ public class GameNode extends Pane {
 
         infoBox = new VBox();
         root.getChildren().add(infoBox);
-        PlayerInfoNode blackPlayerInfoNode = new PlayerInfoNode(blackTimer, "Player 2");
-        blackPlayerInfoNode.minWidthProperty().bind(infoBox.widthProperty());
-        blackPlayerInfoNode.maxWidthProperty().bind(infoBox.widthProperty());
-        blackPlayerInfoNode.minHeightProperty().bind(infoBox.heightProperty().divide(5));
-        blackPlayerInfoNode.maxHeightProperty().bind(infoBox.heightProperty().divide(5));
+        PlayerInfoNode blackPlayerInfoNode = new PlayerInfoNode(blackTimer, "Svartur");
+        blackPlayerInfoNode.minWidthProperty().bind(infoBox.widthProperty().multiply(0.975));
+        blackPlayerInfoNode.maxWidthProperty().bind(infoBox.widthProperty().multiply(0.975));
+        blackPlayerInfoNode.minHeightProperty().bind(infoBox.heightProperty().divide(8));
+        blackPlayerInfoNode.maxHeightProperty().bind(infoBox.heightProperty().divide(8));
         infoBox.getChildren().add(blackPlayerInfoNode);
         infoBox.getChildren().add(notationNode);
         notationNode.minWidthProperty().bind(infoBox.widthProperty().multiply(4.0 / 5));
         notationNode.maxWidthProperty().bind(infoBox.widthProperty().multiply(4.0 / 5));
-        PlayerInfoNode whitePlayerInfoNode = new PlayerInfoNode(whiteTimer, "Player 1");
-        whitePlayerInfoNode.minWidthProperty().bind(infoBox.widthProperty());
-        whitePlayerInfoNode.maxWidthProperty().bind(infoBox.widthProperty());
-        whitePlayerInfoNode.minHeightProperty().bind(infoBox.heightProperty().divide(5));
-        whitePlayerInfoNode.maxHeightProperty().bind(infoBox.heightProperty().divide(5));
+        PlayerInfoNode whitePlayerInfoNode = new PlayerInfoNode(whiteTimer, "Hvítur");
+        whitePlayerInfoNode.minWidthProperty().bind(infoBox.widthProperty().multiply(1.012));
+        whitePlayerInfoNode.maxWidthProperty().bind(infoBox.widthProperty().multiply(1.012));
+        whitePlayerInfoNode.minHeightProperty().bind(infoBox.heightProperty().divide(8));
+        whitePlayerInfoNode.maxHeightProperty().bind(infoBox.heightProperty().divide(8));
         infoBox.getChildren().add(whitePlayerInfoNode);
         infoBox.minHeightProperty().bind(root.heightProperty());
         infoBox.maxHeightProperty().bind(root.heightProperty());

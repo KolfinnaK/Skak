@@ -152,4 +152,25 @@
 .fxaudveltTakki:pressed{
     -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
 }
-
+.fxTimerBackground{
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-size: 80%, 80%;
+}
+.fxTimerBackground2{
+    -fx-background-color: #71a7ad; //ljósblár
+}
+.fxSelectedPiece{
+    -fx-background-color: #659499; //gulur
+}
+.fxMogulegtMoveDokkur{
+    -fx-background-color: #76ACB3; //gulur
+}
+.fxSvarturReitur{
+    -fx-background-color: #FFE38E; //gulur
+}
+.fxMogulegtcMoveLjos{
+    -fx-background-color: #91D5DD; //gulur
+}
+.fxHviturReitur{
+    -fx-background-color: #FFFFFF; //hvítur
+}

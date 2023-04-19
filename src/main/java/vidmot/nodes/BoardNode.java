@@ -1,5 +1,7 @@
 package vidmot.nodes;
 
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import vinnsla.util.Colors;
 import presenter.BoardPresenter;
 import vidmot.Observer;
@@ -24,10 +26,11 @@ import javafx.util.Duration;
 public class BoardNode extends Pane implements Observer {
     private StackPane root;
     private static final double BOARD_PADDING_PERCENTAGE = 0.1;
-    private final String MESSAGE_FONT = "Impact";
     private TilePane board;
     private StackPane messageNode;
     private static final Color MESSAGE_COLOR = new Color(0.631, 0.969, 0.561, 0.6);
+
+    private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 50);
     private BoardPresenter presenter;
 
     public BoardNode(BoardPresenter presenter) {
@@ -91,7 +94,7 @@ public class BoardNode extends Pane implements Observer {
 
         // build the message itself
         Label label = new Label(message);
-        label.setStyle("-fx-font-size: " + 50 + "; -fx-font-family: " + MESSAGE_FONT + ";");
+        label.setFont(font);
         background.widthProperty().bind(label.widthProperty().add(50));
         background.heightProperty().bind(label.heightProperty().add(50));
         label.setAlignment(Pos.CENTER);

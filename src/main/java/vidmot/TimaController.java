@@ -27,7 +27,7 @@ public class TimaController extends UpphafController {
     private Button fxHljodtakki;
     public static int timiEftirShared;
     public static int timiEftir2Shared;
-    private static final int MIN_HEIGHT = 530, MIN_WIDTH = 700;
+    private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
     private int duration;
     public static String bot;
     private Stage stage;
@@ -73,11 +73,11 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
         }
 
     }
@@ -89,11 +89,11 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration, bot)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration, bot)));
         }
 
     }
@@ -105,11 +105,11 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
         }
 
     }
@@ -121,11 +121,16 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(MIN_WIDTH, MIN_HEIGHT, new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
+            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
+            stage.setMinWidth(MIN_WIDTH);
+            stage.setMinHeight(MIN_HEIGHT);
+            stage.setMaxHeight(MAX_HEIGHT);
+            stage.setMaxWidth(MAX_WIDTH);
+            stage.show();
         }
 
 

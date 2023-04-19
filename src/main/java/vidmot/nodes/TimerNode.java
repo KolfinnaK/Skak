@@ -1,5 +1,7 @@
 package vidmot.nodes;
 
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import presenter.TimerPresenter;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Label;
@@ -14,11 +16,15 @@ public class TimerNode extends StackPane {
     private TimerPresenter timerPresenter;
     private Label label;
 
+    private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 35);
+
     public TimerNode(TimerPresenter timerPresenter) {
         background = new Rectangle(80, 40);
-        background.setFill(new Color(146.0/255, 230.0/255, 129.0/255, 1.0));
+        background.setFill(Color.rgb(0, 0, 0, 0.0));
+        background.getStyleClass().add("fxTimerBackground");
         label = new Label();
-        label.setFont(new Font("Impact", 20));
+        label.setFont(font);
+
         this.timerPresenter = timerPresenter;
         timer = new AnimationTimer() {
             @Override
