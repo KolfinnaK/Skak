@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -73,6 +74,7 @@ public class UpphafController  {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
+        addDraggableNode(root);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
@@ -83,9 +85,33 @@ public class UpphafController  {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
+        addDraggableNode(root);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
+    }
+
+    void addDraggableNode(final Node node) {
+
+        node.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent me) {
+                if (me.getButton() != MouseButton.MIDDLE) {
+                    xOffset = me.getSceneX();
+                    yOffset = me.getSceneY();
+                }
+            }
+        });
+
+        node.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent me) {
+                if (me.getButton() != MouseButton.MIDDLE) {
+                    node.getScene().getWindow().setX(me.getScreenX() - xOffset);
+                    node.getScene().getWindow().setY(me.getScreenY() - yOffset);
+                }
+            }
+        });
     }
 
     public void fxHljodtakkiHandler(ActionEvent actionEvent) {
@@ -116,6 +142,7 @@ public class UpphafController  {
                     stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     scene.getStylesheets().add(selectedStylesheet);
+                    addDraggableNode(root);
                     stage.setScene(scene);
                     stage.show();
                     isBot = 0;

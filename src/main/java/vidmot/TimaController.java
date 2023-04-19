@@ -44,6 +44,7 @@ public class TimaController extends UpphafController {
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
+        addDraggableNode(root);
         stage.setScene(scene);
         stage.show();
 
@@ -56,6 +57,7 @@ public class TimaController extends UpphafController {
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
+        addDraggableNode(root);
         stage.setScene(scene);
         stage.show();
     }

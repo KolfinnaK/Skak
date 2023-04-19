@@ -1,5 +1,6 @@
 package vidmot.nodes;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -7,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
@@ -31,7 +34,8 @@ public class TopBarNode extends HBox {
     private HBox fxTakkaGeymsla;
 
     private Pane fxTitleLBarLogo;
-    private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 35);
+
+    private double xOffset = 0.0, yOffset = 0.0;
 
     private final MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
 
@@ -118,6 +122,7 @@ public class TopBarNode extends HBox {
                         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                         Scene scene = new Scene(root);
                         scene.getStylesheets().add(UpphafController.selectedStylesheet);
+                        addDraggableNode(root);
                         stage.setScene(scene);
                         stage.show();
                         isBot = 0;
@@ -148,4 +153,27 @@ public class TopBarNode extends HBox {
             }
         });
     }
+    private void addDraggableNode(final Node node) {
+
+        node.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent me) {
+                if (me.getButton() != MouseButton.MIDDLE) {
+                    xOffset = me.getSceneX();
+                    yOffset = me.getSceneY();
+                }
+            }
+        });
+
+        node.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent me) {
+                if (me.getButton() != MouseButton.MIDDLE) {
+                    node.getScene().getWindow().setX(me.getScreenX() - xOffset);
+                    node.getScene().getWindow().setY(me.getScreenY() - yOffset);
+                }
+            }
+        });
+    }
+
 }
