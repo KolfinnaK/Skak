@@ -174,3 +174,45 @@
 .fxHviturReitur{
     -fx-background-color: #FFFFFF; //hvítur
 }
+.fxTextiMainEda{
+    -fx-background-image: url("../images/edaMainMenu.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%, 100%;
+}
+.fxTextMainViltuSpila{
+    -fx-background-image: url("../images/mainMenuViltuSpila.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%, 100%;
+}
+.fxmainMenuTakkiTolvu{
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-radius: 10; //hringur
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../images/tolvutextumainmenu.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%, 100%;
+}
+.fxmainMenuTakkiTolvu:hover{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
+}
+.fxmainMenuTakkiTolvu:pressed{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
+}
+.fxmainMenuTakkiVin{
+    -fx-background-color: #91D5DD; //ljósblár
+-fx-background-radius: 10; //hringur
+-fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../images/mainMenuTakkiVin.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%, 100%;
+}
+.fxmainMenuTakkiVin:hover{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
+}
+.fxmainMenuTakkiVin:pressed{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
+}

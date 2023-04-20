@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" stylesheets="@stylesheets/cloud-styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
+<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
    <children>
       <AnchorPane fx:id="fxtitleBar" maxHeight="30.0" maxWidth="1050.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" styleClass="fxtitleBar" VBox.vgrow="NEVER">
          <children>
-            <MenuButton alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="457.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" styleClass="fxthemeMenu" text="Þemar" textAlignment="CENTER" textFill="#4d4d4d" AnchorPane.rightAnchor="150.0">
+            <MenuButton alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="457.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" styleClass="fxthemeMenu" text="Þema" textAlignment="CENTER" textFill="#4d4d4d" AnchorPane.rightAnchor="150.0">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Cloudy" />
                   <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />

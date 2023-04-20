@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" stylesheets="@stylesheets/cloud-styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.UpphafController">
+<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" prefHeight="530.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.UpphafController">
    <children>
       <AnchorPane fx:id="fxtitleBar" maxHeight="30.0" maxWidth="1050.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" styleClass="fxtitleBar" VBox.vgrow="NEVER">
          <children>
             <MenuButton fx:id="fxTheme" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="457.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" styleClass="fxthemeMenu" text="Þemar" textAlignment="CENTER" textFill="#4d4d4d" AnchorPane.rightAnchor="150.0">
               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Cloudy" />
+                  <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Skýjað" />
               <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />
                   <MenuItem mnemonicParsing="false" onAction="#fxCottonCandyHandler" text="Cotton candy" />
                   <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Tropical" />
@@ -51,16 +51,16 @@
             <Pane cacheShape="false" prefHeight="30.0" prefWidth="30.0" styleClass="fxpedIcon" />
          </children>
       </AnchorPane>
-      <HBox alignment="CENTER_RIGHT" maxHeight="114.0" maxWidth="1050.0" minHeight="76.0" minWidth="700.0" prefHeight="76.0" styleClass="fxTopBar" VBox.vgrow="ALWAYS">
+      <HBox alignment="TOP_CENTER" maxHeight="114.0" maxWidth="1050.0" minHeight="76.0" minWidth="700.0" styleClass="fxTopBar" VBox.vgrow="ALWAYS">
          <children>
-            <HBox prefHeight="100.0" prefWidth="404.0" spacing="15.0" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" maxHeight="81.0" maxWidth="639.0" minHeight="54.0" minWidth="426.0" spacing="15.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button fx:id="fxHomeButton" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxheimaTakki" text=" ">
+                  <Button fx:id="fxHomeButton" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxheimaTakki" text=" " HBox.hgrow="ALWAYS">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ToggleButton fx:id="fxHljodtakkiToggle" cacheHint="QUALITY" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxTopBarHljod">
+                  <ToggleButton fx:id="fxHljodtakkiToggle" cacheHint="QUALITY" contentDisplay="CENTER" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" styleClass="fxTopBarHljod" HBox.hgrow="ALWAYS">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -69,43 +69,61 @@
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
             </HBox>
-            <Pane prefHeight="53.0" prefWidth="155.0" styleClass="fxTopBarLogo" HBox.hgrow="ALWAYS" />
+            <Pane maxHeight="81.0" maxWidth="357.0" minHeight="54.0" minWidth="238.0" nodeOrientation="LEFT_TO_RIGHT" styleClass="fxTopBarLogo" HBox.hgrow="ALWAYS" />
          </children>
          <padding>
-            <Insets bottom="20.0" right="20.0" top="8.0" />
+            <Insets bottom="20.0" left="16.0" right="20.0" />
          </padding>
       </HBox>
-      <AnchorPane cacheHint="QUALITY" cacheShape="false" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" nodeOrientation="LEFT_TO_RIGHT" styleClass="fxmainMenuAdal" VBox.vgrow="ALWAYS">
-         <children>
-            <Label contentDisplay="RIGHT" layoutX="112.0" layoutY="58.0" lineSpacing="20.0" maxHeight="152.0" maxWidth="337.0" minHeight="42.0" minWidth="225.0" prefHeight="152.0" prefWidth="279.0" scaleShape="false" styleClass="fxmainMenuTexti" text="Viltu Spila við eða" textFill="#3b3b3b" wrapText="true">
-               <font>
-                  <Font name="Trebuchet MS Bold" size="38.0" />
-               </font>
-            </Label>
-            <Button fx:id="fxLeikmadur" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" layoutX="372.0" layoutY="63.0" maxHeight="96.0" maxWidth="159.0" minHeight="64.0" minWidth="106.0" mnemonicParsing="false" onAction="#fxLeikmadurHandler" styleClass="fxmainMenuTakki" text="vin" textFill="WHITE">
-               <font>
-                  <Font name="Trebuchet MS Bold" size="38.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="fxTolva" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" layoutX="189.0" layoutY="134.0" maxHeight="96.0" maxWidth="159.0" minHeight="64.0" minWidth="106.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fxTolvaHandler" styleClass="fxmainMenuTakki" text="tölvu" textFill="WHITE">
-               <font>
-                  <Font name="Trebuchet MS Bold" size="38.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
+      <VBox alignment="TOP_CENTER" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" spacing="10.0" styleClass="fxmainMenuAdal" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets />
          </VBox.margin>
-      </AnchorPane>
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="138.0" maxWidth="555.0" minHeight="92.0" minWidth="370.0" spacing="10.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Pane maxHeight="108.0" maxWidth="384.0" minHeight="72.0" minWidth="256.0" nodeOrientation="LEFT_TO_RIGHT" styleClass="fxTextMainViltuSpila" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="fxLeikmadur" alignment="CENTER" cacheHint="SCALE" contentDisplay="RIGHT" maxHeight="108.0" maxWidth="156.0" minHeight="72.0" minWidth="104.0" mnemonicParsing="false" onAction="#fxLeikmadurHandler" styleClass="fxmainMenuTakkiVin" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="38.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="138.0" maxWidth="555.0" minHeight="92.0" minWidth="370.0" spacing="15.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Pane maxHeight="108.0" maxWidth="99.0" minHeight="72.0" minWidth="66.0" styleClass="fxTextiMainEda" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="fxTolva" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" maxHeight="108.0" maxWidth="213.0" minHeight="72.0" minWidth="142.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#fxTolvaHandler" styleClass="fxmainMenuTakkiTolvu" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="38.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Pane maxHeight="108.0" maxWidth="198.0" minHeight="72.0" minWidth="132.0" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="180.0" left="100.0" right="230.0" top="60.0" />
+         </padding>
+      </VBox>
    </children>
 </VBox>

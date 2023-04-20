@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import presenter.MediatorConstructionFlags;
@@ -25,8 +26,8 @@ public class UpphafController  {
     private ToggleButton fxHljodtakkiToggle;
     @FXML
     private ToggleButton fxFullscreenButton;
-
-
+    @FXML
+    private AnchorPane fxtitleBar;
 
     private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
     private double xOffset = 0.0, yOffset = 0.0;
@@ -37,7 +38,6 @@ public class UpphafController  {
     private Stage stage;
     private Scene scene;
     private Parent root;
-
 
     public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
         this.constructionFlag = constructionFlag;
@@ -74,7 +74,7 @@ public class UpphafController  {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(root);
+        addDraggableNode(fxtitleBar);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
@@ -85,7 +85,7 @@ public class UpphafController  {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(root);
+        addDraggableNode(fxtitleBar);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
@@ -102,7 +102,6 @@ public class UpphafController  {
                 }
             }
         });
-
         node.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {
@@ -115,9 +114,7 @@ public class UpphafController  {
     }
 
     public void fxHljodtakkiHandler(ActionEvent actionEvent) {
-
         mediaPlayer.setMute(!mediaPlayer.isMute());
-
     }
 
     public void fxHomeButtonHandler(ActionEvent actionEvent) {
@@ -142,7 +139,7 @@ public class UpphafController  {
                     stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     scene.getStylesheets().add(selectedStylesheet);
-                    addDraggableNode(root);
+                    addDraggableNode(fxtitleBar);
                     stage.setScene(scene);
                     stage.show();
                     isBot = 0;
@@ -191,8 +188,9 @@ public class UpphafController  {
         }
     }
 
-    public void initialize() {
 
+    public void initialize() {
+        addDraggableNode(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
         mediaPlayer.setAutoPlay(true);
         if (mediaPlayer.isMute()){

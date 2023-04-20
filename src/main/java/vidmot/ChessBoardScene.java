@@ -41,14 +41,16 @@ public class ChessBoardScene extends Scene {
 
     private void initializeComponents(){
         root = (VBox) getRoot();
-        root.getStylesheets().add(UpphafController.class.getResource("stylesheets/cloud-styles.css").toExternalForm());
         titleBar = new TitleBarNode();
         VBox.setVgrow(titleBar, Priority.NEVER);
         topBar = new TopBarNode();
         VBox.setVgrow(topBar, Priority.ALWAYS);
+
         topBar.getStyleClass().add("fxTopBar");
         titleBar.getStyleClass().add("fxtitleBar");
-        addDraggableNode(root);
+
+        //geraði þetta til að get fært skjáinn
+        addDraggableNode(titleBar);
     }
 
     private void constructSceneGraph(GameMediator gameMediator) {
@@ -70,7 +72,6 @@ public class ChessBoardScene extends Scene {
         game.setMaxHeight(636);
     }
     private void addDraggableNode(final Node node) {
-
         node.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {
@@ -90,5 +91,6 @@ public class ChessBoardScene extends Scene {
                 }
             }
         });
+
     }
 }

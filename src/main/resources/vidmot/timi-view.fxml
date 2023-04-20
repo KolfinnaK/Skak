@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" stylesheets="@stylesheets/cloud-styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
+<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
     <children>
         <AnchorPane fx:id="fxtitleBar" maxHeight="30.0" maxWidth="1050.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" styleClass="fxtitleBar" VBox.vgrow="NEVER">
             <children>
-                <MenuButton alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="457.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" styleClass="fxthemeMenu" text="Þemar" textAlignment="CENTER" textFill="#4d4d4d" AnchorPane.rightAnchor="150.0">
+                <MenuButton alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="457.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="93.0" styleClass="fxthemeMenu" text="Þema" textAlignment="CENTER" textFill="#4d4d4d" AnchorPane.rightAnchor="150.0">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Cloudy" />
+                        <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Skýjað" />
                         <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />
                         <MenuItem mnemonicParsing="false" onAction="#fxCottonCandyHandler" text="Cotton candy" />
                         <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Tropical" />
@@ -44,16 +44,16 @@
                 <Pane cacheShape="false" prefHeight="30.0" prefWidth="30.0" styleClass="fxpedIcon" />
             </children>
         </AnchorPane>
-        <HBox alignment="CENTER_RIGHT" maxHeight="114.0" maxWidth="1050.0" minHeight="76.0" minWidth="700.0" prefHeight="76.0" styleClass="fxTopBar" VBox.vgrow="ALWAYS">
+        <HBox alignment="TOP_CENTER" maxHeight="114.0" maxWidth="1050.0" minHeight="76.0" minWidth="700.0" styleClass="fxTopBar" VBox.vgrow="ALWAYS">
             <children>
-                <HBox prefHeight="100.0" prefWidth="404.0" spacing="15.0" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" maxHeight="81.0" maxWidth="639.0" minHeight="54.0" minWidth="426.0" spacing="15.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Button fx:id="fxHomeButton" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxheimaTakki" text=" ">
+                        <Button fx:id="fxHomeButton" cancelButton="true" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHomeButtonHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxheimaTakki" text=" " HBox.hgrow="ALWAYS">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <ToggleButton fx:id="fxHljodtakkiToggle" cacheHint="QUALITY" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" prefHeight="45.0" prefWidth="45.0" styleClass="fxTopBarHljod">
+                        <ToggleButton fx:id="fxHljodtakkiToggle" cacheHint="QUALITY" contentDisplay="CENTER" maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" styleClass="fxTopBarHljod" HBox.hgrow="ALWAYS">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -62,14 +62,11 @@
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
-                    <padding>
-                        <Insets left="15.0" />
-                    </padding>
                 </HBox>
-                <Pane prefHeight="53.0" prefWidth="155.0" styleClass="fxTopBarLogo" HBox.hgrow="ALWAYS" />
+                <Pane maxHeight="81.0" maxWidth="357.0" minHeight="54.0" minWidth="238.0" nodeOrientation="LEFT_TO_RIGHT" styleClass="fxTopBarLogo" HBox.hgrow="ALWAYS" />
             </children>
             <padding>
-                <Insets bottom="20.0" right="20.0" top="8.0" />
+                <Insets bottom="20.0" left="16.0" right="20.0" />
             </padding>
         </HBox>
       <VBox alignment="TOP_CENTER" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" VBox.vgrow="ALWAYS">

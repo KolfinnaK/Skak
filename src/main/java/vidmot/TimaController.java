@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -20,21 +21,17 @@ import java.io.IOException;
 
 public class TimaController extends UpphafController {
 
-    public Menu fxTheme;
     @FXML
     private Button fxHomeButton;
     @FXML
-    private Button fxHljodtakki;
+    private AnchorPane fxtitleBar;
     public static int timiEftirShared;
     public static int timiEftir2Shared;
-    private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
     private int duration;
     public static String bot;
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-
 
     @FXML
     public void fxAudveltHandler(ActionEvent actionEvent)  throws IOException {
@@ -44,7 +41,7 @@ public class TimaController extends UpphafController {
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(root);
+        addDraggableNode(fxtitleBar);
         stage.setScene(scene);
         stage.show();
 
@@ -57,7 +54,7 @@ public class TimaController extends UpphafController {
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(root);
+        addDraggableNode(fxtitleBar);
         stage.setScene(scene);
         stage.show();
     }
@@ -75,11 +72,17 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
+            stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
+            stage.show();
         }
 
     }
@@ -91,11 +94,17 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
+            stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration, bot)));
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
+            stage.show();
         }
 
     }
@@ -107,13 +116,18 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
+            stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
+            stage.show();
         }
-
     }
 
     public void fx10minHandler(ActionEvent actionEvent) throws IOException {
@@ -123,22 +137,22 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration)));
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
+            stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot)));
-            stage.setMinWidth(MIN_WIDTH);
-            stage.setMinHeight(MIN_HEIGHT);
-            stage.setMaxHeight(MAX_HEIGHT);
-            stage.setMaxWidth(MAX_WIDTH);
+            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            scene.getStylesheets().add(selectedStylesheet);
+            stage.setScene(scene);
             stage.show();
         }
-
-
     }
 
     public void initialize(){
+        addDraggableNode(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
 
         if(isBot == 1){

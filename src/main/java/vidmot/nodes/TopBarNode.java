@@ -47,6 +47,7 @@ public class TopBarNode extends HBox {
         root.setPrefSize(USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
         root.setAlignment(Pos.CENTER_RIGHT);
         root.setPadding(new Insets(2, 20, 20, 16));
+
         //build buttons
         //Home button
         buildTakkaGeymsla();
@@ -66,11 +67,6 @@ public class TopBarNode extends HBox {
         HBox.setHgrow(fxTitleLBarLogo, Priority.ALWAYS);
         root.getChildren().addAll(fxTakkaGeymsla, fxTitleLBarLogo);
 
-        /*
-        AnchorPane.setRightAnchor(fxTitleLBarLogo, 32.0);
-        AnchorPane.setBottomAnchor(fxTitleLBarLogo, 15.0);
-        AnchorPane.setTopAnchor(fxTitleLBarLogo, 16.0);
-         */
     }
     private void buildTakkaGeymsla() {
         buildHomeButton();
