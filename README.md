@@ -64,9 +64,7 @@ Alert dialog:
 - Spyr hvort maður vilji alveg örugglega hætta eða hvort maður vilji halda áfram
 - fer með mann aftur á upphafsskjá og upphafsstillir allar stillingar
 
-# ATH, laga:
-- Þarf að laga TopBarNode, takkar á vitlausum stað, home button virkar ekki alveg rétt (ekki hægt að ýta á hann nema maður ýti neðst) og ekki heldur þema menu
-- Þema clearast alltaf þegar maður fer í nýja senu þótt maður hafi valið þema
+
 
 
 
