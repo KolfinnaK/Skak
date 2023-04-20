@@ -25,81 +25,124 @@ import java.util.Optional;
 import static vidmot.UpphafController.isBot;
 
 
-public class TopBarNode extends HBox {
-
+public class TopBarNode extends Pane {
     private HBox root;
     private Button fxHeimaTakki;
     private ToggleButton fxHljodtakkiToggle;
-
     private HBox fxTakkaGeymsla;
-
-    private Pane fxTitleLBarLogo;
-
+    private HBox fxLogoGeymsla;
+    private Pane fxTopBarLogo;
     private double xOffset = 0.0, yOffset = 0.0;
-
     private final MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
 
 
     public TopBarNode() {
-        root = new HBox();
-        root.setMinSize(700, 76);
-        root.setMaxSize(1050, 114);
-        root.setPrefSize(USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
-        root.setAlignment(Pos.CENTER_RIGHT);
-        root.setPadding(new Insets(2, 20, 20, 16));
+        setMinHeight(76);
+        setMaxHeight(114);
 
-        //build buttons
-        //Home button
+        root = new HBox();
+        root.setAlignment(Pos.TOP_CENTER);
+        root.setPadding(new Insets(0, 0, 0, 0));
+        root.setSpacing(0);
+        root.setFillHeight(true);
+        root.setPickOnBounds(true);
+        root.minHeightProperty().bind(heightProperty());
+        root.maxHeightProperty().bind(heightProperty());
+        root.minWidthProperty().bind(widthProperty());
+        root.maxWidthProperty().bind(widthProperty());
+
         buildTakkaGeymsla();
+        byggjaLogoGeymslu();
 
         getChildren().add(root);
-        //heimatakki
-        //hljodtakki
         HBox.setHgrow(fxTakkaGeymsla, Priority.ALWAYS);
-        //Title
-        fxTitleLBarLogo = new Pane();
-        fxTitleLBarLogo.setMinSize(238, 54);
-        fxTitleLBarLogo.setMaxSize(357, 81);
-        fxTitleLBarLogo.setPrefSize(USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
-        fxTitleLBarLogo.getStyleClass().add("fxTopBarLogo");
-        fxTitleLBarLogo.autosize();
+        HBox.setHgrow(fxLogoGeymsla, Priority.ALWAYS);
 
-        HBox.setHgrow(fxTitleLBarLogo, Priority.ALWAYS);
-        root.getChildren().addAll(fxTakkaGeymsla, fxTitleLBarLogo);
+        root.getChildren().addAll(fxTakkaGeymsla, fxLogoGeymsla);
 
+        fxLogoGeymsla.prefWidthProperty().bind(root.widthProperty().multiply(0.82));
+        fxLogoGeymsla.prefHeightProperty().bind(root.heightProperty());
+
+        fxTakkaGeymsla.prefWidthProperty().bind(root.widthProperty().multiply(0.18));
+        fxTakkaGeymsla.prefHeightProperty().bind(root.heightProperty());
     }
+    //byggja Hbox fyrir takka
     private void buildTakkaGeymsla() {
         buildHomeButton();
         buildSoundButton();
+        Region fxTakkaRegion1 = new Region();
+        Region fxTakkaRegion2 = new Region();
 
+        //setja upp Hboxið
         fxTakkaGeymsla = new HBox();
         fxTakkaGeymsla.setAlignment(Pos.CENTER_LEFT);
-        fxTakkaGeymsla.setSpacing(15);
-        fxTakkaGeymsla.setMinSize(426, 54);
-        fxTakkaGeymsla.setMaxSize(639, 81);
-        fxTakkaGeymsla.setPrefSize(USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+        fxTakkaGeymsla.setFillHeight(true);
+        fxTakkaGeymsla.setPickOnBounds(true);
+        fxTakkaGeymsla.setSpacing(0);
+        fxTakkaGeymsla.setPadding(new Insets(4, 0, 28, 0));
+        fxTakkaGeymsla.getChildren().addAll(fxTakkaRegion1, fxHeimaTakki, fxTakkaRegion2, fxHljodtakkiToggle);
 
+        //gera tvö region svo að við getum notað hgrow á takkana
+        fxTakkaRegion1.setMinSize(22, 44);
+        fxTakkaRegion1.setMaxSize(33, 66);
+        fxTakkaRegion2.setMinSize(16, 44);
+        fxTakkaRegion2.setMaxSize(24, 66);
+        fxTakkaRegion1.setPickOnBounds(true);
+        fxTakkaRegion2.setPickOnBounds(true);
 
-        fxTakkaGeymsla.getChildren().add(fxHeimaTakki);
-        fxTakkaGeymsla.getChildren().add(fxHljodtakkiToggle);
-        fxHljodtakkiToggle.setMinSize(45,45);
-        fxHljodtakkiToggle.setMaxSize(45,45);
+        //setja stærðir á takkana
+        fxHljodtakkiToggle.setMinSize(44,44);
+        fxHljodtakkiToggle.setMaxSize(66,66);
+        fxHeimaTakki.setMinSize(44,44);
+        fxHeimaTakki.setMaxSize(66,66);
+        fxHljodtakkiToggle.setPickOnBounds(true);
+        fxHeimaTakki.setPickOnBounds(true);
 
-        fxHeimaTakki.setMinSize(45,45);
-        fxHeimaTakki.setMaxSize(45,45);
+        //setja hgrow á takkana
+        HBox.setHgrow(fxTakkaRegion1, Priority.ALWAYS);
+        HBox.setHgrow(fxTakkaRegion2, Priority.ALWAYS);
+        HBox.setHgrow(fxHeimaTakki, Priority.ALWAYS);
+        HBox.setHgrow(fxHljodtakkiToggle, Priority.ALWAYS);
+    }
+    //byggja Hbox fyrir logo
+    private void byggjaLogoGeymslu() {
+        fxTopBarLogo = new Pane();
+        Region fxLogoRegion1 = new Region();
+        Region fxLogoRegion2 = new Region();
 
+        fxLogoGeymsla = new HBox();
+        fxLogoGeymsla.setAlignment(Pos.TOP_CENTER);
+        fxLogoGeymsla.setFillHeight(true);
+        fxLogoGeymsla.setPickOnBounds(true);
+        fxLogoGeymsla.setSpacing(0);
+        fxLogoGeymsla.setPadding(new Insets(0, 0, 0, 0));
+        fxLogoGeymsla.getChildren().addAll(fxLogoRegion1, fxTopBarLogo, fxLogoRegion2);
+
+        fxLogoRegion1.setMinSize(322, 76);
+        fxLogoRegion1.setMaxSize(483, 114);
+        fxLogoRegion2.setMinSize(14, 76);
+        fxLogoRegion2.setMaxSize(21, 114);
+        fxLogoRegion1.setPickOnBounds(true);
+        fxLogoRegion2.setPickOnBounds(true);
+
+        fxTopBarLogo.setMinSize(238, 76);
+        fxTopBarLogo.setMaxSize(357, 114);
+        fxTopBarLogo.setPickOnBounds(true);
+        fxTopBarLogo.getStyleClass().add("fxTopBarLogo");
+
+        HBox.setHgrow(fxTopBarLogo, Priority.ALWAYS);
+        HBox.setHgrow(fxLogoRegion1, Priority.ALWAYS);
+        HBox.setHgrow(fxLogoRegion2, Priority.ALWAYS);
     }
 
+    //byggja heimatakkann
     private void buildHomeButton() {
         fxHeimaTakki = new Button();
-        fxHeimaTakki.setMnemonicParsing(false);
         fxHeimaTakki.getStyleClass().add("fxheimaTakki");
         // add image to the button
-
         fxHeimaTakki.setOnAction(actionEvent -> {
             if (!actionEvent.isConsumed()) {
                 actionEvent.consume();
-
 
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Ertu viss?");
@@ -130,11 +173,9 @@ public class TopBarNode extends HBox {
             }
         });
     }
-
-
+    //byggja takka fyrir hljóð
     private void buildSoundButton() {
-        fxHljodtakkiToggle = new ToggleButton(null);
-        fxHeimaTakki.setMnemonicParsing(false);
+        fxHljodtakkiToggle = new ToggleButton();
         fxHljodtakkiToggle.getStyleClass().add("fxTopBarHljod");
         if (mediaPlayer.isMute()){
             fxHljodtakkiToggle.setSelected(true);
@@ -149,8 +190,8 @@ public class TopBarNode extends HBox {
             }
         });
     }
+    //svo hægt er að færa custom gluggann
     private void addDraggableNode(final Node node) {
-
         node.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {
@@ -160,7 +201,6 @@ public class TopBarNode extends HBox {
                 }
             }
         });
-
         node.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {
@@ -171,5 +211,4 @@ public class TopBarNode extends HBox {
             }
         });
     }
-
 }

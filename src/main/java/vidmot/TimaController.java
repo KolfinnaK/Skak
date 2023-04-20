@@ -7,17 +7,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import presenter.GameMediator;
 import presenter.MediatorConstructionFlags;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class TimaController extends UpphafController {
 
@@ -25,8 +23,15 @@ public class TimaController extends UpphafController {
     private Button fxHomeButton;
     @FXML
     private AnchorPane fxtitleBar;
+    @FXML
+    private ToggleButton fxHljodtakkiToggle;
+    @FXML
+    private ToggleButton fxFullscreenButton;
+
+    private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
     public static int timiEftirShared;
     public static int timiEftir2Shared;
+    private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
     private int duration;
     public static String bot;
     private Stage stage;
@@ -154,13 +159,18 @@ public class TimaController extends UpphafController {
     public void initialize(){
         addDraggableNode(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
-
         if(isBot == 1){
             bot = getBot();
             System.out.println("Bot: " + bot);
         }
         else {
             bot = null;
+        }
+        if (mediaPlayer.isMute()){
+            fxHljodtakkiToggle.setSelected(true);
+        }
+        if(!Objects.equals(BreiddScenu, "700")){
+            fxFullscreenButton.setSelected(true);
         }
     }
 }

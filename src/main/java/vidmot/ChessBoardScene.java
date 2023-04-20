@@ -20,15 +20,16 @@ import vidmot.nodes.GameNode;
 import vidmot.nodes.TitleBarNode;
 import vidmot.nodes.TopBarNode;
 
+import java.util.Objects;
+
 public class ChessBoardScene extends Scene {
     private TopBarNode topBar;
-
     private TitleBarNode titleBar;
-
     private VBox root;
     private Pane game;
-
     private double xOffset = 0.0, yOffset = 0.0;
+    private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
+
 
 
 
@@ -42,15 +43,33 @@ public class ChessBoardScene extends Scene {
     private void initializeComponents(){
         root = (VBox) getRoot();
         titleBar = new TitleBarNode();
-        VBox.setVgrow(titleBar, Priority.NEVER);
         topBar = new TopBarNode();
-        VBox.setVgrow(topBar, Priority.ALWAYS);
+        root.setFillWidth(true);
+        root.setAlignment(javafx.geometry.Pos.CENTER);
+        root.setFillWidth(true);
+        root.setMinWidth(MIN_WIDTH);
+        root.setMinHeight(MIN_HEIGHT);
+        root.setMaxHeight(MAX_HEIGHT);
+        root.setMaxWidth(MAX_WIDTH);
 
-        topBar.getStyleClass().add("fxTopBar");
+        titleBar = new TitleBarNode();
+        topBar.minWidthProperty().bind(widthProperty());
+        topBar.maxWidthProperty().bind(widthProperty());
+        topBar.setMinHeight(30);
+        topBar.setMaxHeight(30);
         titleBar.getStyleClass().add("fxtitleBar");
+
+        topBar = new TopBarNode();
+        topBar.minWidthProperty().bind(widthProperty());
+        topBar.maxWidthProperty().bind(widthProperty());
+        topBar.setMinHeight(76);
+        topBar.setMaxHeight(114);
+        topBar.getStyleClass().add("fxTopBar");
+        VBox.setVgrow(topBar, Priority.ALWAYS);
 
         //geraði þetta til að get fært skjáinn
         addDraggableNode(titleBar);
+
     }
 
     private void constructSceneGraph(GameMediator gameMediator) {
@@ -66,8 +85,8 @@ public class ChessBoardScene extends Scene {
     private void buildBoardComponent() {
         VBox parent = (VBox) game.getParent();
         VBox.setVgrow(game, Priority.ALWAYS);
-        game.minWidthProperty().bind(parent.widthProperty());
-        game.minWidthProperty().bind(parent.widthProperty());
+        game.setMinWidth(700);
+        game.setMaxWidth(1050);
         game.setMinHeight(424);
         game.setMaxHeight(636);
     }
@@ -81,7 +100,6 @@ public class ChessBoardScene extends Scene {
                 }
             }
         });
-
         node.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {
@@ -91,6 +109,5 @@ public class ChessBoardScene extends Scene {
                 }
             }
         });
-
     }
 }

@@ -15,4 +15,5 @@ public interface Observable {
      * Notifies all the observable's observers that the state has been changed.
      */
     void notifyObservers();
+
 }

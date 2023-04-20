@@ -1,5 +1,7 @@
 package vidmot;
 
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 import presenter.MediatorConstructionFlags;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Optional;
 
 public class UpphafController  {
@@ -36,6 +39,7 @@ public class UpphafController  {
     private MediatorConstructionFlags constructionFlag;
     public static int isBot;
     private Stage stage;
+    public static String BreiddScenu = "700";
     private Scene scene;
     private Parent root;
 
@@ -56,10 +60,12 @@ public class UpphafController  {
             scene.setWidth(MIN_WIDTH);
             scene.setHeight(MIN_HEIGHT);
             fxFullscreenButton.setSelected(false);
+            BreiddScenu = "700";
         } else {
             scene.setWidth(MAX_WIDTH);
             scene.setHeight(MAX_HEIGHT);
             fxFullscreenButton.setSelected(true);
+            BreiddScenu = "1050";
         }
     }
 
@@ -157,7 +163,6 @@ public class UpphafController  {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
             fxHomeButton.getScene().getStylesheets().add(newStylesheet);
             selectedStylesheet = newStylesheet;
-
         }
     }
     public void fxCloudHandler(ActionEvent actionEvent) {
@@ -166,7 +171,6 @@ public class UpphafController  {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
             fxHomeButton.getScene().getStylesheets().add(newStylesheet);
             selectedStylesheet = newStylesheet;
-
         }
     }
 
@@ -188,13 +192,15 @@ public class UpphafController  {
         }
     }
 
-
     public void initialize() {
         addDraggableNode(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
         mediaPlayer.setAutoPlay(true);
         if (mediaPlayer.isMute()){
             fxHljodtakkiToggle.setSelected(true);
+        }
+        if(!Objects.equals(BreiddScenu, "700")){
+            fxFullscreenButton.setSelected(true);
         }
     }
 }

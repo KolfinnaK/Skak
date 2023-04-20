@@ -1,6 +1,7 @@
 package vidmot.nodes;
 
 import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -12,22 +13,28 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import vidmot.UpphafController;
 
-public class TitleBarNode extends AnchorPane{
+import java.util.Objects;
+
+public class TitleBarNode extends Pane{
     private AnchorPane root;
     private Pane fxTitleLBarLogo;
-    private  Label fxTitleLBarText;
+    private Label fxTitleLBarText;
     private MenuButton fxTitleLBarMenu;
     private Button fxTitleLBarClose;
     private ToggleButton fxTitleLBarFullScreen;
     private Button fxTitleLBarMinimize;
     private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 18);
 
-
     //Býr til titleBar(veit ekki hvað þetta heitir á íslesnku) fyrir forritið
     public TitleBarNode() {
+        setMinHeight(30);
+        setMaxHeight(30);
         //Búa til root sem verður AnchorPane
         root = new AnchorPane();
-        root.setPrefSize(700, 30);
+        root.minHeightProperty().bind(heightProperty());
+        root.maxHeightProperty().bind(heightProperty());
+        root.minWidthProperty().bind(widthProperty());
+        root.maxWidthProperty().bind(widthProperty());
 
         //láta forritið búa til takkana
         buildCloseButton();
@@ -72,78 +79,81 @@ public class TitleBarNode extends AnchorPane{
         AnchorPane.setRightAnchor(fxTitleLBarMinimize, 100.0);
         AnchorPane.setRightAnchor(fxTitleLBarMenu, 150.0);
     }
-        //byggja takka fyrir Title Bar
-        private void buildCloseButton() {
-        //Byggja takkan til að loka glugganum
-        fxTitleLBarClose = new Button();
-        fxTitleLBarClose.setLayoutX(650);
-        fxTitleLBarClose.setLayoutY(0);
-        fxTitleLBarClose.getStyleClass().add("fxcloseButton");
+    //byggja takka fyrir Title Bar
 
-        //setja event handler fyrir takkan
-        fxTitleLBarClose.setOnAction(actionEvent -> {
-            if (!actionEvent.isConsumed()) {
-                actionEvent.consume();
-        Stage scene = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        scene.close();
+    //Byggja takkan til að loka glugganum
+    private void buildCloseButton() {
+    fxTitleLBarClose = new Button();
+    fxTitleLBarClose.setLayoutX(650);
+    fxTitleLBarClose.setLayoutY(0);
+    fxTitleLBarClose.getStyleClass().add("fxcloseButton");
+
+    //setja event handler fyrir takkan
+    fxTitleLBarClose.setOnAction(actionEvent -> {
+        if (!actionEvent.isConsumed()) {
+            actionEvent.consume();
+            Stage scene = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            scene.close();
         }});
-        }
-        private void buildFullScreenButton() {
-        //Byggja takkan til að fullskjáa gluggann
-        fxTitleLBarFullScreen = new ToggleButton();
-        fxTitleLBarFullScreen.setLayoutX(600);
-        fxTitleLBarFullScreen.setLayoutY(0);
-        fxTitleLBarFullScreen.getStyleClass().add("fxfullscreenButton");
+    }
+    //Byggja takkan til að fullskjáa gluggann
+    private void buildFullScreenButton() {
+    fxTitleLBarFullScreen = new ToggleButton();
+    fxTitleLBarFullScreen.setLayoutX(600);
+    fxTitleLBarFullScreen.setLayoutY(0);
 
-        //setja event handler fyrir takkan
-        fxTitleLBarFullScreen.setOnAction(actionEvent -> {
-            if (!actionEvent.isConsumed()) {
-                actionEvent.consume();
-                {
-                    Stage scene = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                    if (scene.getWidth() == 1050 && scene.getHeight() == 780) {
-                        scene.setWidth(700);
-                        scene.setHeight(530);
-                        fxTitleLBarFullScreen.setSelected(false);
-                        root.setPrefSize(700, 30);
-
-                    } else {
-
-                        scene.setWidth(1050);
-                        scene.setHeight(780);
-                        fxTitleLBarFullScreen.setSelected(true);
-                        root.setPrefSize(1050, 30);
-
+    //gá hvort glugginn sé fullskjár og setja takkan á rétta stöðu
+    fxTitleLBarFullScreen.getStyleClass().add("fxfullscreenButton");
+    if(!Objects.equals(UpphafController.BreiddScenu, "700")){
+        fxTitleLBarFullScreen.setSelected(true);
+    }
+    //setja event handler fyrir takkan
+    fxTitleLBarFullScreen.setOnAction(actionEvent -> {
+        if (!actionEvent.isConsumed()) {
+            actionEvent.consume();{
+            Stage scene = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            if (scene.getWidth() == 1050 && scene.getHeight() == 780) {
+                scene.setWidth(700);
+                scene.setHeight(530);
+                UpphafController.BreiddScenu = "700";
+                fxTitleLBarFullScreen.setSelected(false);
+            } else {
+                scene.setWidth(1050);
+                scene.setHeight(780);
+                fxTitleLBarFullScreen.setSelected(true);
+                UpphafController.BreiddScenu = "1050";
                     }
                 }
             }
         });
     }
-         //Byggja takkan til að minnka gluggann
-        private void buildMinimizeButton() {
-        fxTitleLBarMinimize = new Button();
-        fxTitleLBarMinimize.setLayoutX(550);
-        fxTitleLBarMinimize.setLayoutY(0);
-        fxTitleLBarMinimize.getStyleClass().add("fxminimizeButton");
+     //Byggja takkan til að minnka gluggann
+    private void buildMinimizeButton() {
+    fxTitleLBarMinimize = new Button();
+    fxTitleLBarMinimize.setLayoutX(550);
+    fxTitleLBarMinimize.setLayoutY(0);
+    fxTitleLBarMinimize.getStyleClass().add("fxminimizeButton");
 
-        //setja event handler fyrir takkan
-        fxTitleLBarMinimize.setOnAction(actionEvent -> {
-            if (!actionEvent.isConsumed()) {
-                actionEvent.consume();
-                Stage scene = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-                scene.setIconified(true);
+    //setja event handler fyrir takkan
+    fxTitleLBarMinimize.setOnAction(actionEvent -> {
+        if (!actionEvent.isConsumed()) {
+            actionEvent.consume();
+            Stage scene = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            scene.setIconified(true);
             }
         });
-        }
+    }
     //Byggja þema Takkan til að halda um valmöguleikana fyrir ChessBoardScene
     private void buildThemeMenu() {
         fxTitleLBarMenu = new MenuButton();
         fxTitleLBarMenu.setLayoutX(457);
         fxTitleLBarMenu.setLayoutY(0);
         fxTitleLBarMenu.setText("Þema");
+        fxTitleLBarMenu.setAlignment(Pos.TOP_RIGHT);
         fxTitleLBarMenu.setFont(Font.font("Trebuchet MS", FontWeight.BOLD, 16));
         fxTitleLBarMenu.setTextFill(Color.web("#4d4d4d"));
         fxTitleLBarMenu.getStyleClass().add("fxthemeMenu");
+
         //byggja þema valmöguleikana fyrir ChessBoardScene
         MenuItem fxSkyjad = new MenuItem("Skýjað");
         MenuItem fxKlassik = new MenuItem("Klassískt");
@@ -156,9 +166,9 @@ public class TitleBarNode extends AnchorPane{
         fxSkyjad.setOnAction(this::fxSkyjadHandler);
         fxKandifloss.setOnAction(this::fxKandiflossHandler);
         fxHitabeltis.setOnAction(this::fxHitabeltisHandler);
-
     }
     //handlers til að breyta þemu í ChessBoarScene
+
     //Kandifloss handler
     private void fxKandiflossHandler(ActionEvent actionEvent) {
         if (!actionEvent.isConsumed()) {

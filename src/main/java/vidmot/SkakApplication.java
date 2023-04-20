@@ -19,7 +19,6 @@ public class SkakApplication extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("stylesheets/cloud-styles.css").toExternalForm());
-        stage.setTitle("Skák");
         stage.setFullScreen(false);
         stage.setMinWidth(MIN_WIDTH);
         stage.setMinHeight(MIN_HEIGHT);

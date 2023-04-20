@@ -1,7 +1,7 @@
-
 .root{
     -fx-background-color: #FFFFFF; //hvítur
-
+}
+.LitirTilaðNota{
     -fx-dokk-blar: #1A4E66; //dökkblár
 
     -fx-ljos-blar: #91D5DD; //ljósblár
@@ -29,7 +29,7 @@
 }
 .fxTopBarHljod{
     -fx-background-color: radial-gradient(focus-angle 10deg , focus-distance 20% , center 55% 58% , radius 62% , #91D5DD 85%, #C8F6FF); //ljósblár
-    -fx-background-radius: 25; //hringur
+    -fx-background-radius: 200; //hringur
     -fx-effect: dropshadow(gaussian , rgba(109, 159, 166) , 2 , 0.1 , 2.5 , 2.5 ); //skuggi
     -fx-background-image: url("../images/sound-play.png");
     -fx-background-position: center;
@@ -45,7 +45,7 @@
 .fxheimaTakki{
     -fx-background-color: radial-gradient(focus-angle 10deg , focus-distance 20% , center 55% 58% , radius 62% , #91D5DD 85%, #C8F6FF); //ljósblár
     -fx-effect: dropshadow(gaussian , rgba(109, 159, 166) , 2 , 0.1 , 2.5 , 2.5 ); //skuggi
-    -fx-background-radius: 25; //hringur
+    -fx-background-radius: 200; //hringur
     -fx-background-image: url("../images/home_icon.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -54,7 +54,6 @@
 .fxthemeMenu {
     -fx-background-color: #FFE38E;//gulur
     -fx-background-radius: 0; //hringur
-
 }
 .fxtitleBar{
     -fx-background-color: #3B3B3B; //grár
@@ -117,7 +116,7 @@
 }
 .fxTopBarLogo {
     -fx-background-image: url("../images/TopBarNyttlogo.png");
-    -fx-background-position: bottom;
+    -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 95%, 95%;
 }
@@ -129,7 +128,6 @@
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 80%, 80%;
-
 }
 .fxerfittTakki:hover{
     -fx-effect: dropshadow(gaussian , #BF2C2C , 0 , 1 , 0 , 6.5 );
@@ -203,8 +201,8 @@
 }
 .fxmainMenuTakkiVin{
     -fx-background-color: #91D5DD; //ljósblár
--fx-background-radius: 10; //hringur
--fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-radius: 10; //hringur
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
     -fx-background-image: url("../images/mainMenuTakkiVin.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -215,4 +213,10 @@
 }
 .fxmainMenuTakkiVin:pressed{
     -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
+}
+.fxHvorViltuTexti{
+    -fx-background-image: url("../images/hvorViltuTexti.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%, 100%;
 }
