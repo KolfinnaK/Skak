@@ -28,8 +28,6 @@ public class TimaController extends UpphafController {
     @FXML
     private ToggleButton fxFullscreenButton;
 
-    public static int timiEftirShared;
-    public static int timiEftir2Shared;
     private MediaPlayer mediaPlayer = TonlistarStjori.getMediaPlayer();
     private int duration;
     public static String bot;
@@ -69,8 +67,6 @@ public class TimaController extends UpphafController {
 
     //handlerar fyrir tíma takkana sem stilla tíma á leiknum og búa til leik senuna
     public void fx1minHandler(ActionEvent actionEvent) {
-        timiEftirShared=60;
-        timiEftir2Shared=60;
         duration = 60000;
 
         if(bot == null) {
@@ -91,8 +87,6 @@ public class TimaController extends UpphafController {
     }
 
     public void fx3minHandler(ActionEvent actionEvent) {
-        timiEftirShared=180;
-        timiEftir2Shared=180;
         duration = 180000;
 
         if(bot == null) {
@@ -113,8 +107,6 @@ public class TimaController extends UpphafController {
     }
 
     public void fx5minHandler(ActionEvent actionEvent) {
-        timiEftirShared=300;
-        timiEftir2Shared=300;
         duration = 300000;
 
         if(bot == null) {
@@ -134,8 +126,6 @@ public class TimaController extends UpphafController {
     }
 
     public void fx10minHandler(ActionEvent actionEvent) throws IOException {
-        timiEftirShared=600;
-        timiEftir2Shared=600;
         duration = 600000;
 
         if(bot == null) {
