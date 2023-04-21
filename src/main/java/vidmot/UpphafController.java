@@ -19,6 +19,16 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Optional;
 
+/****************************************************************************************************************************
+ * Lýsing: Controller klasi fyrir upphafssenuna sem inniheldur handlera fyrir takkana í senunni
+ * og einnig fyrir þema menuinn.
+ *
+ *
+ *
+ *
+ *
+ *****************************************************************************************************************************/
+
 public class UpphafController  {
 
     @FXML
@@ -41,20 +51,28 @@ public class UpphafController  {
     private Scene scene;
     private Parent root;
 
+    /**
+     * Aðferð sem setur ConstructionFlag - þetta eru upplýsingar fyrir vinnsluna
+     * @param constructionFlag
+     */
     public void setConstructionFlag(MediatorConstructionFlags constructionFlag) {
         this.constructionFlag = constructionFlag;
     }
 
-    public MediatorConstructionFlags getConstructionFlag() {
-        return constructionFlag;
-    }
 
-    //handler sem fyrir minimize takkann
+    /**
+     * Handler fyrir minimize takkann
+     * @param event
+     */
     public void fxMinimizeButtonHandler(ActionEvent event){
         Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene.setIconified(true);
     }
-    //handler fyrir fullscreen takkan
+
+    /**
+     * Handler fyrir fullscreen takkann til þess að stækka gluggann
+     * @param event
+     */
     public void fxFullscreenButtonHandler(ActionEvent event){
         Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
         if (scene.getWidth() == MAX_WIDTH && scene.getHeight() == MAX_HEIGHT){
@@ -70,13 +88,20 @@ public class UpphafController  {
         }
     }
 
-    //handler sem lokar forritinu
+    /**
+     * Handler fyrir takkann sem lokar forritinu
+     * @param event
+     */
     public void fxCloseButtonHandler(ActionEvent event){
         Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene.close();
     }
 
-    //handler sem opnar erfidleikavalmyndina
+    /**
+     * Handler fyrir tölva takkann sem vistar valið að spila við tölvuna og skiptir svo yfir í erfiðleikasenu
+     * @param event
+     * @throws IOException
+     */
     public void fxTolvaHandler(ActionEvent event) throws IOException {
         isBot = 1;
         root = FXMLLoader.load(getClass().getResource("/vidmot/erfidleika-view.fxml"));
@@ -89,7 +114,11 @@ public class UpphafController  {
         setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
     }
 
-    //handler sem opnar leikmannsvalmyndina
+    /**
+     * Handler fyrir vinur takkann sem vistar valið að spila við vin og skiptir svo yfir í tímasenu
+     * @param event
+     * @throws IOException
+     */
     public void fxLeikmadurHandler(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -100,7 +129,11 @@ public class UpphafController  {
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
     }
-    //handler sem leifir notanda að draga skjáinn
+
+    /**
+     * Handler sem leyfir notenda að hreyfa gluggann til á tölvuskjánum
+     * @param node
+     */
     void dragaSkjaHandler(final Node node) {
         node.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -121,12 +154,20 @@ public class UpphafController  {
             }
         });
     }
-    //Hljóðtakka handlerinn
+
+    /**
+     * Handler fyrir hljóðtakkann
+     * @param actionEvent
+     */
     public void fxHljodtakkiHandler(ActionEvent actionEvent) {
         mediaPlayer.setMute(!mediaPlayer.isMute());
     }
 
-    //heima takka handlerinn
+    /**
+     * Handler fyrir heimatakkann, hann birtir alert dialog sem spyr notenda hvort hann sé viss um að hann vilji fara
+     * aftur á upphafsskjá og hreinsar svo allar stillingar sem höfðu verið valdar.
+     * @param actionEvent
+     */
     public void fxHomeButtonHandler(ActionEvent actionEvent) {
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
         if (!actionEvent.isConsumed()) {
@@ -135,7 +176,7 @@ public class UpphafController  {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Ertu viss?");
             alert.setHeaderText(null);
-            alert.setContentText("Vilt þú fara til baka á upphafsskjá og hreinsa þema?");
+            alert.setContentText("Vilt þú fara til baka á upphafsskjá?");
 
             ButtonType yesButton = new ButtonType("Já", ButtonBar.ButtonData.OK_DONE);
             ButtonType noButton = new ButtonType("Nei", ButtonBar.ButtonData.CANCEL_CLOSE);
@@ -160,7 +201,11 @@ public class UpphafController  {
             }
         }
     }
-    //handlerar fyrir þema takkana
+
+    /**
+     * Handler fyrir klassíska þemað
+     * @param actionEvent
+     */
     public void fxClassicHandler(ActionEvent actionEvent) {
         String newStylesheet = getClass().getResource("stylesheets/klassiskt-still.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
@@ -169,6 +214,11 @@ public class UpphafController  {
             selectedStylesheet = newStylesheet;
         }
     }
+
+    /**
+     * Handler fyrir skýjaða þemað
+     * @param actionEvent
+     */
     public void fxCloudHandler(ActionEvent actionEvent) {
         String newStylesheet = getClass().getResource("stylesheets/skyjad-still.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
@@ -177,6 +227,11 @@ public class UpphafController  {
             selectedStylesheet = newStylesheet;
         }
     }
+
+    /**
+     * Handler fyrir hitabeltisþemað
+     * @param actionEvent
+     */
     public void fxTropicalHandler(ActionEvent actionEvent) {
         String newStylesheet = getClass().getResource("stylesheets/hitabeltis-still.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
@@ -186,6 +241,9 @@ public class UpphafController  {
         }
     }
 
+    /**
+     * Handler fyrir initialize aðferðina sem kveikir á tónlistinni og setur nokkrar aðferðir
+     */
     public void initialize() {
         dragaSkjaHandler(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);

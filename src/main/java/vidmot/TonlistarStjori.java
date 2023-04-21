@@ -7,7 +7,9 @@ public class TonlistarStjori {
     private static Media media;
     private static MediaPlayer mediaPlayer;
 
-    //nær í hljóðskrána og spilar hana
+    /**
+     * Aðferð sem nær í tónlistarskrána og spilar hana
+     */
     static {
         media = new Media(TonlistarStjori.class.getResource("tonlist/music.wav").toExternalForm());
 
