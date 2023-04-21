@@ -35,7 +35,12 @@ public class TimaController extends UpphafController {
     private Scene scene;
     private Parent root;
 
-    //handler fyrir audvelt bot takkann
+
+    /**
+     * Handler fyrir auðvelt bot takka. Tekur mann yfir í tímasenu
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void fxAudveltHandler(ActionEvent actionEvent)  throws IOException {
         bot = ("audvelt");
@@ -48,7 +53,11 @@ public class TimaController extends UpphafController {
         stage.show();
     }
 
-    //handler fyrir erfitt bot takkann
+    /**
+     * Handler fyrir erfitt bot takka. Tekur mann yfir í tímasenu
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void fxErfittHandler(ActionEvent actionEvent)  throws IOException {
         bot=("erfitt");
@@ -61,11 +70,22 @@ public class TimaController extends UpphafController {
         stage.show();
     }
 
+    /**
+     * getter fyrir bot,
+     * @return String sem segir til um hvort valið var auðvelt eða erfitt bot.
+     */
     public static String getBot() {
         return bot;
     }
 
     //handlerar fyrir tíma takkana sem stilla tíma á leiknum og búa til leik senuna
+
+    /**
+     * Handler fyrir 1mín takka, hefur leik með 1 mínútu á mann.
+     * Tekur einnig inn hvort spilað er á móti tölvu eða ekki og erfiðleikastig ef valið er að spila á móti tölvu
+     * og býr til skákleik og færir mann yfir í skáksenu
+     * @param actionEvent
+     */
     public void fx1minHandler(ActionEvent actionEvent) {
         duration = 60000;
 
@@ -86,6 +106,13 @@ public class TimaController extends UpphafController {
 
     }
 
+
+    /**
+     * Handler fyrir 3mín takka, hefur leik með 3 mínútur á mann.
+     * Tekur einnig inn hvort spilað er á móti tölvu eða ekki og erfiðleikastig ef valið er að spila á móti tölvu
+     * og býr til skákleik og færir mann yfir í skáksenu
+     * @param actionEvent
+     */
     public void fx3minHandler(ActionEvent actionEvent) {
         duration = 180000;
 
@@ -106,6 +133,12 @@ public class TimaController extends UpphafController {
 
     }
 
+    /**
+     * Handler fyrir 5mín takka, hefur leik með 5 mínútur á mann.
+     * Tekur einnig inn hvort spilað er á móti tölvu eða ekki og erfiðleikastig ef valið er að spila á móti tölvu
+     * og býr til skákleik og færir mann yfir í skáksenu
+     * @param actionEvent
+     */
     public void fx5minHandler(ActionEvent actionEvent) {
         duration = 300000;
 
@@ -125,6 +158,13 @@ public class TimaController extends UpphafController {
         }
     }
 
+    /**
+     *  Handler fyrir 10mín takka, hefur leik með 10 mínútur á mann.
+     *  Tekur einnig inn hvort spilað er á móti tölvu eða ekki og erfiðleikastig ef valið er að spila á móti tölvu
+     *  og býr til skákleik og færir mann yfir í skáksenu
+     * @param actionEvent
+     * @throws IOException
+     */
     public void fx10minHandler(ActionEvent actionEvent) throws IOException {
         duration = 600000;
 
@@ -144,6 +184,9 @@ public class TimaController extends UpphafController {
         }
     }
 
+    /**
+     * Initialize fall fyrir TimaController, skoðar ýmis stillingaratriði úr fyrri senum og setur senuna upp eftir því
+     */
     public void initialize(){
         dragaSkjaHandler(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
