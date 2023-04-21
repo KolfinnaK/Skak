@@ -144,7 +144,7 @@ public class ToppBordaHnutur extends Pane {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Ertu viss?");
                 alert.setHeaderText(null);
-                alert.setContentText("Vilt þú fara til baka á upphafsskjá og hreinsa þema?");
+                alert.setContentText("Vilt þú fara til baka á upphafsskjá?");
 
                 ButtonType yesButton = new ButtonType("Já", ButtonBar.ButtonData.OK_DONE);
                 ButtonType noButton = new ButtonType("Nei", ButtonBar.ButtonData.CANCEL_CLOSE);
