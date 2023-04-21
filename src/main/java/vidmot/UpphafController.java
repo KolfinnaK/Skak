@@ -1,7 +1,5 @@
 package vidmot;
 
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -34,8 +32,8 @@ public class UpphafController  {
 
     private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
     private double xOffset = 0.0, yOffset = 0.0;
-    private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
-    public static String selectedStylesheet =  UpphafController.class.getResource("stylesheets/cloud-styles.css").toExternalForm();
+    private MediaPlayer mediaPlayer = TonlistarStjori.getMediaPlayer();
+    public static String selectedStylesheet =  UpphafController.class.getResource("stylesheets/skyjad-still.css").toExternalForm();
     private MediatorConstructionFlags constructionFlag;
     public static int isBot;
     private Stage stage;
@@ -50,10 +48,13 @@ public class UpphafController  {
     public MediatorConstructionFlags getConstructionFlag() {
         return constructionFlag;
     }
+
+    //handler sem fyrir minimize takkann
     public void fxMinimizeButtonHandler(ActionEvent event){
         Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene.setIconified(true);
     }
+    //handler fyrir fullscreen takkan
     public void fxFullscreenButtonHandler(ActionEvent event){
         Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
         if (scene.getWidth() == MAX_WIDTH && scene.getHeight() == MAX_HEIGHT){
@@ -69,36 +70,38 @@ public class UpphafController  {
         }
     }
 
+    //handler sem lokar forritinu
     public void fxCloseButtonHandler(ActionEvent event){
         Stage scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene.close();
     }
 
+    //handler sem opnar erfidleikavalmyndina
     public void fxTolvaHandler(ActionEvent event) throws IOException {
         isBot = 1;
         root = FXMLLoader.load(getClass().getResource("/vidmot/erfidleika-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(fxtitleBar);
+        dragaSkjaHandler(fxtitleBar);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_AI); //það kemur villa útaf þessum línum
     }
 
+    //handler sem opnar leikmannsvalmyndina
     public void fxLeikmadurHandler(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(fxtitleBar);
+        dragaSkjaHandler(fxtitleBar);
         stage.setScene(scene);
         stage.show();
         setConstructionFlag(MediatorConstructionFlags.TIMED_LOCAL);
     }
-
-    void addDraggableNode(final Node node) {
-
+    //handler sem leifir notanda að draga skjáinn
+    void dragaSkjaHandler(final Node node) {
         node.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {
@@ -118,11 +121,12 @@ public class UpphafController  {
             }
         });
     }
-
+    //Hljóðtakka handlerinn
     public void fxHljodtakkiHandler(ActionEvent actionEvent) {
         mediaPlayer.setMute(!mediaPlayer.isMute());
     }
 
+    //heima takka handlerinn
     public void fxHomeButtonHandler(ActionEvent actionEvent) {
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
         if (!actionEvent.isConsumed()) {
@@ -145,7 +149,7 @@ public class UpphafController  {
                     stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     scene.getStylesheets().add(selectedStylesheet);
-                    addDraggableNode(fxtitleBar);
+                    dragaSkjaHandler(fxtitleBar);
                     stage.setScene(scene);
                     stage.show();
                     isBot = 0;
@@ -156,9 +160,9 @@ public class UpphafController  {
             }
         }
     }
-
+    //handlerar fyrir þema takkana
     public void fxClassicHandler(ActionEvent actionEvent) {
-        String newStylesheet = getClass().getResource("stylesheets/classic-styles.css").toExternalForm();
+        String newStylesheet = getClass().getResource("stylesheets/klassiskt-still.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
             fxHomeButton.getScene().getStylesheets().add(newStylesheet);
@@ -166,25 +170,15 @@ public class UpphafController  {
         }
     }
     public void fxCloudHandler(ActionEvent actionEvent) {
-        String newStylesheet = getClass().getResource("stylesheets/cloud-styles.css").toExternalForm();
+        String newStylesheet = getClass().getResource("stylesheets/skyjad-still.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
             fxHomeButton.getScene().getStylesheets().add(newStylesheet);
             selectedStylesheet = newStylesheet;
         }
     }
-
-    public void fxCottonCandyHandler(ActionEvent actionEvent) {
-        String newStylesheet = getClass().getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
-        if (!selectedStylesheet.equals(newStylesheet)) {
-            fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
-            fxHomeButton.getScene().getStylesheets().add(newStylesheet);
-            selectedStylesheet = newStylesheet;
-        }
-    }
-
     public void fxTropicalHandler(ActionEvent actionEvent) {
-        String newStylesheet = getClass().getResource("stylesheets/tropical-styles.css").toExternalForm();
+        String newStylesheet = getClass().getResource("stylesheets/hitabeltis-still.css").toExternalForm();
         if (!selectedStylesheet.equals(newStylesheet)) {
             fxHomeButton.getScene().getStylesheets().remove(selectedStylesheet);
             fxHomeButton.getScene().getStylesheets().add(newStylesheet);
@@ -193,7 +187,7 @@ public class UpphafController  {
     }
 
     public void initialize() {
-        addDraggableNode(fxtitleBar);
+        dragaSkjaHandler(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
         mediaPlayer.setAutoPlay(true);
         if (mediaPlayer.isMute()){

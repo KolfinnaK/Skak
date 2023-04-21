@@ -1,4 +1,4 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
 import vinnsla.util.Pieces;
 import presenter.BoardPresenter;
@@ -99,31 +99,31 @@ public class TileNode extends StackPane implements Observer {
     }
 
     public Image getImage(Pieces piece) {
-        String path = "file:./src/main/java/vidmot/resources/";
+        String path = "file:./src/main/resources/vidmot/taflmenn/";
         if (piece == Pieces.BLACK_KING)
-            path += "black_king.png";
+            path += "svartur_kongur.png";
         else if (piece == Pieces.BLACK_QUEEN)
-            path += "black_queen.png";
+            path += "svort_drolla.png";
         else if (piece == Pieces.BLACK_ROOK)
-            path += "black_rook.png";
+            path += "hrokur_svart.png";
         else if (piece == Pieces.BLACK_BISHOP)
-            path += "black_bishop.png";
+            path += "biskup_svart.png";
         else if (piece == Pieces.BLACK_KNIGHT)
-            path += "black_knight.png";
+            path += "hestur_svart.png";
         else if (piece == Pieces.BLACK_PAWN)
-            path += "black_pawn.png";
+            path += "svart_ped.png";
         else if (piece == Pieces.WHITE_KING)
-            path += "white_king.png";
+            path += "hvitur_kongur.png";
         else if (piece == Pieces.WHITE_QUEEN)
-            path += "white_queen.png";
+            path += "hvit_drolla.png";
         else if (piece == Pieces.WHITE_ROOK)
-            path += "white_rook.png";
+            path += "hrokur_hvitt.png";
         else if (piece == Pieces.WHITE_BISHOP)
-            path += "white_bishop.png";
+            path += "biskup_hvitt.png";
         else if (piece == Pieces.WHITE_KNIGHT)
-            path += "white_knight.png";
+            path += "hestur_hvitt.png";
         else if (piece == Pieces.WHITE_PAWN)
-            path += "white_pawn.png";
+            path += "hvitt_ped.png";
         else
             return null;
 

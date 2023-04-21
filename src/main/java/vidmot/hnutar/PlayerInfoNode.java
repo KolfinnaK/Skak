@@ -1,4 +1,4 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -6,17 +6,19 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class PlayerInfoNode extends Pane {
     private HBox root;
-    private TimerNode timer;
+    private TimaHnutur timer;
     private Label playerName;
+    private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 17);
 
-    public PlayerInfoNode(TimerNode timer, String playerName) {
+    public PlayerInfoNode(TimaHnutur timer, String playerName) {
         this.timer = timer;
         this.playerName = new Label(playerName);
         this.playerName.setPadding(new Insets(0, 10, 0, 10));
-        this.playerName.setFont(new Font("Impact", 20));
+        this.playerName.setFont(font);
         root = new HBox();
         root.setAlignment(Pos.CENTER);
         root.minWidthProperty().bind(widthProperty());

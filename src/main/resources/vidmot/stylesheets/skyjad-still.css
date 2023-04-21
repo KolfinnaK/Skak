@@ -18,26 +18,33 @@
 }
 
 .fxmainMenuAdal{
-    -fx-background-image: url("../images/cloud_bakgrunnur2.png");
+    -fx-background-image: url("../myndir/cloud_bakgrunnur2.png");
     -fx-background-size: 100%, 100%;
     -fx-background-repeat: no-repeat;
 }
 .fxTopBar{
-    -fx-background-image: url("../images/cloud_blob.png");
+    -fx-background-color: #FFFFFF; //hvitur
+    -fx-background-image: url("../myndir/cloud_blob.png");
     -fx-background-size: 100%, 100%;
     -fx-background-repeat: no-repeat;
+}
+.fxTopBarLogo {
+    -fx-background-image: url("../myndir/TopBarNyttlogo.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 95%, 95%;
 }
 .fxTopBarHljod{
     -fx-background-color: radial-gradient(focus-angle 10deg , focus-distance 20% , center 55% 58% , radius 62% , #91D5DD 85%, #C8F6FF); //ljósblár
     -fx-background-radius: 200; //hringur
     -fx-effect: dropshadow(gaussian , rgba(109, 159, 166) , 2 , 0.1 , 2.5 , 2.5 ); //skuggi
-    -fx-background-image: url("../images/sound-play.png");
+    -fx-background-image: url("../myndir/sound-play.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 70%, 70%;
 }
 .fxTopBarHljod:selected{
-    -fx-background-image: url("../images/sound-mute.png");
+    -fx-background-image: url("../myndir/sound-mute.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 70%, 70%;
@@ -46,140 +53,19 @@
     -fx-background-color: radial-gradient(focus-angle 10deg , focus-distance 20% , center 55% 58% , radius 62% , #91D5DD 85%, #C8F6FF); //ljósblár
     -fx-effect: dropshadow(gaussian , rgba(109, 159, 166) , 2 , 0.1 , 2.5 , 2.5 ); //skuggi
     -fx-background-radius: 200; //hringur
-    -fx-background-image: url("../images/home_icon.png");
+    -fx-background-image: url("../myndir/home_icon.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 70%, 70%;
-}
-.fxthemeMenu {
-    -fx-background-color: #FFE38E;//gulur
-    -fx-background-radius: 0; //hringur
-}
-.fxtitleBar{
-    -fx-background-color: #3B3B3B; //grár
-    -fx-background-radius: 0; //hringur
-}
-.fxmainMenuTakki{
-    -fx-background-color: #91D5DD; //ljósblár
-    -fx-background-radius: 10; //hringur
-    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
-    -fx-transition: 0.15s;
-}
-.fxmainMenuTakki:hover{
-    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
-}
-.fxmainMenuTakki:pressed{
-    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
-}
-.fxpedIcon{
-    -fx-background-color: #FFE38E; //hvítur
-    -fx-background-image: url("../images/logo-ped.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 85%,85%;
-}
-.fxcloseButton{
-    -fx-background-color: #3B3B3B; //ljósgrár
-    -fx-background-radius: 0; //hringur
-    -fx-background-image: url("../images/close-icon.png");
-    -fx-background-size: 17px, 17px;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-}
-.fxcloseButton:hover{
-    -fx-background-color: #FF3B3B; //ljósgrár
-}
-.fxminimizeButton{
-    -fx-background-color: #3B3B3B; //ljósgrár
-    -fx-background-radius: 0; //hringur
-    -fx-background-image: url("../images/minimize-icon.png");
-    -fx-background-size: 15px, 15px;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-}
-.fxminimizeButton:hover{
-    -fx-background-color: #575757; //ljósljósgrár
-}
-.fxfullscreenButton{
-    -fx-background-color: #3B3B3B; //ljósgrár
-    -fx-background-radius: 0; //hringur
-    -fx-background-image: url("../images/full-screen-icon.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 15px, 15px;
-}
-.fxfullscreenButton:selected{
-    -fx-background-image: url("../images/full-screen-exit-icon.png");
-}
-.fxfullscreenButton:hover{
-    -fx-background-color: #575757; //ljóljósgrár
-}
-.fxTopBarLogo {
-    -fx-background-image: url("../images/TopBarNyttlogo.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 95%, 95%;
-}
-.fxerfittTakki{
-    -fx-background-color: #FF3B3B; //ljósblár
-    -fx-background-radius: 20; //hringur
-    -fx-effect: dropshadow(gaussian , #BF2C2C , 0 , 1 , 0 , 8.5 );
-    -fx-background-image: url("../images/erfitt.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 80%, 80%;
-}
-.fxerfittTakki:hover{
-    -fx-effect: dropshadow(gaussian , #BF2C2C , 0 , 1 , 0 , 6.5 );
-}
-.fxerfittTakki:pressed{
-    -fx-effect: dropshadow(gaussian , #BF2C2C , 0 , 1 , 0 , 1 );
-}
-.fxaudveltTakki{
-    -fx-background-color: #91D5DD; //ljósblár
-    -fx-background-radius: 20; //hringur
-    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
-    -fx-background-image: url("../images/audvelt.png");
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 70%, 70%;
-}
-.fxaudveltTakki:hover{
-    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
-}
-.fxaudveltTakki:pressed{
-    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
-}
-.fxTimerBackground{
-    -fx-background-color: #91D5DD; //ljósblár
-    -fx-background-size: 80%, 80%;
-}
-.fxTimerBackground2{
-    -fx-background-color: #71a7ad; //ljósblár
-}
-.fxSelectedPiece{
-    -fx-background-color: #659499; //gulur
-}
-.fxMogulegtMoveDokkur{
-    -fx-background-color: #76ACB3; //gulur
-}
-.fxSvarturReitur{
-    -fx-background-color: #FFE38E; //gulur
-}
-.fxMogulegtcMoveLjos{
-    -fx-background-color: #91D5DD; //gulur
-}
-.fxHviturReitur{
-    -fx-background-color: #FFFFFF; //hvítur
 }
 .fxTextiMainEda{
-    -fx-background-image: url("../images/edaMainMenu.png");
+    -fx-background-image: url("../myndir/edaMainMenu.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100%, 100%;
 }
 .fxTextMainViltuSpila{
-    -fx-background-image: url("../images/mainMenuViltuSpila.png");
+    -fx-background-image: url("../myndir/mainMenuViltuSpila.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100%, 100%;
@@ -188,7 +74,7 @@
     -fx-background-color: #91D5DD; //ljósblár
     -fx-background-radius: 10; //hringur
     -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
-    -fx-background-image: url("../images/tolvutextumainmenu.png");
+    -fx-background-image: url("../myndir/tolvutextumainmenu.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100%, 100%;
@@ -203,7 +89,7 @@
     -fx-background-color: #91D5DD; //ljósblár
     -fx-background-radius: 10; //hringur
     -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
-    -fx-background-image: url("../images/mainMenuTakkiVin.png");
+    -fx-background-image: url("../myndir/mainMenuTakkiVin.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100%, 100%;
@@ -215,8 +101,197 @@
     -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
 }
 .fxHvorViltuTexti{
-    -fx-background-image: url("../images/hvorViltuTexti.png");
+    -fx-background-image: url("../myndir/hvorViltuTexti.png");
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-background-size: 100%, 100%;
+}
+.fxmainMenuTexti{
+    -fx-background-image: url("../myndir/HversuLanganTexti.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100%, 100%;
+}
+.fxthemeMenu {
+    -fx-background-color: #FFE38E;//gulur
+    -fx-background-radius: 0; //hringur
+}
+.fxtitleBar{
+    -fx-background-color: #3B3B3B; //grár
+    -fx-background-radius: 0; //hringur
+}
+
+.fxthemeMenu {
+    -fx-background-color: #FFE38E;//gulur
+    -fx-background-radius: 0; //hringur
+}
+.fxpedIcon{
+    -fx-background-color: #FFE38E; //hvítur
+    -fx-background-image: url("../myndir/logo-ped.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 85%,85%;
+}
+.fxcloseButton{
+    -fx-background-color: #3B3B3B; //ljósgrár
+    -fx-background-radius: 0; //hringur
+    -fx-background-image: url("../myndir/close-icon.png");
+    -fx-background-size: 17px, 17px;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+.fxcloseButton:hover{
+    -fx-background-color: #FF3B3B; //ljósgrár
+}
+.fxminimizeButton{
+    -fx-background-color: #3B3B3B; //ljósgrár
+    -fx-background-radius: 0; //hringur
+    -fx-background-image: url("../myndir/minimize-icon.png");
+    -fx-background-size: 15px, 15px;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+.fxminimizeButton:hover{
+    -fx-background-color: #575757; //ljósljósgrár
+}
+.fxfullscreenButton{
+    -fx-background-color: #3B3B3B; //ljósgrár
+    -fx-background-radius: 0; //hringur
+    -fx-background-image: url("../myndir/full-screen-icon.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 15px, 15px;
+}
+.fxfullscreenButton:hover{
+    -fx-background-color: #575757; //ljóljósgrár
+}
+.fxfullscreenButton:selected{
+    -fx-background-image: url("../myndir/full-screen-exit-icon.png");
+}
+
+.fxerfittTakki{
+    -fx-background-color: #FF3B3B; //ljósblár
+    -fx-background-radius: 20; //hringur
+    -fx-effect: dropshadow(gaussian , #BF2C2C , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../myndir/erfitt.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 80%, 80%;
+}
+.fxerfittTakki:hover{
+    -fx-effect: dropshadow(gaussian , #BF2C2C , 0 , 1 , 0 , 6.5 );
+}
+.fxerfittTakki:pressed{
+    -fx-effect: dropshadow(gaussian , #BF2C2C , 0 , 1 , 0 , 1 );
+}
+.fxaudveltTakki{
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-radius: 20; //hringur
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../myndir/audvelt.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 70%, 70%;
+}
+.fxaudveltTakki:hover{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
+}
+.fxaudveltTakki:pressed{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
+}
+
+
+.fxTimerBackground{ //bakgrunnur fyrir timer
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-size: 80%, 80%;
+}
+
+.fxSelectedPiece{
+    -fx-background-color: #659499; //gulur
+}
+.fxMogulegtMoveDokkur{
+    -fx-background-color: #76ACB3; //dokkblar
+}
+.fxSvarturReitur{
+    -fx-background-color: #FFE38E; //gulur
+}
+.fxMogulegtcMoveLjos{
+    -fx-background-color: #91D5DD; //gulur
+}
+.fxHviturReitur{
+    -fx-background-color: #fff2c9; //hvítur
+}
+
+.fx10minTakki{
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-radius: 10; //hringur
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../myndir/10minText.png");
+    -fx-background-size: 100%, 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-transition: 0.15s;
+}
+.fx10minTakki:hover{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
+}
+.fx10minTakki:pressed{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
+}
+.fx5minTakki{
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-radius: 10; //hringur
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../myndir/5minText.png");
+    -fx-background-size: 100%, 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-transition: 0.15s;
+}
+.fx5minTakki:hover{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
+}
+.fx5minTakki:pressed {
+    -fx-effect: dropshadow(gaussian, #82BEC4, 0, 1, 0, 1);
+}
+.fx3minTakki{
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-radius: 10; //hringur
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../myndir/3minTexti.png");
+    -fx-background-size: 100%, 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-transition: 0.15s;
+}
+.fx3minTakki:hover{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
+}
+.fx3minTakki:pressed{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
+}
+.fx1minTakki{
+    -fx-background-color: #91D5DD; //ljósblár
+    -fx-background-radius: 10; //hringur
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 8.5 );
+    -fx-background-image: url("../myndir/1minTexti.png");
+    -fx-background-size: 100%, 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-transition: 0.15s;
+ }
+.fx1minTakki:hover{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 6.5 );
+}
+.fx1minTakki:pressed{
+    -fx-effect: dropshadow(gaussian , #82BEC4 , 0 , 1 , 0 , 1 );
+}
+.fxTimaBakk{
+    -fx-background-color: #FFFFFF; //hvítur
+}
+.fxerfileikaBakk{
+    -fx-background-color: #FFFFFF; //hvítur
+}
+.fxSkakSenaBakkgrunnur{
+    -fx-background-color: #FFFFFF; //hvítur
 }

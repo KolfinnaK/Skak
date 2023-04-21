@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
+<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" prefHeight="530.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
     <children>
         <AnchorPane fx:id="fxtitleBar" cacheShape="false" maxHeight="30.0" maxWidth="1050.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" styleClass="fxtitleBar" VBox.vgrow="NEVER">
             <children>
@@ -14,8 +14,7 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Skýjað" />
                         <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />
-                        <MenuItem mnemonicParsing="false" onAction="#fxCottonCandyHandler" text="Cotton candy" />
-                        <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Tropical" />
+                        <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Hitabeltis" />
                     </items>
                     <font>
                         <Font name="Trebuchet MS Bold" size="16.0" />
@@ -81,53 +80,60 @@
                 </HBox>
             </children>
         </HBox>
-      <VBox alignment="TOP_CENTER" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" VBox.vgrow="ALWAYS">
+      <VBox alignment="TOP_CENTER" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" styleClass="fxTimaBakk" VBox.vgrow="ALWAYS">
          <children>
-                <Label contentDisplay="RIGHT" lineSpacing="20.0" maxHeight="152.0" maxWidth="361.0" minHeight="42.0" minWidth="225.0" prefHeight="69.0" prefWidth="361.0" scaleShape="false" styleClass="fxmainMenuTexti" text="Hversu langan leik?" textFill="#3b3b3b" wrapText="true">
-                    <font>
-                        <Font name="Trebuchet MS Bold" size="38.0" />
-                    </font>
-                </Label>
-            <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="132.0" prefWidth="700.0" spacing="28.0" VBox.vgrow="NEVER">
+            <Region cache="true" cacheHint="SPEED" maxHeight="105.0" maxWidth="1050.0" minHeight="70.0" minWidth="700.0" VBox.vgrow="ALWAYS" />
+            <HBox maxHeight="90.0" maxWidth="1050.0" minHeight="60.0" minWidth="700.0" VBox.vgrow="ALWAYS">
                <children>
-                      <Button fx:id="fx1min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fx1minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="1 mín" textFill="WHITE">
-                          <font>
-                              <Font name="Trebuchet MS Bold" size="30.0" />
-                          </font>
-                          <cursor>
-                              <Cursor fx:constant="HAND" />
-                          </cursor>
-                      </Button>
-                      <Button fx:id="fx3min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fx3minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="3 mín" textFill="WHITE">
-                          <font>
-                              <Font name="Trebuchet MS Bold" size="30.0" />
-                          </font>
-                          <cursor>
-                              <Cursor fx:constant="HAND" />
-                          </cursor>
-                      </Button>
-                      <Button fx:id="fx5min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fx5minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="5 mín" textFill="WHITE">
-                          <font>
-                              <Font name="Trebuchet MS Bold" size="30.0" />
-                          </font>
-                          <cursor>
-                              <Cursor fx:constant="HAND" />
-                          </cursor>
-                      </Button>
-                      <Button fx:id="fx10min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" minWidth="-Infinity" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#fx10minHandler" prefHeight="80.0" prefWidth="140.0" styleClass="fxmainMenuTakki" text="10 mín" textFill="WHITE">
-                          <font>
-                              <Font name="Trebuchet MS Bold" size="30.0" />
-                          </font>
-                          <cursor>
-                              <Cursor fx:constant="HAND" />
-                          </cursor>
-                      </Button>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="90.0" maxWidth="234.0" minHeight="60.0" minWidth="156.0" HBox.hgrow="ALWAYS" />
+                  <Pane cache="true" cacheHint="SCALE" maxHeight="90.0" maxWidth="582.0" minHeight="60.0" minWidth="388.0" styleClass="fxmainMenuTexti" HBox.hgrow="ALWAYS" />
+                  <Region cache="true" cacheHint="SPEED" maxHeight="90.0" maxWidth="234.0" minHeight="60.0" minWidth="156.0" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
+            <Region cache="true" cacheHint="SPEED" maxHeight="36.0" maxWidth="1050.0" minHeight="24.0" minWidth="700.0" VBox.vgrow="ALWAYS" />
+            <HBox alignment="CENTER" maxHeight="120.0" maxWidth="1050.0" minHeight="80.0" minWidth="700.0" nodeOrientation="LEFT_TO_RIGHT" VBox.vgrow="ALWAYS">
+               <children>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="120.0" maxWidth="42.0" minHeight="80.0" minWidth="28.0" HBox.hgrow="ALWAYS" />
+                      <Button fx:id="fx1min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" maxHeight="120.0" maxWidth="210.0" minHeight="80.0" minWidth="140.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#fx1minHandler" styleClass="fx1minTakki" textFill="WHITE" HBox.hgrow="ALWAYS">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="120.0" maxWidth="42.0" minHeight="80.0" minWidth="28.0" HBox.hgrow="ALWAYS" />
+                      <Button fx:id="fx3min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" maxHeight="120.0" maxWidth="210.0" minHeight="80.0" minWidth="140.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#fx3minHandler" styleClass="fx3minTakki" textFill="WHITE" HBox.hgrow="ALWAYS">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="120.0" maxWidth="42.0" minHeight="80.0" minWidth="28.0" HBox.hgrow="ALWAYS" />
+                      <Button fx:id="fx5min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" maxHeight="120.0" maxWidth="210.0" minHeight="80.0" minWidth="140.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#fx5minHandler" styleClass="fx5minTakki" textFill="WHITE" HBox.hgrow="ALWAYS">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="120.0" maxWidth="42.0" minHeight="80.0" minWidth="28.0" HBox.hgrow="ALWAYS" />
+                      <Button fx:id="fx10min" alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" maxHeight="120.0" maxWidth="210.0" minHeight="80.0" minWidth="140.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#fx10minHandler" styleClass="fx10minTakki" textFill="WHITE" HBox.hgrow="ALWAYS">
+                          <font>
+                              <Font name="Trebuchet MS Bold" size="30.0" />
+                          </font>
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="120.0" maxWidth="42.0" minHeight="80.0" minWidth="28.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Region cache="true" cacheHint="SPEED" maxHeight="285.0" maxWidth="1050.0" minHeight="190.0" minWidth="700.0" VBox.vgrow="ALWAYS" />
          </children>
-         <padding>
-            <Insets top="70.0" />
-         </padding>
       </VBox>
     </children>
 </VBox>

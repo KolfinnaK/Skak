@@ -1,4 +1,4 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;

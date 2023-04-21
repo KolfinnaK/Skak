@@ -7,7 +7,7 @@ import vinnsla.util.Colors;
 import vinnsla.util.Pair;
 import vinnsla.util.Tile;
 import vidmot.Observer;
-import vidmot.nodes.BoardNode;
+import vidmot.hnutar.BoardNode;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;

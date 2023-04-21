@@ -1,5 +1,7 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import presenter.NotationPresenter;
 import vidmot.Observer;
 import javafx.geometry.Insets;
@@ -12,6 +14,8 @@ public class NotationNode extends ScrollPane implements Observer {
     private int notationCount;
     private NotationPresenter notationPresenter;
     private VBox root;
+    private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 12);
+
 
     public NotationNode(NotationPresenter notationPresenter) {
         notationCount = 0;
@@ -46,10 +50,12 @@ public class NotationNode extends ScrollPane implements Observer {
             Label numberLabel = new Label(root.getChildren().size() + 1 + ". ");
             numberLabel.setMinWidth(30);
             numberLabel.setMaxWidth(30);
+            numberLabel.setFont(font);
             row.getChildren().add(numberLabel);
             Label label = new Label(notationPresenter.getLastMovement());
             label.setMinWidth(50);
             label.setMaxWidth(50);
+            label.setFont(font);
             row.getChildren().add(label);
             root.getChildren().add(row);
         } else {

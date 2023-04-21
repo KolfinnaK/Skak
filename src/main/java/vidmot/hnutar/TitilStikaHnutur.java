@@ -1,4 +1,4 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
@@ -15,7 +15,7 @@ import vidmot.UpphafController;
 
 import java.util.Objects;
 
-public class TitleBarNode extends Pane{
+public class TitilStikaHnutur extends Pane{
     private AnchorPane root;
     private Pane fxTitleLBarLogo;
     private Label fxTitleLBarText;
@@ -25,8 +25,8 @@ public class TitleBarNode extends Pane{
     private Button fxTitleLBarMinimize;
     private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 18);
 
-    //Býr til titleBar(veit ekki hvað þetta heitir á íslesnku) fyrir forritið
-    public TitleBarNode() {
+    //Býr til titil stiku fyrir skak senuna
+    public TitilStikaHnutur() {
         setMinHeight(30);
         setMaxHeight(30);
         //Búa til root sem verður AnchorPane
@@ -143,7 +143,7 @@ public class TitleBarNode extends Pane{
             }
         });
     }
-    //Byggja þema Takkan til að halda um valmöguleikana fyrir ChessBoardScene
+    //Byggja þema Takkan til að halda um valmöguleikana fyrir SkakBordSenaController
     private void buildThemeMenu() {
         fxTitleLBarMenu = new MenuButton();
         fxTitleLBarMenu.setLayoutX(457);
@@ -154,41 +154,25 @@ public class TitleBarNode extends Pane{
         fxTitleLBarMenu.setTextFill(Color.web("#4d4d4d"));
         fxTitleLBarMenu.getStyleClass().add("fxthemeMenu");
 
-        //byggja þema valmöguleikana fyrir ChessBoardScene
+        //byggja þema valmöguleikana fyrir SkakBordSenaController
         MenuItem fxSkyjad = new MenuItem("Skýjað");
         MenuItem fxKlassik = new MenuItem("Klassískt");
-        MenuItem fxKandifloss = new MenuItem("Kandífloss");
         MenuItem fxHitabeltis = new MenuItem("Hitabeltis");
-        fxTitleLBarMenu.getItems().addAll(fxSkyjad, fxKlassik, fxKandifloss, fxHitabeltis);
+        fxTitleLBarMenu.getItems().addAll(fxSkyjad, fxKlassik, fxHitabeltis);
 
         //refrence fyiri þema handlerana
         fxKlassik.setOnAction(this::fxKlassikHandler);
         fxSkyjad.setOnAction(this::fxSkyjadHandler);
-        fxKandifloss.setOnAction(this::fxKandiflossHandler);
         fxHitabeltis.setOnAction(this::fxHitabeltisHandler);
     }
     //handlers til að breyta þemu í ChessBoarScene
 
-    //Kandifloss handler
-    private void fxKandiflossHandler(ActionEvent actionEvent) {
-        if (!actionEvent.isConsumed()) {
-            actionEvent.consume();
-            {
-                String newStylesheet = UpphafController.class.getResource("stylesheets/cottoncandy-styles.css").toExternalForm();
-                if (!UpphafController.selectedStylesheet.equals(newStylesheet)) {
-                    getScene().getStylesheets().remove(UpphafController.selectedStylesheet);
-                    getScene().getStylesheets().add(newStylesheet);
-                    UpphafController.selectedStylesheet = newStylesheet;
-                }
-            }
-        }
-    }
     //Skýjad handler
     private void fxSkyjadHandler(ActionEvent actionEvent) {
         if (!actionEvent.isConsumed()) {
             actionEvent.consume();
             {
-                String newStylesheet = UpphafController.class.getResource("stylesheets/cloud-styles.css").toExternalForm();
+                String newStylesheet = UpphafController.class.getResource("stylesheets/skyjad-still.css").toExternalForm();
                 if (!UpphafController.selectedStylesheet.equals(newStylesheet)) {
                     getScene().getStylesheets().remove(UpphafController.selectedStylesheet);
                     getScene().getStylesheets().add(newStylesheet);
@@ -197,12 +181,12 @@ public class TitleBarNode extends Pane{
             }
         }
     }
-    //Klassík handler
+    //Klassískt handler
     private void fxKlassikHandler(ActionEvent actionEvent) {
         if (!actionEvent.isConsumed()) {
             actionEvent.consume();
             {
-                String newStylesheet = UpphafController.class.getResource("stylesheets/classic-styles.css").toExternalForm();
+                String newStylesheet = UpphafController.class.getResource("stylesheets/klassiskt-still.css").toExternalForm();
                 if (!UpphafController.selectedStylesheet.equals(newStylesheet)) {
                     getScene().getStylesheets().remove(UpphafController.selectedStylesheet);
                     getScene().getStylesheets().add(newStylesheet);
@@ -216,7 +200,7 @@ public class TitleBarNode extends Pane{
         if (!actionEvent.isConsumed()) {
             actionEvent.consume();
             {
-            String newStylesheet = UpphafController.class.getResource("stylesheets/tropical-styles.css").toExternalForm();
+            String newStylesheet = UpphafController.class.getResource("stylesheets/hitabeltis-still.css").toExternalForm();
                 if (!UpphafController.selectedStylesheet.equals(newStylesheet)) {
                     getScene().getStylesheets().remove(UpphafController.selectedStylesheet);
                     getScene().getStylesheets().add(newStylesheet);

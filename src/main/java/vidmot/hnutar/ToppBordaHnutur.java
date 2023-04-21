@@ -1,4 +1,4 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -12,11 +12,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import vidmot.MediaManager;
+import vidmot.TonlistarStjori;
 import vidmot.UpphafController;
 
 import java.io.IOException;
@@ -25,7 +22,7 @@ import java.util.Optional;
 import static vidmot.UpphafController.isBot;
 
 
-public class TopBarNode extends Pane {
+public class ToppBordaHnutur extends Pane {
     private HBox root;
     private Button fxHeimaTakki;
     private ToggleButton fxHljodtakkiToggle;
@@ -33,10 +30,10 @@ public class TopBarNode extends Pane {
     private HBox fxLogoGeymsla;
     private Pane fxTopBarLogo;
     private double xOffset = 0.0, yOffset = 0.0;
-    private final MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
+    private final MediaPlayer mediaPlayer = TonlistarStjori.getMediaPlayer();
 
-
-    public TopBarNode() {
+    //hnutur sem innihledur topp borðan á Skákborðs senuni
+    public ToppBordaHnutur() {
         setMinHeight(76);
         setMaxHeight(114);
 

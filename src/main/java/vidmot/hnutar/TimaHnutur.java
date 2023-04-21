@@ -1,6 +1,5 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
-import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import presenter.TimerPresenter;
 import javafx.animation.AnimationTimer;
@@ -10,7 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
-public class TimerNode extends StackPane {
+public class TimaHnutur extends StackPane {
     private AnimationTimer timer;
     private Rectangle background;
     private TimerPresenter timerPresenter;
@@ -18,7 +17,7 @@ public class TimerNode extends StackPane {
 
     private Font font = Font.font("Trebuchet MS", FontWeight.BOLD, 35);
 
-    public TimerNode(TimerPresenter timerPresenter) {
+    public TimaHnutur(TimerPresenter timerPresenter) {
         background = new Rectangle(80, 40);
         background.setFill(Color.rgb(0, 0, 0, 0.0));
         background.getStyleClass().add("fxTimerBackground");

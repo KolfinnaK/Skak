@@ -1,4 +1,4 @@
-package vidmot.nodes;
+package vidmot.hnutar;
 
 import presenter.GameMediator;
 import javafx.geometry.Insets;
@@ -13,15 +13,15 @@ public class GameNode extends Pane {
     private VBox infoBox;
     private HBox root;
     private BoardNode board;
-    private TimerNode whiteTimer, blackTimer;
+    private TimaHnutur whiteTimer, blackTimer;
     private NotationNode notationNode;
     private GameMediator gameMediator;
 
     public GameNode(GameMediator gameMediator) {
         this.gameMediator = gameMediator;
         board = new BoardNode(gameMediator.getBoardPresenter());
-        whiteTimer = new TimerNode(gameMediator.getWhiteTimerPresenter());
-        blackTimer = new TimerNode(gameMediator.getBlackTimerPresenter());
+        whiteTimer = new TimaHnutur(gameMediator.getWhiteTimerPresenter());
+        blackTimer = new TimaHnutur(gameMediator.getBlackTimerPresenter());
         notationNode = new NotationNode(gameMediator.getGameNotationPresenter());
         blackTimer.getStyleClass().add("fxTimerBackground");
         whiteTimer.getStyleClass().add("fxTimerBackground");
@@ -36,6 +36,7 @@ public class GameNode extends Pane {
         root.maxWidthProperty().bind(widthProperty());
         root.minHeightProperty().bind(heightProperty());
         root.maxHeightProperty().bind(heightProperty());
+        root.getStyleClass().add("fxSkakSenaBakkgrunnur");
 
         // add a pane for the board to live in, add a VBox for the timers
         board.minWidthProperty().bind(widthProperty().multiply(1 - TIME_BOX_SPACE_PERCENTAGE));
@@ -44,6 +45,7 @@ public class GameNode extends Pane {
 
         infoBox = new VBox();
         root.getChildren().add(infoBox);
+        infoBox.getStyleClass().add("fxInfoBoxBakgrunnur");
         PlayerInfoNode blackPlayerInfoNode = new PlayerInfoNode(blackTimer, "Svartur");
         blackPlayerInfoNode.minWidthProperty().bind(infoBox.widthProperty().multiply(0.975));
         blackPlayerInfoNode.maxWidthProperty().bind(infoBox.widthProperty().multiply(0.975));

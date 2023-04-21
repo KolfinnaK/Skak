@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
+<VBox alignment="CENTER" maxHeight="780.0" maxWidth="1050.0" minHeight="530.0" minWidth="700.0" prefHeight="530.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.TimaController">
     <children>
         <AnchorPane fx:id="fxtitleBar" cacheShape="false" maxHeight="30.0" maxWidth="1050.0" minHeight="30.0" minWidth="700.0" prefHeight="30.0" prefWidth="700.0" styleClass="fxtitleBar" VBox.vgrow="NEVER">
             <children>
@@ -14,8 +14,7 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#fxCloudHandler" text="Skýjað" />
                         <MenuItem mnemonicParsing="false" onAction="#fxClassicHandler" text="Klassískt" />
-                        <MenuItem mnemonicParsing="false" onAction="#fxCottonCandyHandler" text="Cotton candy" />
-                        <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Tropical" />
+                        <MenuItem mnemonicParsing="false" onAction="#fxTropicalHandler" text="Hitabeltis" />
                     </items>
                     <font>
                         <Font name="Trebuchet MS Bold" size="16.0" />
@@ -48,13 +47,13 @@
             <children>
                 <HBox alignment="CENTER_LEFT" cacheShape="false" maxHeight="114.0" maxWidth="189.0" minHeight="76.0" minWidth="126.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Region maxHeight="66.0" maxWidth="33.0" minHeight="44.0" minWidth="22.0" HBox.hgrow="ALWAYS" />
+                        <Region cache="true" cacheHint="SPEED" maxHeight="66.0" maxWidth="33.0" minHeight="44.0" minWidth="22.0" HBox.hgrow="ALWAYS" />
                         <Button fx:id="fxHomeButton" cacheShape="false" cancelButton="true" contentDisplay="CENTER" maxHeight="66.0" maxWidth="66.0" minHeight="44.0" minWidth="44.0" mnemonicParsing="false" onAction="#fxHomeButtonHandler" styleClass="fxheimaTakki" text=" " HBox.hgrow="ALWAYS">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Region maxHeight="66.0" maxWidth="24.0" minHeight="44.0" minWidth="16.0" HBox.hgrow="ALWAYS" />
+                        <Region cache="true" cacheHint="SPEED" maxHeight="66.0" maxWidth="24.0" minHeight="44.0" minWidth="16.0" HBox.hgrow="ALWAYS" />
                         <ToggleButton fx:id="fxHljodtakkiToggle" cacheHint="QUALITY" cacheShape="false" contentDisplay="CENTER" maxHeight="66.0" maxWidth="66.0" minHeight="44.0" minWidth="44.0" mnemonicParsing="false" onAction="#fxHljodtakkiHandler" styleClass="fxTopBarHljod" HBox.hgrow="ALWAYS">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
@@ -70,27 +69,32 @@
                 </HBox>
                 <HBox maxHeight="114.0" maxWidth="861.0" minHeight="76.0" minWidth="574.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Region maxHeight="114.0" maxWidth="483.0" minHeight="76.0" minWidth="322.0" HBox.hgrow="ALWAYS" />
+                        <Region cache="true" cacheHint="SPEED" maxHeight="114.0" maxWidth="483.0" minHeight="76.0" minWidth="322.0" HBox.hgrow="ALWAYS" />
                         <Pane maxHeight="114.0" maxWidth="357.0" minHeight="76.0" minWidth="238.0" nodeOrientation="LEFT_TO_RIGHT" styleClass="fxTopBarLogo" HBox.hgrow="ALWAYS">
                             <HBox.margin>
                                 <Insets />
                             </HBox.margin>
                         </Pane>
-                        <Region maxHeight="114.0" maxWidth="21.0" minHeight="76.0" minWidth="14.0" HBox.hgrow="ALWAYS" />
+                        <Region cache="true" cacheHint="SPEED" maxHeight="114.0" maxWidth="21.0" minHeight="76.0" minWidth="14.0" HBox.hgrow="ALWAYS" />
                     </children>
                 </HBox>
             </children>
         </HBox>
-        <HBox alignment="TOP_RIGHT" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="424.0" prefWidth="700.0" VBox.vgrow="ALWAYS">
+        <HBox alignment="TOP_RIGHT" maxHeight="636.0" maxWidth="1050.0" minHeight="424.0" minWidth="700.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="424.0" prefWidth="700.0" styleClass="fxerfileikaBakk" VBox.vgrow="ALWAYS">
             <children>
-                <Label alignment="BOTTOM_LEFT" contentDisplay="RIGHT" lineSpacing="20.0" maxHeight="235.0" maxWidth="361.0" minHeight="42.0" minWidth="225.0" prefHeight="234.0" prefWidth="270.0" scaleShape="false" styleClass="fxmainMenuTexti" text="Hvor viltu takast á við?" textFill="#3b3b3b" wrapText="true">
-                    <font>
-                        <Font name="Trebuchet MS Bold" size="38.0" />
-                    </font>
-                </Label>
-                <VBox alignment="CENTER" maxHeight="636.0" maxWidth="600.0" minHeight="424.0" minWidth="400.0" prefHeight="424.0" prefWidth="400.0" spacing="30.0" HBox.hgrow="ALWAYS">
+            <Region cache="true" cacheHint="SPEED" maxHeight="636.0" maxWidth="129.0" minHeight="424.0" minWidth="86.0" HBox.hgrow="ALWAYS" />
+            <VBox maxHeight="636.0" maxWidth="354.0" minHeight="424.0" minWidth="236.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="156.0" maxWidth="354.0" minHeight="104.0" minWidth="236.0" VBox.vgrow="ALWAYS" />
+                  <Pane maxHeight="204.0" maxWidth="354.0" minHeight="136.0" minWidth="236.0" styleClass="fxHvorViltuTexti" VBox.vgrow="ALWAYS" />
+                  <Region cache="true" cacheHint="SPEED" maxHeight="276.0" maxWidth="354.0" minHeight="184.0" minWidth="236.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <Region cache="true" cacheHint="SPEED" maxHeight="636.0" maxWidth="84.0" minHeight="424.0" minWidth="56.0" HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER" maxHeight="636.0" maxWidth="270.0" minHeight="424.0" minWidth="180.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Button alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fxAudveltHandler" prefHeight="150.0" prefWidth="180.0" styleClass="fxaudveltTakki" textFill="WHITE">
+                  <Region cache="true" cacheHint="SPEED" maxHeight="54.0" maxWidth="270.0" minHeight="36.0" minWidth="180.0" VBox.vgrow="ALWAYS" />
+                        <Button alignment="CENTER" cacheHint="SCALE" cacheShape="false" contentDisplay="CENTER" maxHeight="225.0" maxWidth="270.0" minHeight="150.0" minWidth="180.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fxAudveltHandler" styleClass="fxaudveltTakki" textFill="WHITE" VBox.vgrow="ALWAYS">
                             <font>
                                 <Font name="Trebuchet MS Bold" size="30.0" />
                             </font>
@@ -98,7 +102,8 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
-                        <Button alignment="CENTER" cacheHint="SCALE" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fxErfittHandler" prefHeight="150.0" prefWidth="180.0" styleClass="fxerfittTakki" textFill="WHITE">
+                  <Region cache="true" cacheHint="SPEED" maxHeight="60.0" maxWidth="270.0" minHeight="40.0" minWidth="180.0" VBox.vgrow="ALWAYS" />
+                        <Button alignment="CENTER" cacheHint="SCALE" cacheShape="false" contentDisplay="CENTER" maxHeight="225.0" maxWidth="270.0" minHeight="150.0" minWidth="180.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#fxErfittHandler" styleClass="fxerfittTakki" textFill="WHITE" VBox.vgrow="ALWAYS">
                             <font>
                                 <Font name="Trebuchet MS Bold" size="30.0" />
                             </font>
@@ -106,15 +111,14 @@
                                 <Cursor fx:constant="HAND" />
                             </cursor>
                         </Button>
+                  <Region cache="true" cacheHint="SPEED" maxHeight="72.0" maxWidth="270.0" minHeight="48.0" minWidth="180.0" VBox.vgrow="ALWAYS" />
                     </children>
                 </VBox>
+            <Region cache="true" cacheHint="SPEED" maxHeight="636.0" maxWidth="213.0" minHeight="424.0" minWidth="142.0" HBox.hgrow="ALWAYS" />
             </children>
             <opaqueInsets>
                 <Insets />
             </opaqueInsets>
-            <padding>
-                <Insets left="70.0" />
-            </padding>
         </HBox>
     </children>
 </VBox>

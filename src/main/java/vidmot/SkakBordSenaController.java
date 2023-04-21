@@ -1,39 +1,27 @@
 package vidmot;
 
-import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 import presenter.GameMediator;
-import vidmot.nodes.GameNode;
-import vidmot.nodes.TitleBarNode;
-import vidmot.nodes.TopBarNode;
+import vidmot.hnutar.GameNode;
+import vidmot.hnutar.TitilStikaHnutur;
+import vidmot.hnutar.ToppBordaHnutur;
 
-import java.util.Objects;
-
-public class ChessBoardScene extends Scene {
-    private TopBarNode topBar;
-    private TitleBarNode titleBar;
+public class SkakBordSenaController extends Scene {
+    private ToppBordaHnutur topBar;
+    private TitilStikaHnutur titleBar;
     private VBox root;
     private Pane game;
     private double xOffset = 0.0, yOffset = 0.0;
     private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
 
-
-
-
-    public ChessBoardScene(GameMediator gameMediator) {
+    public SkakBordSenaController(GameMediator gameMediator) {
         super(new VBox());
         initializeComponents();
         constructSceneGraph(gameMediator);
@@ -42,8 +30,9 @@ public class ChessBoardScene extends Scene {
 
     private void initializeComponents(){
         root = (VBox) getRoot();
-        titleBar = new TitleBarNode();
-        topBar = new TopBarNode();
+        titleBar = new TitilStikaHnutur();
+        topBar = new ToppBordaHnutur();
+
         root.setFillWidth(true);
         root.setAlignment(javafx.geometry.Pos.CENTER);
         root.setFillWidth(true);
@@ -52,14 +41,14 @@ public class ChessBoardScene extends Scene {
         root.setMaxHeight(MAX_HEIGHT);
         root.setMaxWidth(MAX_WIDTH);
 
-        titleBar = new TitleBarNode();
+        titleBar = new TitilStikaHnutur();
         topBar.minWidthProperty().bind(widthProperty());
         topBar.maxWidthProperty().bind(widthProperty());
         topBar.setMinHeight(30);
         topBar.setMaxHeight(30);
         titleBar.getStyleClass().add("fxtitleBar");
 
-        topBar = new TopBarNode();
+        topBar = new ToppBordaHnutur();
         topBar.minWidthProperty().bind(widthProperty());
         topBar.maxWidthProperty().bind(widthProperty());
         topBar.setMinHeight(76);
@@ -68,7 +57,7 @@ public class ChessBoardScene extends Scene {
         VBox.setVgrow(topBar, Priority.ALWAYS);
 
         //geraði þetta til að get fært skjáinn
-        addDraggableNode(titleBar);
+        dragaSkjaHandler(titleBar);
 
     }
 
@@ -90,7 +79,7 @@ public class ChessBoardScene extends Scene {
         game.setMinHeight(424);
         game.setMaxHeight(636);
     }
-    private void addDraggableNode(final Node node) {
+    private void dragaSkjaHandler(final Node node) {
         node.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent me) {

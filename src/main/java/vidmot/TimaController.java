@@ -28,30 +28,29 @@ public class TimaController extends UpphafController {
     @FXML
     private ToggleButton fxFullscreenButton;
 
-    private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
     public static int timiEftirShared;
     public static int timiEftir2Shared;
-    private MediaPlayer mediaPlayer = MediaManager.getMediaPlayer();
+    private MediaPlayer mediaPlayer = TonlistarStjori.getMediaPlayer();
     private int duration;
     public static String bot;
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    //handler fyrir audvelt bot takkann
     @FXML
     public void fxAudveltHandler(ActionEvent actionEvent)  throws IOException {
-
         bot = ("audvelt");
         root = FXMLLoader.load(getClass().getResource("/vidmot/timi-view.fxml"));
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(fxtitleBar);
+        dragaSkjaHandler(fxtitleBar);
         stage.setScene(scene);
         stage.show();
-
     }
 
+    //handler fyrir erfitt bot takkann
     @FXML
     public void fxErfittHandler(ActionEvent actionEvent)  throws IOException {
         bot=("erfitt");
@@ -59,17 +58,16 @@ public class TimaController extends UpphafController {
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         scene = new Scene(root);
         scene.getStylesheets().add(selectedStylesheet);
-        addDraggableNode(fxtitleBar);
+        dragaSkjaHandler(fxtitleBar);
         stage.setScene(scene);
         stage.show();
     }
-
 
     public static String getBot() {
         return bot;
     }
 
-
+    //handlerar fyrir tíma takkana sem stilla tíma á leiknum og búa til leik senuna
     public void fx1minHandler(ActionEvent actionEvent) {
         timiEftirShared=60;
         timiEftir2Shared=60;
@@ -77,14 +75,14 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
@@ -99,14 +97,14 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
@@ -121,14 +119,14 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
@@ -142,14 +140,14 @@ public class TimaController extends UpphafController {
 
         if(bot == null) {
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_LOCAL, duration));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
         }
         else{
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            Scene scene = new ChessBoardScene(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
+            Scene scene = new SkakBordSenaController(new GameMediator(MediatorConstructionFlags.TIMED_AI, duration, bot));
             scene.getStylesheets().add(selectedStylesheet);
             stage.setScene(scene);
             stage.show();
@@ -157,7 +155,7 @@ public class TimaController extends UpphafController {
     }
 
     public void initialize(){
-        addDraggableNode(fxtitleBar);
+        dragaSkjaHandler(fxtitleBar);
         fxHomeButton.setOnAction(this::fxHomeButtonHandler);
         if(isBot == 1){
             bot = getBot();

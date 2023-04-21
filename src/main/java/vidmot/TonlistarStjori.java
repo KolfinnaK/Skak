@@ -3,12 +3,13 @@ package vidmot;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-public class MediaManager {
+public class TonlistarStjori {
     private static Media media;
     private static MediaPlayer mediaPlayer;
 
+    //nær í hljóðskrána og spilar hana
     static {
-        media = new Media(MediaManager.class.getResource("audio/music.wav").toExternalForm());
+        media = new Media(TonlistarStjori.class.getResource("tonlist/music.wav").toExternalForm());
 
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);

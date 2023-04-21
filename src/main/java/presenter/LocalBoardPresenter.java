@@ -1,7 +1,7 @@
 package presenter;
 
 import vidmot.Observer;
-import vidmot.nodes.BoardNode;
+import vidmot.hnutar.BoardNode;
 
 public class LocalBoardPresenter extends BoardPresenter {
     public LocalBoardPresenter(GameMediator gameMediator) {

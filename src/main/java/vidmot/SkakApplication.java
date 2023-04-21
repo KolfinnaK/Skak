@@ -16,9 +16,9 @@ public class SkakApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/vidmot/upphaf-view.fxml"));
-        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initStyle(StageStyle.UNDECORATED); //Fjarlægir default window bar
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("stylesheets/cloud-styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("stylesheets/skyjad-still.css").toExternalForm());
         stage.setFullScreen(false);
         stage.setMinWidth(MIN_WIDTH);
         stage.setMinHeight(MIN_HEIGHT);
