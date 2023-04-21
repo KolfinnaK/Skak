@@ -17,6 +17,16 @@ import presenter.MediatorConstructionFlags;
 import java.io.IOException;
 import java.util.Objects;
 
+/****************************************************************************************************************************
+ * Lýsing:
+ * Controller klasi fyrir erfiðleika og tímasenuna. Inniheldur handlera fyrir takkana í báðum senum og fyrir þema menu.
+ * Inniheldur einnig initialize fall sem stillir útlit forrits miðað við gefnar upplýsingar frá upphafcontroller
+ *
+ *
+ *
+ *
+ *****************************************************************************************************************************/
+
 public class TimaController extends UpphafController {
 
     @FXML
