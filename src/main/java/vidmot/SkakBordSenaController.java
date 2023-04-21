@@ -13,9 +13,11 @@ import vidmot.hnutar.GameNode;
 import vidmot.hnutar.TitilStikaHnutur;
 import vidmot.hnutar.ToppBordaHnutur;
 
-/**
- *  SkakBordSenaController er controller klasi sem stýrir UI hlutum leikborðsins.
- */
+/****************************************************************************************************************************
+ * Lýsing: SkakBordSenaController er controller klasi sem stýrir UI hlutum leikborðsins.
+ *
+ *
+ *****************************************************************************************************************************/
 
 public class SkakBordSenaController extends Scene {
     private ToppBordaHnutur topBar;
