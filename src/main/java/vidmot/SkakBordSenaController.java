@@ -13,6 +13,10 @@ import vidmot.hnutar.GameNode;
 import vidmot.hnutar.TitilStikaHnutur;
 import vidmot.hnutar.ToppBordaHnutur;
 
+/**
+ *  SkakBordSenaController er controller klasi sem stýrir UI hlutum leikborðsins.
+ */
+
 public class SkakBordSenaController extends Scene {
     private ToppBordaHnutur topBar;
     private TitilStikaHnutur titleBar;
@@ -22,10 +26,10 @@ public class SkakBordSenaController extends Scene {
     private static final int MAX_HEIGHT = 780, MAX_WIDTH = 1050, MIN_HEIGHT = 530, MIN_WIDTH = 700;
 
     /**
-
-     SkakBordSenaController er controller klasi sem stýrir UI hlutum leikborðsins.
+     Smiður fyrir nýjan SkakBordSenaController hlut með tilgreindum GameMediator hlut.
      @param gameMediator a GameMediator hlutur sem að stjórnar leikjafræðinni.
      */
+
     public SkakBordSenaController(GameMediator gameMediator) {
         super(new VBox());
         initializeComponents();
